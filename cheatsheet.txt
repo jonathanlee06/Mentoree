@@ -1,0 +1,5 @@
+background: rgb(1,190,196);
+background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%);
+
+dark blue: #1e5ca6
+cyan-green: #01bec4
