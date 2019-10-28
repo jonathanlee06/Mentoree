@@ -88,6 +88,146 @@ a, a:focus, a:hover {
   outline: 0;
 }
 
+/* =================================== */
+/*  login/Register Form 
+/* =================================== */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 997; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+.modal-form {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/* =================================== */
+/*  login/Register Form END
+/* =================================== */
+
 .btn.active.focus,
 .btn.active:focus,
 .btn.focus,
@@ -1769,6 +1909,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .default-select .nice-select {
+  position: relative;
   border: none;
   border-radius: 0px;
   height: 40px;
@@ -1946,10 +2087,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ticker-btn:hover {
-  background: #1e5ca6;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, .3);
   /* background: rgba(73, 228, 250, 0.2); */
   /* color: #49e4fa; */
-  color: white;
+}
+
+.ticker-btn-white {
+  background: #fff;
+  /* background: #1e5ca6; */
+  /* background: rgba(1,190,196,1); */
+  border-radius: 20px;
+  color: #fff;
+  padding: 6px 20px !important;
+  text-transform: uppercase;
+}
+
+.ticker-btn-white:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .1);
+  /* background: rgba(73, 228, 250, 0.2); */
+  /* color: #49e4fa; */
 }
 
 @media (max-width: 960px) {
@@ -2241,8 +2397,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   /* background-image: -moz-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
   background-image: -webkit-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
   background-image: -ms-linear-gradient(0deg, #bfacff 0%, #795fff 100%); */
-  background: rgb(1,190,196);
-  background: linear-gradient(90deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%);
+  /* background: rgb(1,190,196);
+  background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%); */
+  background: #fff;
 }
 
 .p1-gradient-color, .feat-txt h1 {
@@ -2328,7 +2485,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background: url(../img/header-bg.jpg) center;
+  background: url(../img/back.png) center;
   background-size: cover;
 }
 
@@ -2336,8 +2493,56 @@ body.mobile-nav-active #mobile-nav-toggle {
   opacity: .95;
 }
 
+.banner-area img{
+  /* width: 650px;
+  height: 650px; */
+  width: auto;
+  height: auto;
+}
+
+.banner-area span{
+  font-weight: 600;
+  position: relative;
+  /* background: -webkit-linear-gradient(30deg, rgba(1,190,196,1), rgba(37,124,227,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #fff;
+}
+
+.banner-area .title{
+  /* color: rgb(1,190,196);
+  color: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 50%); */
+  font-size: 72px;
+  width: auto;
+  height: auto;
+  /* color: #fff; */
+  background: -webkit-linear-gradient(30deg, rgba(1,190,196,1), rgba(37,124,227,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.banner-area .ticker-btn {
+  background: rgb(1,190,196);
+  background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%);
+  /* background: #fff; */
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  /* color: -webkit-linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1)); */
+  padding: 6px 20px !important;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.banner-area .ticker-btn:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, .3);
+  /* background: rgba(73, 228, 250, 0.2); */
+  /* color: #49e4fa; */
+}
+
+
 .banner-content {
-  margin-top: -90px;
+  /* margin-top: -90px; */
   text-align: center;
 }
 
@@ -2350,6 +2555,40 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .banner-content h1 span {
   color: #49e4fa;
+}
+
+@media (max-width: 991.98px) {
+  .banner-area h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .banner-area h1 br {
+    display: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .banner-area h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 414px) {
+  .banner-area h1 {
+    font-size: 32px;
+  }
+}
+
+.banner-content p span {
+  color: #49e4fa;
+}
+
+@media (max-width: 1280px) {
+  .banner-area br {
+    display: none;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -2392,7 +2631,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   /* border: 1px solid #b8aaf3; */
   border: 1px solid #fff;
   border-radius: 40px;
-  padding: 20px 10px;
+  padding: 10px 10px;
   margin: 40px 0;
 }
 
@@ -2414,7 +2653,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   width: 100%;
   height: 100%;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 0;
   border: none;
   text-transform: uppercase;
 }
