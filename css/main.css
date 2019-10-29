@@ -2087,7 +2087,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ticker-btn:hover {
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, .3);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .3);
   /* background: rgba(73, 228, 250, 0.2); */
   /* color: #49e4fa; */
 }
@@ -2393,13 +2393,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-.p1-gradient-bg, .banner-area .overlay-bg, .sidebar .single-slidebar .cat-list li:hover, .callto-action-area, .single-price:hover .price-bottom, .single-service:hover, .submit-right, .submit-left, .contact-btns, .form-area .primary-btn {
+.p1-gradient-bg, .banner-area .overlay-bg, .sidebar .single-slidebar .cat-list li:hover, .single-price:hover .price-bottom, .single-service:hover, .submit-right, .submit-left, .contact-btns, .form-area .primary-btn {
   /* background-image: -moz-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
   background-image: -webkit-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
   background-image: -ms-linear-gradient(0deg, #bfacff 0%, #795fff 100%); */
   /* background: rgb(1,190,196);
   background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%); */
   background: #fff;
+}
+
+.callto-action-area {
+  background: rgb(1,190,196);
+  background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%);
 }
 
 .p1-gradient-color, .feat-txt h1 {
@@ -2559,6 +2564,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 991.98px) {
   .banner-area h1 {
+    font-size: 36px;
+  }
+
+  .banner-area .title {
     font-size: 36px;
   }
 }
