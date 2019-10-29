@@ -285,4 +285,57 @@ document.body.style.position = '';
 document.body.style.top = '';
 window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
+//login
+var DOMAIN = "http://localhost/Mentoree-master";
+  //user login
+  $("#form_login").on("submit",function(){
+      var email = $("#log_email");
+      var pass = $("#log_password");
+      var status = false;
+      //red text border and error message if no email
+      if (email.val() == "") {
+          email.addClass("border-danger");
+          $("#e_error").html("<span class= 'text-danger'>Please enter Email Address</span>");
+          status = false;
+      }else{
+          email.removeClass("border-danger");
+          $("#e_error").html("");
+          status = true;
+      }
+
+      //red text border and error message is no password
+      if (pass.val() == "") {
+          pass.addClass("border-danger");
+          $("#p_error").html("<span class= 'text-danger'>Please enter password</span>");
+          status = false;
+      }else{
+          pass.removeClass("border-danger");
+          $("#p_error").html("");
+          status = true;
+      }
+        if(status){
+          $.ajax({
+              url : DOMAIN+"/includes/process.php",
+                method : "POST",
+                data : $('#form_login').serialize(),
+                success : function(data){
+                    //error msg if user not registered
+                    if(data == "NOT_REGISTERED"){
+                        email.addClass("border-danger");
+                        $("#e_error").html("<span class = 'text-danger'> Email address is not registered</span>");
+                    //error msg if password not matched
+                    }else if(data == "PASSWORD_NOT_MATCHED"){
+                        pass.addClass("border-danger");
+                        $("#p_error").html("<span class = 'text-danger'> Password did not matched</span>");
+                    }else if(data == 1){
+                        //console.log(data);
+                        window.location.href = DOMAIN+"/index.html"
+                    }else{
+                        console.log(data);
+                    }
+                      
+                }
+          });
+        }   
+    });
  });
