@@ -15,6 +15,7 @@
 ::selection {
   background-color: #49e4fa;
   color: #fff;
+  -webkit-text-fill-color: #fff;
 }
 
 ::-webkit-input-placeholder {
@@ -116,6 +117,11 @@ button:hover {
   opacity: 0.8;
 }
 
+body .modal-open {
+  overflow: hidden;
+  position: fixed;
+}
+
 /* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;
@@ -156,7 +162,7 @@ span.psw {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+  /* padding-top: 60px; */
 }
 
 .modal-form {
@@ -175,11 +181,18 @@ span.psw {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(0,0,0,1); /* Black w/ opacity */
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  border: 0;
+  width: 0; /* Could be more or less, depending on screen size */
 }
+
+.modal .card {
+  margin-top: 7%;
+  margin-bottom: 7%;
+  width: 30rem;
+}
+
 
 /* The Close Button (x) */
 .close {
@@ -201,6 +214,11 @@ span.psw {
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
+}
+
+.animate-back {
+  -webkit-transition-timing-function: ease-in; /* Safari prior 6.1 */
+  transition-timing-function: ease-in;
 }
 
 @-webkit-keyframes animatezoom {
@@ -2525,6 +2543,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 .banner-area .ticker-btn {
   background: rgb(1,190,196);

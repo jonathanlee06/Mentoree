@@ -263,14 +263,21 @@ $(document).ready(function(){
 ////////  Login/Register  ///////
 
 // Get the modal
-var modal = document.getElementById('id01');
+var loginModal = document.getElementById('id01');
+var registerModal = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == loginModal) {
+      loginModal.style.display = "none";
+      document.body.style.overflow = '';
+    }
+    else if (event.target == registerModal) {
+      registerModal.style.display = "none";
+      document.body.style.overflow = '';
     }
 }
+
 
 ////////  Login/Register END ///////
 
@@ -279,11 +286,13 @@ window.onclick = function(event) {
 document.body.style.position = 'fixed';
 document.body.style.top = `-${window.scrollY}px`;
 
+
 // When the modal is hidden, we want to remain at the top of the scroll position
 const scrollY = document.body.style.top;
 document.body.style.position = '';
 document.body.style.top = '';
 window.scrollTo(0, parseInt(scrollY || '0') * -1);
+
 
 //login
 var DOMAIN = "http://localhost/Mentoree-master";

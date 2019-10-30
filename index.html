@@ -54,13 +54,133 @@
 							<li><a href="single.html">single</a></li>
 						</ul>
 						</li> -->
-						<li><a class="ticker-btn-white" href="#">Login</a></li>
-						<li><a class="ticker-btn text-white" href="home.html">Register</a></li>				          				          
+						<li><a class="ticker-btn-white" href="#" onclick="document.getElementById('id01').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto;">Login</a></li>
+						<li><a class="ticker-btn text-white" href="#" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto;">Register</a></li>				          				          
 					</ul>
 					</nav><!-- #nav-menu-container -->		    		
 				</div>
 			</div>
 			</header><!-- #header -->
+
+			<!-- Login Modal -->
+			<div id="id01" class="modal">
+				<div class="model-content card mx-auto animate">
+						
+							<!-- <img src="./images/login.png" class="card-img-top mx-auto" alt="Login Icon" 
+							style = "width : 128px; height : 128px;" vspace = "30"> -->
+							
+						<div class="card-body">
+								<h2 class="text-center">Login</h2>
+								<br>
+							<form id = 'form_login' onsubmit = "return false" method="POST">
+								<div class="form-group">
+									<label for="exampleInputEmail1">Email address</label>
+									<input type="email" class="form-control" name = "log_email" id="log_email" placeholder="Enter email">
+									<small id="e_error" class="form-text text-muted">We'll never share your email with anyone else.</small>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Password</label>
+									<input type="password" class="form-control" name= "log_password" id="log_password" placeholder="Password">
+									<small id="p_error" class="form-text text-muted"></small>
+								</div>
+			
+								<div class = "login-button text-center" >
+									<button type="submit" class="btn btn-primary"> <i class="fa fa-lock"> </i> LOGIN</button>
+									<!--<span><a href='#'>&nbsp;Register</a></span>-->
+								</div>  
+							</form>
+			
+						</div>
+
+						<div class = "card-footer"><a href='#'>Forget Password ?</a></div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Register Modal -->
+			<div id="id02" class="modal">
+				<div class="model-content card mx-auto animate">
+					
+							<!-- <img src="./images/login.png" class="card-img-top mx-auto" alt="Login Icon" 
+							style = "width : 128px; height : 128px;" vspace = "30"> -->
+							
+						<div class="card-body">
+								<h2 class="text-center">Register</h2>
+								<br>
+							<form>
+								<div class="form-group">
+									<label for="exampleInputUsername">Username</label>
+									<input type="text" class="form-control" placeholder="Enter Username">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">Email address</label>
+									<input type="email" class="form-control" placeholder="Enter email">
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Password</label>
+									<input type="password" class="form-control" placeholder="Password">
+									<small id="p_error" class="form-text text-muted"></small>
+								</div>
+								<div class="form-group">
+										<label for="exampleInputPassword2">Confirm Password</label>
+										<input type="password" class="form-control" placeholder="Confirm Password">
+										<small id="p_error" class="form-text text-muted"></small>
+									</div>
+			
+								<div class = "login-button text-center" >
+									<button type="submit" class="btn btn-primary" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:auto;"> <i class="fa fa-arrow-right"> </i> Register</button>
+									<!--<span><a href='#'>&nbsp;Register</a></span>-->
+								</div>  
+							</form>
+			
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Register #2 Modal -->
+			<div id="id02-1" class="modal">
+				<div class="model-content card mx-auto">
+							
+					<div class="card-body">
+							<h2 class="text-center">User Info</h2>
+							<br>
+						<form>
+							<div class="form-group">
+								<label for="exampleInputUsername">First Name</label>
+								<input type="text" class="form-control" placeholder="First Name">
+								<label for="exampleInputUsername">Last Name</label>
+								<input type="text" class="form-control" placeholder="Last Name">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input type="email" class="form-control" placeholder="Enter email">
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input type="password" class="form-control" placeholder="Password">
+								<small id="p_error" class="form-text text-muted"></small>
+							</div>
+							<div class="form-group">
+									<label for="exampleInputPassword2">Confirm Password</label>
+									<input type="password" class="form-control" placeholder="Confirm Password">
+									<small id="p_error" class="form-text text-muted"></small>
+								</div>
+		
+							<div class = "login-button text-center" >
+								<button type="submit" class="btn btn-primary"> <i class="fa fa-arrow-right"> </i> Register</button>
+								<!--<span><a href='#'>&nbsp;Register</a></span>-->
+							</div>  
+						</form>
+		
+					</div>
+
+
+				</div>
+			</div>
 
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home">	
@@ -751,7 +871,7 @@
 								
 								<ul class="list-unstyled">
 								<li>
-									<a href="#!" class="text-white">Become a student</a>
+									<a href="#!" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';" class="text-white">Become a student</a>
 								</li>
 								<li>
 									<a href="#!" class="text-white">Find tutors</a>
@@ -772,7 +892,7 @@
 								
 								<ul class="list-unstyled">
 								<li>
-									<a href="#!" class="text-white">Become a tutor</a>
+									<a href="#!" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';" class="text-white">Become a tutor</a>
 								</li>
 								<li>
 									<a href="#!" class="text-white">Find students</a>
