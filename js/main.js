@@ -265,6 +265,7 @@ $(document).ready(function(){
 // Get the modal
 var loginModal = document.getElementById('id01');
 var registerModal = document.getElementById('id02');
+var infoModal = document.getElementById('id02-1');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -274,6 +275,10 @@ window.onclick = function(event) {
     }
     else if (event.target == registerModal) {
       registerModal.style.display = "none";
+      document.body.style.overflow = '';
+    }
+    else if (event.target == infoModal) {
+      infoModal.style.display = "none";
       document.body.style.overflow = '';
     }
 }

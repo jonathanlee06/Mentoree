@@ -4,11 +4,11 @@
 		<!-- Mobile Specific Meta -->
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
+		<link rel="shortcut icon" href="img/favicon.ico">
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Job Listing</title>
+		<title>Mentoree</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -65,36 +65,38 @@
 			<!-- Login Modal -->
 			<div id="id01" class="modal">
 				<div class="model-content card mx-auto animate">
-						
-							<!-- <img src="./images/login.png" class="card-img-top mx-auto" alt="Login Icon" 
-							style = "width : 128px; height : 128px;" vspace = "30"> -->
+					<div class="card-body">
 							
-						<div class="card-body">
-								<h2 class="text-center">Login</h2>
-								<br>
-							<form id = 'form_login' onsubmit = "return false" method="POST">
-								<div class="form-group">
-									<label for="exampleInputEmail1">Email address</label>
-									<input type="email" class="form-control" name = "log_email" id="log_email" placeholder="Enter email">
-									<small id="e_error" class="form-text text-muted">We'll never share your email with anyone else.</small>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword1">Password</label>
-									<input type="password" class="form-control" name= "log_password" id="log_password" placeholder="Password">
-									<small id="p_error" class="form-text text-muted"></small>
-								</div>
-			
-								<div class = "login-button text-center" >
-									<button type="submit" class="btn btn-primary"> <i class="fa fa-lock"> </i> LOGIN</button>
-									<!--<span><a href='#'>&nbsp;Register</a></span>-->
-								</div>  
-							</form>
-			
+						<div class="row">
+							<div class="col-lg-6">
+								<h2 class="card-title">Login</h2>
+							</div>
+							<div class="col-lg-6">
+								<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" style="color: #000;">&times;</span>
+							</div>
 						</div>
 
-						<div class = "card-footer"><a href='#'>Forget Password ?</a></div>
-
+						<form id = 'form_login' onsubmit = "return false" method="POST">
+							<div class="form-group">
+								<!-- <label for="exampleInputEmail1">Email address</label> -->
+								<input type="email" class="form-control" name = "log_email" id="log_email" placeholder="Email">
+								<small id="e_error" class="form-text text-muted text-center">We'll never share your email with anyone else.</small>
+							</div>
+							<div class="form-group">
+								<!-- <label for="exampleInputPassword1">Password</label> -->
+								<input type="password" class="form-control" name= "log_password" id="log_password" placeholder="Password">
+								<small id="p_error" class="form-text text-muted"></small>
+							</div>
+		
+							<div class = "login-button text-center" >
+								<button type="submit" class="ticker-btn" style="width:40%;"> <i class="fa fa-lock"> </i> LOGIN</button>
+								<!--<span><a href='#'>&nbsp;Register</a></span>-->
+							</div>  
+						</form>
+		
 					</div>
+
+					<div class = "card-footer text-center"><a href='#' style="font-weight: 500;">Forget Password ?</a></div>
 				</div>
 			</div>
 
@@ -102,41 +104,34 @@
 			<!-- Register Modal -->
 			<div id="id02" class="modal">
 				<div class="model-content card mx-auto animate">
-					
-							<!-- <img src="./images/login.png" class="card-img-top mx-auto" alt="Login Icon" 
-							style = "width : 128px; height : 128px;" vspace = "30"> -->
-							
-						<div class="card-body">
-								<h2 class="text-center">Register</h2>
-								<br>
-							<form>
-								<div class="form-group">
-									<label for="exampleInputUsername">Username</label>
-									<input type="text" class="form-control" placeholder="Enter Username">
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">Email address</label>
-									<input type="email" class="form-control" placeholder="Enter email">
-								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword1">Password</label>
-									<input type="password" class="form-control" placeholder="Password">
-									<small id="p_error" class="form-text text-muted"></small>
-								</div>
-								<div class="form-group">
-										<label for="exampleInputPassword2">Confirm Password</label>
-										<input type="password" class="form-control" placeholder="Confirm Password">
-										<small id="p_error" class="form-text text-muted"></small>
-									</div>
-			
-								<div class = "login-button text-center" >
-									<button type="submit" class="btn btn-primary" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:auto;"> <i class="fa fa-arrow-right"> </i> Register</button>
-									<!--<span><a href='#'>&nbsp;Register</a></span>-->
-								</div>  
-							</form>
-			
-						</div>
-
+					<div class="card-body">
+							<h2 class="card-title">Register</h2>
+						<form>
+							<div class="form-group">
+								<!-- <label for="exampleInputUsername">Username</label> -->
+								<input type="text" class="form-control" placeholder="Username">
+							</div>
+							<div class="form-group">
+								<!-- <label for="exampleInputEmail1">Email address</label> -->
+								<input type="email" class="form-control" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<!-- <label for="exampleInputPassword1">Password</label> -->
+								<input type="password" class="form-control" placeholder="Password">
+								<small id="p_error" class="form-text text-muted"></small>
+							</div>
+							<div class="form-group">
+								<!-- <label for="exampleInputPassword2">Confirm Password</label> -->
+								<input type="password" class="form-control" placeholder="Confirm Password">
+								<small id="p_error" class="form-text text-muted"></small>
+							</div>
+		
+							<div class = "login-button text-center" >
+								<button type="submit" href="#" class="ticker-btn" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:40%;"> <i class="fa fa-arrow-right"> </i> Register</button>
+								<!--<span><a href='#'>&nbsp;Register</a></span>-->
+							</div>  
+						</form>
+		
 					</div>
 				</div>
 			</div>
@@ -146,8 +141,9 @@
 				<div class="model-content card mx-auto">
 							
 					<div class="card-body">
-							<h2 class="text-center">User Info</h2>
-							<br>
+						
+						<h2 class="card-title">User Info</h2>
+
 						<form>
 							<div class="form-group">
 								<label for="exampleInputUsername">First Name</label>
@@ -171,7 +167,7 @@
 								</div>
 		
 							<div class = "login-button text-center" >
-								<button type="submit" class="btn btn-primary"> <i class="fa fa-arrow-right"> </i> Register</button>
+								<button type="submit" class="ticker-btn"> <i class="fa fa-arrow-right"></i>Complete Profile</button>
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
 							</div>  
 						</form>
@@ -811,7 +807,7 @@
 						</div>
 						<div class="col-lg-6 download-right">
 							<h1>Download the <br>
-							Job Listing App Today!</h1>
+							Mentoree App Today!</h1>
 							<p class="subs">
 								It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned.
 							</p>
