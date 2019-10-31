@@ -72,7 +72,7 @@
 								<h2 class="card-title">Login</h2>
 							</div>
 							<div class="col-lg-6">
-								<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" style="color: #000;">&times;</span>
+								<span onclick="document.getElementById('id01').style.display='none'; document.body.style.overflow = '';" class="close" title="Close Modal" style="color: #000;">&times;</span>
 							</div>
 						</div>
 
@@ -105,7 +105,16 @@
 			<div id="id02" class="modal">
 				<div class="model-content card mx-auto animate">
 					<div class="card-body">
-							<h2 class="card-title">Register</h2>
+							
+						<div class="row">
+							<div class="col-lg-6">
+								<h2 class="card-title">Register</h2>
+							</div>
+							<div class="col-lg-6">
+								<span onclick="document.getElementById('id02').style.display='none'; document.body.style.overflow = '';" class="close" title="Close Modal" style="color: #000;">&times;</span>
+							</div>
+						</div>
+
 						<form>
 							<div class="form-group">
 								<!-- <label for="exampleInputUsername">Username</label> -->
@@ -167,7 +176,7 @@
 								</div>
 		
 							<div class = "login-button text-center" >
-								<button type="submit" class="ticker-btn"> <i class="fa fa-arrow-right"></i>Complete Profile</button>
+								<button type="submit" href="#" class="ticker-btn"> <i class="fa fa-arrow-right"></i>Complete Profile</button>
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
 							</div>  
 						</form>
