@@ -300,7 +300,7 @@ window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
 
 //login
-var DOMAIN = "http://localhost/Mentoree-master";
+var DOMAIN = "http://localhost/Mentoree";
   //user login
   $("#form_login").on("submit",function(){
       var email = $("#log_email");
@@ -343,7 +343,7 @@ var DOMAIN = "http://localhost/Mentoree-master";
                         $("#p_error").html("<span class = 'text-danger'> Password did not matched</span>");
                     }else if(data == 1){
                         //console.log(data);
-                        window.location.href = DOMAIN+"/index.html"
+                        window.location.href = DOMAIN+"/home.html"
                     }else{
                         console.log(data);
                     }
