@@ -12,6 +12,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.css">
 			<!--
 			CSS
 			============================================= -->
@@ -22,6 +23,7 @@
 			<link rel="stylesheet" href="css/nice-select.css">					
 			<link rel="stylesheet" href="css/animate.min.css">
 			<link rel="stylesheet" href="css/owl.carousel.css">
+			<link rel="stylesheet" href="css/bootstrap-tagsinput.css">
 			<link rel="stylesheet" href="css/main.css">
 
 		</head>
@@ -90,7 +92,7 @@
 							</div>
 		
 							<div class = "login-button text-center" >
-								<button type="submit" class="ticker-btn" style="width:40%;"> <i class="fa fa-lock"> </i> LOGIN</button>
+								<button type="submit" class="ticker-btn-form" style="width:40%; height: 50px;"> <i class="fa fa-lock"></i>	 LOGIN</button>
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
 							</div>  
 						</form>
@@ -119,34 +121,34 @@
 							<div class="form-group">
 								<!-- <label for="exampleInputUsername">Username</label> -->
 								<input type="text" class="form-control" name = "reg_username" id = "reg_username" placeholder="Username">
-								<small id="r_user_error" class="form-text text-muted"></small>
+								<small id="r_user_error" class="form-text text-muted text-center"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputEmail1">Email address</label> -->
 								<input type="email" class="form-control" name = "reg_email" id = "reg_email" placeholder="Email">
-								<small id="r_email_error" class="form-text text-muted"></small>
+								<small id="r_email_error" class="form-text text-muted text-center"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword1">Password</label> -->
 								<input type="password" class="form-control" name = "reg_password" id = "reg_password"placeholder="Password">
-								<small id="r_pass_error" class="form-text text-muted"></small>
+								<small id="r_pass_error" class="form-text text-muted text-center"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword2">Confirm Password</label> -->
 								<input type="password" class="form-control" name = "reg_confirmPass" id = "reg_confirmPass" placeholder="Confirm Password">
-								<small id="r_confirm_pass_error" class="form-text text-muted"></small>
+								<small id="r_confirm_pass_error" class="form-text text-muted text-center"></small>
 							</div>
 		
 							<div class = "login-button text-center" >
 								<!--<button type="submit" href="#" class="ticker-btn" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:40%;"> <i class="fa fa-arrow-right"> </i> Register</button>-->
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
-								<button type="submit" class="btn btn-primary"> </i> REGISTER</button>
+								<button type="submit" class="ticker-btn-form" style="width:40%; height: 50px;"> </i> Register</button>
 							</div>  
 						</form>
 						
 					</div>
 					<div class="card-footer text-center">
-						<p>Already have an account? <a onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block'">Login</a></p>
+						<p>Already have an account? <a>Login</a></p>
 					</div>
 				</div>
 			</div>
@@ -157,7 +159,7 @@
 							
 					<div class="card-body">
 						
-						<h2 class="card-title">User Info</h2>
+						<h2 class="card-title">Personal Info</h2>
 
 						<form>
 							<div class="form-group">
@@ -172,19 +174,27 @@
 								<div class="row"></div>
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Enter email">
+								<div class="form-select" id="default-select">
+									<select class="nice-select">
+										<option value="1">Select Location</option>
+										<option value="2">UOW Malaysia KDU University College Utropolis, Glenmarie</option>
+										<option value="3">UOW Malaysia KDU College Damansara Jaya</option>
+										<option value="4">UOW Malaysia KDU University College Georgetown, Penang</option>
+										<option value="5">UOW Malaysia KDU University College Batu Kawan, Penang</option>
+									</select>
+								</div>
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password">
+								<input type="text" class="form-control" placeholder="Phone Number">
 								<small id="p_error" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
-									<input type="password" class="form-control" placeholder="Confirm Password">
+									<input type="text" class="form-control" placeholder="Subject">
 									<small id="p_error" class="form-text text-muted"></small>
 								</div>
 		
 							<div class = "login-button text-center" >
-								<button type="submit" href="#" class="ticker-btn"> <i class="fa fa-arrow-right"></i>Complete Profile</button>
+								<button type="submit" href="#" class="ticker-btn-form" style="width:40%; height: 50px;"> <i class="fa fa-arrow-right"></i> Complete Profile</button>
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
 							</div>  
 						</form>
@@ -201,7 +211,7 @@
 						<h2 class="card-title">User Info</h2>
 						<div class="row">
 							<div class="col-md-6">
-
+								
 							</div>
 							<div class="col-md-6">
 
@@ -976,8 +986,11 @@
 			<!-- End footer Area -->		
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
   			<script src="js/easing.min.js"></script>			
@@ -990,6 +1003,7 @@
 			<script src="js/jquery.nice-select.min.js"></script>			
 			<script src="js/parallax.min.js"></script>		
 			<script src="js/mail-script.js"></script>	
+			<script src="js/tagsinput.js"></script>
 			<script src="js/main.js"></script>	
 		</body>
 	</html>

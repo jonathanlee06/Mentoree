@@ -4,7 +4,7 @@ session_start();
 define("HOST","localhost");
 define("USER","root");
 define("PASS","");
-define("DB","tutor_hub");
+define("DB","mentoree");
 
 define("DOMAIN","http://localhost/Mentoree/home.html");
 ?>

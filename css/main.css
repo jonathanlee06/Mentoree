@@ -198,6 +198,10 @@ span.psw {
   padding: 2%;
 }
 
+.modal .card-title {
+  margin-bottom: 5%;
+}
+
 .modal .card-footer {
   background: #fff;
   border-radius: 20px;
@@ -208,60 +212,6 @@ span.psw {
   border-radius: 20px;
 }
 
-.modal .default-select {
-
-}
-
-.default-select .nice-select {
-  position: relative;
-  border: none;
-  border-radius: 0px;
-  height: 40px;
-  /* background: #f9f9ff; */
-  background: #f3f3f3;
-  padding-left: 20px;
-  padding-right: 40px;
-}
-
-.default-select .nice-select .list {
-  margin-top: 0;
-  border: none;
-  border-radius: 0px 0px 20px 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
-  width: 100%;
-  padding: 10px 0 10px 0px;
-}
-
-.default-select .nice-select .list .option {
-  font-weight: 400;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  line-height: 28px;
-  min-height: 28px;
-  font-size: 12px;
-  padding-left: 20px;
-}
-
-.default-select .nice-select .list .option.selected {
-  color: #01bec4;
-  background: transparent;
-}
-
-.default-select .nice-select .list .option:hover {
-  color: #01bec4;
-  background: transparent;
-}
-
-.default-select .current {
-  margin-right: 50px;
-  font-weight: 300;
-}
-
-.default-select .nice-select::after {
-  right: 20px;
-}
 
 /* The Close Button (x) */
 .close {
@@ -2052,44 +2002,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-select .nice-select {
-  border: none;
-  border-radius: 0px;
-  height: 40px;
-  background: #f9f9ff;
-  padding-left: 45px;
-  padding-right: 40px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  color: #6C757D;
+  border-radius: 30px;
+  height: 50px;
+  background: #fff;
+  padding: 5px 20px;
+  margin-top: 2%;
+  margin-bottom: 5%;
   width: 100%;
 }
 
 .form-select .nice-select .list {
-  margin-top: 0;
+  left: 3%;
+  margin-top: 0.3%;
   border: none;
-  border-radius: 0px;
-  box-shadow: none;
-  width: 100%;
-  padding: 10px 0 10px 0px;
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, .2);
+  width: 92%;
+  padding: 12px 0 10px 0px;
 }
 
 .form-select .nice-select .list .option {
-  font-weight: 300;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  font-weight: 400;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
   line-height: 28px;
   min-height: 28px;
-  font-size: 12px;
-  padding-left: 45px;
+  font-size: 15px;
+  padding: 5px 20px;
 }
 
 .form-select .nice-select .list .option.selected {
-  color: #49e4fa;
+  color: #01bec4;
   background: transparent;
 }
 
 .form-select .nice-select .list .option:hover {
-  color: #49e4fa;
+  color: #01bec4;
   background: transparent;
+  /* color: #fff;
+  background: rgb(1,190,196);
+  background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%); */
 }
 
 .form-select .current {
@@ -2176,6 +2133,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .ticker-btn:hover {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, .3);
+  /* background: rgba(73, 228, 250, 0.2); */
+  /* color: #49e4fa; */
+}
+
+.ticker-btn-form {
+  background: rgb(1,190,196);
+  background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%);
+  /* background: #1e5ca6; */
+  /* background: rgba(1,190,196,1); */
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+  color: #fff;
+  padding: 6px 20px !important;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.ticker-btn-form:hover {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
   /* background: rgba(73, 228, 250, 0.2); */
   /* color: #49e4fa; */
 }
