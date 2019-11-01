@@ -421,7 +421,10 @@ var DOMAIN = "http://localhost/Mentoree";
                 email.addClass("border-danger");
                 $("#r_email_error").html("<span class= 'text-danger'>Email is taken by another user</span>");
               }else{
-                alert(data);
+                // alert(data)
+                document.getElementById('id02').style.display='none'; 
+                document.getElementById('id02-1').style.display='block';
+                // test your git
               }
             }
           })
