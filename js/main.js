@@ -299,6 +299,8 @@ document.body.style.top = '';
 window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
 
+
+
 //login
 var DOMAIN = "http://localhost/Mentoree";
   //user login
@@ -352,4 +354,80 @@ var DOMAIN = "http://localhost/Mentoree";
           });
         }   
     });
+
+    //registration
+    $("#form_register").on("submit",function(){
+
+        var username = $("#reg_username");
+        var email = $("#reg_email");
+        var pass = $("#reg_password");
+        var confirmPass = $("#reg_confirmPass");
+        var status = true;
+
+      if (username.val() == "") {
+          username.addClass("border-danger");
+          $("#r_user_error").html("<span class= 'text-danger'>Please enter an username</span>");
+          status = false;
+      }else{
+          username.removeClass("border-danger");
+          $("#r_user_error").html("");
+          status = true;
+      }
+
+      if (email.val() == "") {
+        email.addClass("border-danger");
+        $("#r_email_error").html("<span class= 'text-danger'>Please enter Email Address</span>");
+        status = false;
+      }else{
+        email.removeClass("border-danger");
+        $("#r_email_error").html("");
+        status = true;
+      }
+
+      if (pass.val() == "") {
+          pass.addClass("border-danger");
+          $("#r_pass_error").html("<span class= 'text-danger'>Please enter password</span>");
+          status = false;
+      }else{
+          pass.removeClass("border-danger");
+          $("#r_pass_error").html("");
+          status = true;
+      }
+
+      if (confirmPass.val() == "") {
+        confirmPass.addClass("border-danger");
+        $("#r_confirm_pass_error").html("<span class= 'text-danger'>Please enter your password again</span>");
+        status = false;
+      }else{
+
+        if(pass.val() != confirmPass.val()){
+          confirmPass.addClass("border-danger");
+          $("#r_confirm_pass_error").html("<span class= 'text-danger'>Password does not match</span>");
+          status = false;
+        }else{
+          confirmPass.removeClass("border-danger");
+          $("#r_confirm_pass_error").html("");
+          status = true;
+        }
+      }
+    
+
+
+        if(status){
+          $.ajax({
+            url : DOMAIN+"/includes/process.php",
+            method : "POST",
+            data : $("#form_register").serialize(),
+            success : function(data){
+              if(data == "EMAIL_ALREADY_EXISTS"){
+                email.addClass("border-danger");
+                $("#r_email_error").html("<span class= 'text-danger'>Email is taken by another user</span>");
+              }else{
+                alert(data);
+              }
+            }
+          })
+        }
+    })
+
  });

@@ -115,29 +115,32 @@
 							</div>
 						</div>
 
-						<form>
+						<form id = "form_register" onsubmit = "return false" method = "POST">
 							<div class="form-group">
 								<!-- <label for="exampleInputUsername">Username</label> -->
-								<input type="text" class="form-control" placeholder="Username">
+								<input type="text" class="form-control" name = "reg_username" id = "reg_username" placeholder="Username">
+								<small id="r_user_error" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputEmail1">Email address</label> -->
-								<input type="email" class="form-control" placeholder="Email">
+								<input type="email" class="form-control" name = "reg_email" id = "reg_email" placeholder="Email">
+								<small id="r_email_error" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword1">Password</label> -->
-								<input type="password" class="form-control" placeholder="Password">
-								<small id="p_error" class="form-text text-muted"></small>
+								<input type="password" class="form-control" name = "reg_password" id = "reg_password"placeholder="Password">
+								<small id="r_pass_error" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword2">Confirm Password</label> -->
-								<input type="password" class="form-control" placeholder="Confirm Password">
-								<small id="p_error" class="form-text text-muted"></small>
+								<input type="password" class="form-control" name = "reg_confirmPass" id = "reg_confirmPass" placeholder="Confirm Password">
+								<small id="r_confirm_pass_error" class="form-text text-muted"></small>
 							</div>
 		
 							<div class = "login-button text-center" >
-								<button type="submit" href="#" class="ticker-btn" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:40%;"> <i class="fa fa-arrow-right"> </i> Register</button>
+								<!--<button type="submit" href="#" class="ticker-btn" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:40%;"> <i class="fa fa-arrow-right"> </i> Register</button>-->
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
+								<button type="submit" class="btn btn-primary"> </i> REGISTER</button>
 							</div>  
 						</form>
 		
