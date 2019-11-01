@@ -283,21 +283,23 @@ window.onclick = function(event) {
     }
 }
 
+
 ////////  Login/Register END ///////
 
 
 // When the modal is shown, we want a fixed body
 document.body.style.position = 'fixed';
-// document.body.style.top = `-${window.scrollY}px`;
+document.body.style.top = `-${window.scrollY}px`;
 
 
 // When the modal is hidden, we want to remain at the top of the scroll position
 const scrollY = document.body.style.top;
 document.body.style.position = '';
 document.body.style.top = '';
+window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
 
-//////// Form Validation ////////
+
 
 //login
 var DOMAIN = "http://localhost/Mentoree";
@@ -408,9 +410,7 @@ var DOMAIN = "http://localhost/Mentoree";
           status = true;
         }
       }
-    
-
-
+      
         if(status){
           $.ajax({
             url : DOMAIN+"/includes/process.php",
@@ -421,8 +421,7 @@ var DOMAIN = "http://localhost/Mentoree";
                 email.addClass("border-danger");
                 $("#r_email_error").html("<span class= 'text-danger'>Email is taken by another user</span>");
               }else{
-                document.getElementById('id02').style.display='none'; 
-                document.getElementById('id02-1').style.display='block';
+                alert(data);
               }
             }
           })
