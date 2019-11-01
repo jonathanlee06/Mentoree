@@ -11,6 +11,7 @@
 		<title>Mentoree</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
 			<!--
 			CSS
 			============================================= -->
@@ -55,7 +56,7 @@
 						</ul>
 						</li> -->
 						<li><a class="ticker-btn-white" href="#" onclick="document.getElementById('id01').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto;">Login</a></li>
-						<li><a class="ticker-btn text-white" href="#" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto;">Register</a></li>				          				          
+						<li><button class="ticker-btn text-white" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto;">Register</button></li>				          				          
 					</ul>
 					</nav><!-- #nav-menu-container -->		    		
 				</div>
@@ -68,10 +69,10 @@
 					<div class="card-body">
 							
 						<div class="row">
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<h2 class="card-title">Login</h2>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<span onclick="document.getElementById('id01').style.display='none'; document.body.style.overflow = '';" class="close" title="Close Modal" style="color: #000;">&times;</span>
 							</div>
 						</div>
@@ -85,7 +86,7 @@
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword1">Password</label> -->
 								<input type="password" class="form-control" name= "log_password" id="log_password" placeholder="Password">
-								<small id="p_error" class="form-text text-muted"></small>
+								<small id="p_error" class="form-text text-muted text-center"></small>
 							</div>
 		
 							<div class = "login-button text-center" >
@@ -105,20 +106,18 @@
 			<div id="id02" class="modal">
 				<div class="model-content card mx-auto animate">
 					<div class="card-body">
-							
 						<div class="row">
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<h2 class="card-title">Register</h2>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<span onclick="document.getElementById('id02').style.display='none'; document.body.style.overflow = '';" class="close" title="Close Modal" style="color: #000;">&times;</span>
 							</div>
 						</div>
 
 						<form>
 							<div class="form-group">
-								<!-- <label for="exampleInputUsername">Username</label> -->
-								<input type="text" class="form-control" placeholder="Username">
+								<input type="text" class="form-control" placeholder='Username'>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputEmail1">Email address</label> -->
@@ -127,20 +126,34 @@
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword1">Password</label> -->
 								<input type="password" class="form-control" placeholder="Password">
-								<small id="p_error" class="form-text text-muted"></small>
+								<small id="p_error" class="form-text text-muted text-center"></small>
 							</div>
 							<div class="form-group">
 								<!-- <label for="exampleInputPassword2">Confirm Password</label> -->
 								<input type="password" class="form-control" placeholder="Confirm Password">
-								<small id="p_error" class="form-text text-muted"></small>
+								<small id="p_error" class="form-text text-muted text-center"></small>
+							</div>
+							<div class="form-group">
+								<div class="default-select" id="default-selects"">
+									<select>
+										<option value="1">Select area</option>
+										<option value="2">Dhaka</option>
+										<option value="3">Rajshahi</option>
+										<option value="4">Barishal</option>
+										<option value="5">Noakhali</option>
+									</select>
+								</div>
 							</div>
 		
 							<div class = "login-button text-center" >
-								<button type="submit" href="#" class="ticker-btn" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:40%;"> <i class="fa fa-arrow-right"> </i> Register</button>
+								<button type="submit" class="ticker-btn" onclick="document.getElementById('id02-1').style.display='block'; document.getElementById('id02').style.display='none';" style="width:40%;"> <i class="fa fa-arrow-right"> </i> Register</button>
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
 							</div>  
 						</form>
-		
+						
+					</div>
+					<div class="card-footer text-center">
+						<p>Already have an account? <a onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block'">Login</a></p>
 					</div>
 				</div>
 			</div>
@@ -155,22 +168,24 @@
 
 						<form>
 							<div class="form-group">
-								<label for="exampleInputUsername">First Name</label>
-								<input type="text" class="form-control" placeholder="First Name">
-								<label for="exampleInputUsername">Last Name</label>
-								<input type="text" class="form-control" placeholder="Last Name">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" class="form-control" placeholder="First Name">
+									</div>
+									<div class="col-md-6">
+										<input type="text" class="form-control" placeholder="Last Name">
+									</div>
+								</div>
+								<div class="row"></div>
 							</div>
 							<div class="form-group">
-								<label for="exampleInputEmail1">Email address</label>
 								<input type="email" class="form-control" placeholder="Enter email">
 							</div>
 							<div class="form-group">
-								<label for="exampleInputPassword1">Password</label>
 								<input type="password" class="form-control" placeholder="Password">
 								<small id="p_error" class="form-text text-muted"></small>
 							</div>
 							<div class="form-group">
-									<label for="exampleInputPassword2">Confirm Password</label>
 									<input type="password" class="form-control" placeholder="Confirm Password">
 									<small id="p_error" class="form-text text-muted"></small>
 								</div>
@@ -180,10 +195,26 @@
 								<!--<span><a href='#'>&nbsp;Register</a></span>-->
 							</div>  
 						</form>
-		
 					</div>
 
 
+				</div>
+			</div>
+
+			<!-- Register Type Modal -->
+			<div id="id02-2" class="modal">
+				<div class="model-content card mx-auto">
+					<div class="card-body">
+						<h2 class="card-title">User Info</h2>
+						<div class="row">
+							<div class="col-md-6">
+
+							</div>
+							<div class="col-md-6">
+
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -953,6 +984,7 @@
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
   			<script src="js/easing.min.js"></script>			
