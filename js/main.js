@@ -266,6 +266,7 @@ $(document).ready(function(){
 var loginModal = document.getElementById('id01');
 var registerModal = document.getElementById('id02');
 var infoModal = document.getElementById('id02-1');
+var userTypeModal = document.getElementById('id02-2');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -279,6 +280,10 @@ window.onclick = function(event) {
     }
     else if (event.target == infoModal) {
       infoModal.style.display = "none";
+      document.body.style.overflow = '';
+    }
+    else if (event.target == userTypeModal) {
+      userTypeModal.style.display = "none";
       document.body.style.overflow = '';
     }
 }
@@ -298,7 +303,19 @@ document.body.style.position = '';
 document.body.style.top = '';
 window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
+// Tab
+// var tutor = document.getElementById('nav-tutor-tab');
+// var student = document.getElementById('nav-student-tab');
 
+// window.onclick = function(event) {
+//   if (event.target == tutor) {
+//     tutor.style.borderRadius = "20px 0px 0px 0px";
+//   }
+//   else if (event.target == registerModal) {
+//     registerModal.style.display = "none";
+//     document.body.style.overflow = '';
+//   }
+// }
 
 
 //login
@@ -345,7 +362,7 @@ var DOMAIN = "http://localhost/Mentoree";
                         $("#p_error").html("<span class = 'text-danger'> Password did not matched</span>");
                     }else if(data == 1){
                         //console.log(data);
-                        window.location.href = DOMAIN+"/home.html"
+                        window.location.href = DOMAIN+"/home.php"
                     }else{
                         console.log(data);
                     }
@@ -429,6 +446,12 @@ var DOMAIN = "http://localhost/Mentoree";
             }
           })
         }
+    })
+
+    // Register user type
+    $("#type").on("submit",function(){
+      document.getElementById('id02-2').style.display='none'; 
+      document.getElementById('id02').style.display='block';
     })
 
  });

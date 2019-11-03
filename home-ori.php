@@ -43,7 +43,7 @@
 						<li><a href="about-us.html">About Us</a></li>
 						<li><a href="category.html">Category</a></li>
 						<!-- <li><a href="price.html">Price</a></li>
-						<li><a href="blog-home.html">Blog</a></li> -->
+						<li><a href="blog-home.php">Blog</a></li> -->
 						<li><a href="contact.html">Contact</a></li>
 						<li><a>|</a></li>
 						<!-- <li class="menu-has-children"><a href="">Pages</a>
@@ -53,8 +53,19 @@
 							<li><a href="single.html">single</a></li>
 						</ul>
 						</li> -->
-						<li><img src="img/man.png" alt=""></li>	
-						<li><a class="" href="index.html">Logout</a></li>
+						<li class="menu-has-children">
+							<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+								<img src="img/man.png" class="rounded-circle">
+							<!-- </a> -->
+							<ul>
+								<li><a href="elements.html">elements</a></li>
+								<li><a href="search.html">search</a></li>
+								<li><a href="single.html">single</a></li>
+								<li><a href="index.html">Logout</a></li>
+							</ul>
+						</li>
+						<!-- <li><img src="img/man.png" alt=""></li>	 -->
+						
 									          				          
 					</ul>
 					</nav><!-- #nav-menu-container -->		    		
@@ -62,39 +73,32 @@
 			</div>
 			</header><!-- #header -->
 
-			<div id="id01" class="modal">
-				<div class="modal-content animate">
-						<div class = "container">
-							<div class="card mx-auto" style="width: 25rem;">
-									<img src="./images/login.png" class="card-img-top mx-auto" alt="Login Icon" 
-									style = "width : 128px; height : 128px;" vspace = "30">
-								<div class="card-body">
-									<form id = 'form_login' onsubmit = "return false" method="POST">
-										<div class="form-group">
-											<label for="exampleInputEmail1">Email address</label>
-											<input type="email" class="form-control" name = "log_email" id="log_email" placeholder="Enter email">
-											<small id="e_error" class="form-text text-muted">We'll never share your email with anyone else.</small>
-										</div>
-										<div class="form-group">
-											<label for="exampleInputPassword1">Password</label>
-											<input type="password" class="form-control" name= "log_password" id="log_password" placeholder="Password">
-											<small id="p_error" class="form-text text-muted"></small>
-										</div>
-					
-										<div class = "login-button text-center" >
-											<button type="submit" class="btn btn-primary"> <i class="fa fa-lock"> </i> LOGIN</button>
-											<!--<span><a href='#'>&nbsp;Register</a></span>-->
-										</div>  
-									</form>
-					
-								</div>
-
-								<div class = "card-footer"><a href='#'>Forget Password ?</a></div>
-
-							</div>
+			<section class="banner-area relative" id="home">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-center">
+						<!-- <div class="banner-content col-lg-12">
+							<h1 class="text-white">
+								<span>1500+</span> Jobs posted last week				
+							</h1>	
+							<p class="text-white"> <span>Search by tags:</span> Tecnology, Business, Consulting, IT Company, Design, Development</p>
+						</div>											 -->
+						<div class="col-md-5">
+							<div class="empty-space marg-lg-b100 marg-sm-b30"></div>
+							<h1 class="title">
+								P2P Tutoring Platform				
+							</h1>
+							<br>
+							<button class="ticker-btn"><span>Get Started</span></button>
 						</div>
+						<div class="col-md-7">
+							<!-- <div class="empty-space marg-lg-b100 marg-sm-b30"></div> -->
+							<img src="img/group-presentation-5-2.svg" class="">
+						</div>
+					</div>
 				</div>
-			</div>
+			</section>
+
 
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home">	
