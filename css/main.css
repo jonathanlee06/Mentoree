@@ -2902,6 +2902,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .single-popular-post .thumb img {
   margin-top: 10px;
   margin-left: 5px;
+  margin-bottom: 30px;
 }
 
 .single-popular-post .btns {
@@ -3192,7 +3193,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: inline-block;
   background: #fff;
   border: 1px solid #eee;
-  padding: 6px 15px;
+  /* padding: 6px 15px; */
+  padding: 0;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
