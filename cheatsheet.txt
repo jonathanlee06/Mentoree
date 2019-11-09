@@ -5,3 +5,7 @@ dark blue: #1e5ca6
 cyan-blue: #257ce3
 cyan-green: #01bec4
 grey: #F5F5F5
+
+for($i = 1; $i <= $num_of_rows; $i++){
+    ?><a href="home.php?page=<?php echo $i ?>"><?php echo $i." "; ?></a> <?php
+}
