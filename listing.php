@@ -1,14 +1,14 @@
 <?php
     $conn = mysqli_connect("localhost", "root", "", "pagination");
 
-    $rows_per_page = 10;
+    $rows_per_page = 5;
 
     $page = $_GET['page'];
     if($page == "" || $page == "1"){
         $page1 = 0;
     }
     else {
-        $page1 = ($page*10)-10;
+        $page1 = ($page*5)-5;
     }
 
     $query = "SELECT * FROM listing LIMIT ".$page1. ", " . $rows_per_page;
@@ -57,3 +57,21 @@
     }
 
     ?>
+    <div class="container">
+        <ul class="pagination justify-content-center">
+            <li class="disabled"><a href="">&laquo;</a></li>
+            <?php
+                for($i = 1; $i <= $num_of_rows; $i++){
+                    echo "<li ";
+                    if ($_GET['page'] == $i) {
+                        echo ' class="active"';
+                    }
+                    echo "><a href='?page=$i'>$i</a></li>";
+                    
+                }
+            ?>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+    <?php
+?>

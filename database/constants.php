@@ -6,5 +6,5 @@ define("USER","root");
 define("PASS","");
 define("DB","mentoree");
 
-define("DOMAIN","http://localhost/Mentoree/index.html");
+define("DOMAIN","http://localhost/Mentoree/index.php");
 ?>

@@ -2521,7 +2521,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-.p1-gradient-bg, .banner-area .overlay-bg, .sidebar .single-slidebar .cat-list li:hover, .single-price:hover .price-bottom, .single-service:hover, .submit-right, .submit-left, .contact-btns, .form-area .primary-btn {
+.p1-gradient-bg, .banner-area, .short-banner-area .overlay-bg, .sidebar .single-slidebar .cat-list li:hover, .single-price:hover .price-bottom, .single-service:hover, .submit-right, .submit-left, .contact-btns, .form-area .primary-btn {
   /* background-image: -moz-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
   background-image: -webkit-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
   background-image: -ms-linear-gradient(0deg, #bfacff 0%, #795fff 100%); */
@@ -2615,6 +2615,47 @@ body.mobile-nav-active #mobile-nav-toggle {
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+.short-banner-area {
+  background: url(../img/back.png) center;
+  background-size: cover;
+}
+
+.short-banner-area .overlay-bg {
+  opacity: .95;
+}
+
+.short-banner-area img{
+  /* width: 650px;
+  height: 650px; */
+  width: auto;
+  height: auto;
+}
+
+.short-banner-area a{
+  color: #000;
+}
+
+.short-banner-area span{
+  font-weight: 600;
+  position: relative;
+  /* background: -webkit-linear-gradient(30deg, rgba(1,190,196,1), rgba(37,124,227,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #fff;
+}
+
+.short-banner-area .title{
+  /* color: rgb(1,190,196);
+  color: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 50%); */
+  font-size: 72px;
+  width: auto;
+  height: auto;
+  /* color: #fff; */
+  background: -webkit-linear-gradient(30deg, rgba(1,190,196,1), rgba(37,124,227,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .banner-area {
@@ -3971,11 +4012,18 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .about-content h1 {
   font-size: 48px;
-  font-weight: 300;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.post-list-title{
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .about-content a {
-  color: #fff;
+  color: #000;
   font-weight: 300;
   font-size: 14px;
 }

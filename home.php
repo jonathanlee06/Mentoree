@@ -25,53 +25,7 @@
 		</head>
 		<body>
 			
-			<!-- <h2>Modal Login Form</h2> -->
-
-			<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
-			
-			
-
-			<header id="header" id="home">
-			<div class="container">
-				<div class="row align-items-center justify-content-between d-flex">
-					<div id="logo">
-					<a href="index.html"><img src="img/web-logo-4.png" alt="" title="" /></a>
-					</div>
-					<nav id="nav-menu-container">
-					<ul class="nav-menu">
-						<li class="menu-active"><a href="index.html">Home</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="category.html">Category</a></li>
-						<!-- <li><a href="price.html">Price</a></li>
-						<li><a href="blog-home.php">Blog</a></li> -->
-						<li><a href="contact.html">Contact</a></li>
-						<li><a>|</a></li>
-						<!-- <li class="menu-has-children"><a href="">Pages</a>
-						<ul>
-							<li><a href="elements.html">elements</a></li>
-							<li><a href="search.html">search</a></li>
-							<li><a href="single.html">single</a></li>
-						</ul>
-						</li> -->
-						<li class="menu-has-children">
-							<!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-								<img src="img/man.png" class="rounded-circle">
-							<!-- </a> -->
-							<ul>
-								<li><a href="elements.html">elements</a></li>
-								<li><a href="search.html">search</a></li>
-								<li><a href="single.html">single</a></li>
-								<li><a href="index.html">Logout</a></li>
-							</ul>
-						</li>
-						<!-- <li><img src="img/man.png" alt=""></li>	 -->
-						
-									          				          
-					</ul>
-					</nav><!-- #nav-menu-container -->		    		
-				</div>
-			</div>
-			</header><!-- #header -->
+			<?php include "nav-home.html"; ?>
 
 			<section class="banner-area relative" id="home">	
 				<div class="overlay overlay-bg"></div>
@@ -264,142 +218,8 @@
 				<div class="container">
 					<div class="row justify-content-center d-flex">
 						<div class="col-lg-8 post-list">
-							<!-- <ul class="cat-list">
-								<li><a href="#">Recent</a></li>
-								<li><a href="#">Full Time</a></li>
-								<li><a href="#">Intern</a></li>
-								<li><a href="#">part Time</a></li>
-							</ul> -->
-							<?php
-								$conn = mysqli_connect("localhost", "root", "", "pagination");
-
-								$rows_per_page = 10;
-
-								$page = $_GET['page'];
-								if($page == "" || $page == "1"){
-									$page1 = 0;
-								}
-								else {
-									$page1 = ($page*10)-10;
-								}
-
-								$query = "SELECT * FROM listing LIMIT ".$page1. ", " . $rows_per_page;
-								$query_row = "SELECT * FROM listing";
-								$row_num = mysqli_query($conn, $query_row);
-								$count = mysqli_num_rows($row_num);
-								$num_of_rows = ceil($count/10);
-
-								$run  = mysqli_query($conn, $query);
-
-								while($rs = mysqli_fetch_array($run)) {
-									?>
-									<div class="single-post d-flex flex-row">
-										<div class="row">
-											
-											
-											<div class="col-md-12 col-lg-12">
-												<div class="details">
-													<div class="thumb">
-														<img src="img/post.png" alt="">
-													</div>
-													<div class="title d-flex flex-row">
-														<div class="titles">
-															<a href="single.html"><h4><?php echo $rs['first_name'].' '.$rs['last_name'] ?></h4></a>
-															<h6><?php echo $rs['email'] ?></h6>					
-														</div>
-														<ul class="btns">
-															<!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-															<li><a href="#">Apply</a></li> -->
-														</ul>
-													</div>
-													<p>
-														<?php echo $rs['gender'] ?>
-													</p>
-													<!-- <h5>Job Nature: Full time</h5>
-													<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-													<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p> -->
-												</div>
-											</div>
-										</div>
-										
-										
-									</div>
-									<?php
-									// echo $rs['id'].' -> '.$rs['first_name'].'<br>';
-								}
-
-								?>
-								<div class="container">
-									<ul class="pagination justify-content-center">
-										<li class="disabled"><a href="">&laquo;</a></li>
-										<?php
-											for($i = 1; $i <= $num_of_rows; $i++){
-												echo "<li ";
-												if ($_GET['page'] == $i) {
-													echo ' class="active"';
-												}
-												echo "><a href='?page=$i'>$i</a></li>";
-												
-											}
-										?>
-										<li><a href="#">&raquo;</a></li>
-									</ul>
-								</div>
-								<?php
-							?>
-
-							<!-- <div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>	
 							
-							<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
-							<div class="container">
-								<ul class="pagination justify-content-center">
-									<li class="disabled"><a href="">&laquo;</a></li>
-									<li class="active"><a href="">1</a></li>
-									<li><a href="">2</a></li>
-									<li><a href="">3</a></li>
-									<li><a href="">4</a></li>
-									<li><a href="">5</a></li>
-									<li><a href="">6</a></li>
-									<li><a href="">7</a></li>
-									<li><a href="">8</a></li>
-									<li><a href="">9</a></li>
-									<li><a href="">10</a></li>
-									<li><a href="#">&raquo;</a></li>
-								</ul>
-							</div> -->
+						<?php include "listing.php"; ?>
 
 						</div>
 						<div class="col-lg-4 sidebar">
@@ -676,7 +496,7 @@
 					<div class="row footer-bottom d-flex justify-content-between">
 						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy; <a href="index.html" target="_blank">Mentoree</a> <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy; <a href="index.php" target="_blank">Mentoree</a> <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
 						<div class="col-lg-4 col-sm-12 footer-social">

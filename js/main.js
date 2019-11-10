@@ -362,7 +362,7 @@ var DOMAIN = "http://localhost/Mentoree";
                         $("#p_error").html("<span class = 'text-danger'> Password did not matched</span>");
                     }else if(data == 1){
                         //console.log(data);
-                        window.location.href = DOMAIN+"/home.php"
+                        window.location.href = DOMAIN+"/home.php?page=1"
                     }else{
                         console.log(data);
                     }
