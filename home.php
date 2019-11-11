@@ -24,8 +24,8 @@
 			<link rel="stylesheet" href="css/main.css">
 		</head>
 		<body>
-			
-			<?php include "nav-home.html"; ?>
+			<?php session_start(); ?>
+			<?php include "nav-home.php"; ?>
 
 			<section class="banner-area relative" id="home">	
 				<div class="overlay overlay-bg"></div>

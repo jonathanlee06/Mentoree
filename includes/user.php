@@ -23,16 +23,16 @@ class User
         }
     }
 
-    public function createUserAccount($username,$email,$password){
+    public function createUserAccount($username,$email,$password,$userType){
         //to protect your application from sql attack you can use prepare statement
         if($this->emailExists($email)){
             echo "EMAIL_ALREADY_EXISTS";
         }else{
             $pass_hash = password_hash($password,PASSWORD_BCRYPT,["cost"=>8]);
             //$date = date("Y-m-d");  
-            $pre_stmt = $this->con->prepare("INSERT INTO `users`(`username`, `email`, `password`) 
-            VALUES (?,?,?)");
-            $pre_stmt->bind_param("sss", $username,$email,$pass_hash);
+            $pre_stmt = $this->con->prepare("INSERT INTO `users`(`username`, `email`, `password`,`userType`) 
+            VALUES (?,?,?,?)");
+            $pre_stmt->bind_param("ssss", $username,$email,$pass_hash,$userType);
             $result = $pre_stmt->execute() or die($this->con->error);
             if($result){
                 return $this->con->insert_id;
@@ -57,6 +57,7 @@ class User
             if(password_verify($password,$row["password"])){
                 $_SESSION["userid"] = $row["id"];
                 $_SESSION["username"] = $row["username"];
+                $_SESSION["useremail"] = $email;
                 if($result){
                     return 1;
                 }else{
@@ -70,7 +71,7 @@ class User
 }   
 
 //$user = new User();
-//$user->createUserAccount("Bob","bob@gmail.com","1234");
+//echo $user->createUserAccount("Jin","jin@gmail.com","1234","Tutor");
 //echo $user -> userlogin("bob@gmail.com", "1234");
 //echo $_SESSION["username"];
 ?>

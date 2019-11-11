@@ -372,6 +372,8 @@ var DOMAIN = "http://localhost/Mentoree";
         }   
     });
 
+    
+
     //registration
     $("#form_register").on("submit",function(){
 
@@ -447,11 +449,4 @@ var DOMAIN = "http://localhost/Mentoree";
           })
         }
     })
-
-    // Register user type
-    $("#type").on("submit",function(){
-      document.getElementById('id02-2').style.display='none'; 
-      document.getElementById('id02').style.display='block';
-    })
-
  });

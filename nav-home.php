@@ -25,9 +25,9 @@
                         <img src="img/man.png" class="rounded-circle">
                     <!-- </a> -->
                     <ul>
-                        <li><a href="elements.html">elements</a></li>
-                        <li><a href="search.html">search</a></li>
-                        <li><a href="single.html">single</a></li>
+                        <li><a href="elements.html"><?php echo $_SESSION["username"]; ?></a></li>
+                        <li><a href="search.html"><?php echo $_SESSION["useremail"]; ?></a></li>
+                        <li><a href="single.html">View Profile  </a></li>
                         <li><a href="index.php">Logout</a></li>
                     </ul>
                 </li>

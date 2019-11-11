@@ -24,7 +24,7 @@
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<!-- <link rel="stylesheet" href="css/bootstrap-tagsinput.css"> -->
 			<link rel="stylesheet" href="css/main.css">
-
+			
 		</head>
 		<body>
 			
@@ -786,9 +786,10 @@
 			<script src="js/jquery.sticky.js"></script>
 			<script src="js/jquery.nice-select.min.js"></script>			
 			<script src="js/parallax.min.js"></script>		
-			<script src="js/mail-script.js"></script>	
+			<script src="js/mail-script.js"></script>
 			<!-- <script src="js/tagsinput.js"></script> -->
-			<script src="js/main.js"></script>	
+			<script src="js/main.js"></script>
+				
 		</body>
 	</html>
 
