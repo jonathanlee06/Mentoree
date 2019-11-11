@@ -1,14 +1,14 @@
 <?php
     $conn = mysqli_connect("localhost", "root", "", "pagination");
 
-    $rows_per_page = 5;
+    $rows_per_page = 10;
 
     $page = $_GET['page'];
     if($page == "" || $page == "1"){
         $page1 = 0;
     }
     else {
-        $page1 = ($page*5)-5;
+        $page1 = ($page*10)-10;
     }
 
     $query = "SELECT * FROM listing LIMIT ".$page1. ", " . $rows_per_page;
