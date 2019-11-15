@@ -23,17 +23,16 @@ class User
         }
     }
 
-    public function createUserAccount($username,$email,$password,$type){
+    public function createUserAccount($username,$email,$password,$userType){
         //to protect your application from sql attack you can use prepare statement
         if($this->emailExists($email)){
             echo "EMAIL_ALREADY_EXISTS";
         }else{
-            echo $type + "You noob";
             $pass_hash = password_hash($password,PASSWORD_BCRYPT,["cost"=>8]);
             //$date = date("Y-m-d");  
             $pre_stmt = $this->con->prepare("INSERT INTO `users`(`username`, `email`, `password`,`userType`) 
             VALUES (?,?,?,?)");
-            $pre_stmt->bind_param("ssss", $username,$email,$pass_hash,$type);
+            $pre_stmt->bind_param("ssss", $username,$email,$pass_hash,$userType);
             $result = $pre_stmt->execute() or die($this->con->error);
             if($result){
                 return $this->con->insert_id;

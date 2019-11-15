@@ -317,52 +317,6 @@ window.scrollTo(0, parseInt(scrollY || '0') * -1);
 //   }
 // }
 
-  $('#form_userType').on("submit",function() {
-
-    var buttonValue = $('input[id=Tutor]').val();
-    // var serialize = $(this).serialize();
-    var value = $(this).serialize();
-    $.ajax({
-        url: "includes/process.php", //assuming that your html file is in the same folder as 
-              //your php script. 
-        type: "POST",
-        data: "type="+buttonValue,
-        dataType: "text",
-        cache: false,
-        async: true,
-        error : function(jqXHR, exception) {
-          if (jqXHR.status === 0) {
-              alert('Not connected.\nPlease verify your network connection.');
-          } else if (jqXHR.status === 404) {
-              alert('The requested page not found. [404]');
-          } else if (jqXHR.status === 500) {
-              alert('Internal Server Error [500].');
-          } else if (exception === 'parsererror') {
-              alert('Requested JSON parse failed.');
-          } else if (exception === 'timeout') {
-              alert('Time out error.');
-          } else if (exception === 'abort') {
-              alert('Ajax request aborted.');
-          } else {
-              alert('Uncaught Error.\n' + jqXHR.responseText);
-          }
-      }
-    }).done(function(response){
-      console.log("get " + buttonValue);
-      console.log("post " + response);
-      alert(response);
-      document.getElementById('id02-2').style.display='none'; 
-      document.getElementById('id02').style.display='block';
-    });
-
-    // $.post('includes/process.php', {'type': buttonValue})
-    //   .done(function(data){
-    //     alert(data);
-    //     document.getElementById('id02-2').style.display='none'; 
-    //     document.getElementById('id02').style.display='block';
-    //   });
-
-  });
 
 //login
 var DOMAIN = "http://localhost/Mentoree";
@@ -495,59 +449,4 @@ var DOMAIN = "http://localhost/Mentoree";
           })
         }
     })
-
-    // $('#reg_student').click(function() {
-
-    //   var buttonValue = $(this).val();
-
-    //   $.ajax({
-    //       url: "includes/process.php", //assuming that your html file is in the same folder as 
-    //              //your php script. 
-    //       type: "POST",
-    //       data: {"type": buttonValue},
-    //       success:function(data){
-    //         console.log(data);
-    //       } 
-    //   });
-
-    // });
-
-    
-
-    // $('#form_userType').submit(function(e) {
-    //   e.preventDefault();
-
-    //   var buttonValue = $(this).val();
-    //   var serialize = $(this).serialize();
-
-    //   $.ajax({
-    //       url: "includes/process.php", //assuming that your html file is in the same folder as 
-    //              //your php script. 
-    //       type: "POST",
-    //       data: serialize,
-    //       cache: false
-    //   }).done(function(data){
-    //     console.log(data);
-    //   });
-
-    // });
  });
-
-// function submit_userType(){
-//   var type=$("input[id=Tutor]").val();
-
-//   var dataTosend='type='+type;
-
-//   $.ajax({
-//     url: 'test.php',
-//     type: "POST",
-//     data: {'type': type},
-//     dataType: 'text',
-//     async: true,
-//     success: function (data) {
-//       alert(data);
-//       document.getElementById('id02-2').style.display='none'; 
-//       document.getElementById('id02').style.display='block';
-//     },
-//   });
-// }

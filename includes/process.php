@@ -2,38 +2,22 @@
 include_once("../database/constants.php");
 include_once("user.php");
 
-$user = "";
-$user = isset($_POST['type']) ? $_POST['type'] : "";
-
-if($user === ""){
-    
-    echo "No value passed!";
-}
-else{
-    $userType = $_POST['type'];
-    ?><p><?php echo $userType; ?> successful</p><?php
-}
-
-// $name = $_POST["type"]; //the var you put in your ajax data:{}
-// echo $name;
-
 //REGISTER processing 
 if(isset($_POST["reg_username"]) AND isset($_POST["reg_email"]) AND isset($_POST["reg_password"])){
-    ?><p><?php echo $_POST['type']; ?> successful</p><?php
-    echo 
+
     $user = new User();
+    $userType = "";
 
 
-    // if(isset($_POST["reg_student"])){
-    //     $userType = "Student";
-    // }
+    if(isset($_POST["reg_student"])){
+        $userType = "Student";
+    }
     
-    // if (isset($_POST["reg_tutor"])){
-    //     $userType = "Tutor";
-    // }
+    if (isset($_POST["reg_tutor"])){
+        $userType = "Tutor";
+    }
 
-    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_password"], $_POST['type']);
-    
+    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_password"], $userType);
     echo $result;
 
 }
@@ -44,8 +28,5 @@ if(isset($_POST["log_email"]) AND isset($_POST["log_password"])){
     $result = $user->userLogin($_POST["log_email"], $_POST["log_password"]);
     echo $result;
 }
-
-
-
 
 ?>
