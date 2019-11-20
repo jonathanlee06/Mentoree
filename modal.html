@@ -63,6 +63,15 @@
                     <small id="r_email_error" class="form-text text-muted text-center"></small>
                 </div>
                 <div class="form-group">
+                    <div class="form-select" id="default-select">
+                        <select class="nice-select">
+                            <option value="" disabled selected hidden>Select User Type</option>
+                            <option value="1">Student</option>
+                            <option value="2">Tutor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <!-- <label for="exampleInputPassword1">Password</label> -->
                     <input type="password" class="form-control" name = "reg_password" id = "reg_password"placeholder="Password">
                     <small id="r_pass_error" class="form-text text-muted text-center"></small>
@@ -153,19 +162,21 @@
             </div>
             
             <div class="row text-center" >
-                <form id = "form_userType" onsubmit = "return false" method = "POST">
-                    <div class="col-md-6">
-                        <input type="submit" class="btn btn-round" name= "reg_student" id = "reg_student" value = "Student" onclick="document.getElementById('id02-2').style.display='none'; 
-                        document.getElementById('id02').style.display='block';">
+                <form id = "form_userType" onsubmit = "return false" method = "POST" action="">
+                    <!-- <div class="col-md-6">
+                            <input type='hidden' name='Student' id="Student" value='Student'>
+                        <button type="submit" class="btn btn-round" name= "reg_student" id = "reg_student" value = "Student">
+                            
                             <img src="img/student.png" alt="" style="width: 95px; height: 65px;"> 
-                        </input>
+                        </button>
                         <p class="reg-card-subtitle">I'm a Student</p>
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
-                        <input type="submit" class="btn btn-round" name= "reg_tutor" id = "reg_tutor" value= "Tutor" onclick = "document.getElementById('id02-2').style.display='none'; 
-                        document.getElementById('id02').style.display='block';">
+                            <input type='text' name='Tutor' id="Tutor" value='Tutor'> 
+                        <button type="submit" class="btn btn-round" name= "reg_tutor" id = "reg_tutor">
+                            
                             <img class="text-center" src="img/teacher.png" alt="" style="width: 75px; height: 70px;">
-                        </input>
+                        </button>
                         <p class="reg-card-subtitle">I'm a Tutor</p>
                     </div>
                 </form>

@@ -99,7 +99,7 @@ a, a:focus, a:hover {
 /*  login/Register Form
 /* =================================== */
 /* Full-width input fields */
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=url] {
   font-family: FontAwesome, "Poppins", sans-serif;
   width: 100%;
   padding: 12px 20px;
@@ -2618,12 +2618,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .short-banner-area {
-  background: url(../img/back.png) center;
+  background: url(../img/back2.png) center;
   background-size: cover;
-}
-
-.short-banner-area .overlay-bg {
-  opacity: .95;
 }
 
 .short-banner-area img{
@@ -2664,7 +2660,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area .overlay-bg {
-  opacity: .95;
+  opacity: 0.95;
 }
 
 .banner-area img{
