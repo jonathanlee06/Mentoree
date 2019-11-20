@@ -449,4 +449,22 @@ var DOMAIN = "http://localhost/Mentoree";
           })
         }
     })
+
+    //job listing upload 
+    $("#form_jobListing").on("submit",function(){
+
+      var status = true;
+
+      if(status){
+        $.ajax({
+          url : DOMAIN+"/includes/process.php",
+          method : "POST",
+          data : $("#form_jobListing").serialize(),
+          success : function(data){
+            alert(data);
+          }
+        })
+      }
+
+    })
  });
