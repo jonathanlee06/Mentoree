@@ -3,17 +3,17 @@ include_once("../database/constants.php");
 include_once("user.php");
 include_once("DBOperation.php");
 
-$user = "";
-$user = isset($_POST['type']) ? $_POST['type'] : "";
+// $user = "";
+// $user = isset($_POST['type']) ? $_POST['type'] : "";
 
-if($user === ""){
+// if($user === ""){
     
-    echo "No value passed!";
-}
-else{
-    $userType = $_POST['type'];
-    ?><p><?php echo $userType; ?> successful</p><?php
-}
+//     echo "No value passed!";
+// }
+// else{
+//     $userType = $_POST['type'];
+//     
+// }
 
 // $name = $_POST["type"]; //the var you put in your ajax data:{}
 // echo $name;

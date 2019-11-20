@@ -512,7 +512,91 @@ var DOMAIN = "http://localhost/Mentoree";
         })
       }
 
-    })
+    // });
+
+    // Checkboxes
+    function filter_data()
+    {
+        // $('.filter_data').html('<div id="loading" style="" ></div>');
+        // var action = 'fetch_data';
+        // var minimum_price = $('#hidden_minimum_price').val();
+        // var maximum_price = $('#hidden_maximum_price').val();
+        // var brand = get_filter('brand');
+        var ram = get_filter('brand');
+        console.log(ram);
+        // var storage = get_filter('storage');
+        $.ajax({
+            url:"tutor-listings.php",
+            method:"POST",
+            data:{ram:ram},
+            success:function(data){
+                $('.post-list').html(data);
+                
+            }
+        });
+    }
+
+    function get_filter(class_name)
+    {
+        var filter = "";
+        $('.'+class_name+':checked').each(function(){
+            filter = ($(this).val());
+        });
+        return filter;
+    }
+
+    $("input[type=radio]").change(function(){
+        if($(this).is(":checked")) {
+          
+          filter_data();
+        }
+
+        
+    });
+
+
+    // SEARCH TUTOR
+    $("#search-tutor").on("submit",function(){
+      var query_type = $("#search");
+      var area = $('#area option:selected').val()
+      //red text border and error message if no email
+      if (query_type.val() == "") {
+          query_type.addClass("border-danger");
+          $("#s_error").html("<span class= 'text-danger'>Please enter search query</span>");
+          status = false;
+          alert("You Noob");
+      }else{
+          // email.removeClass("border-danger");
+          // $("#e_error").html("");
+          status = true;
+      }
+
+      //red text border and error message is no password
+      if (area == "") {
+          alert("You Noob area");
+          status = false;
+      }else{
+          // pass.removeClass("border-danger");
+          // $("#p_error").html("");
+          status = true;
+      }
+
+      if(status){
+        $.ajax({
+            url : "tutor-listings.php",
+              method : "POST",
+              data : $('#search-tutor').serialize(),
+              async: true,
+              success : function(data){
+                $('.post-list').html(data);
+                console.log(data);
+              }
+        });
+      }   
+    });
+
+    
+
  });
 
 // function submit_userType(){

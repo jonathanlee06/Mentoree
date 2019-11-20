@@ -1771,13 +1771,13 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   border: 1px solid #f1f1f1;
 }
 
 .primary-checkbox input:checked + label {
-  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+  background: url(../img/elements/check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -2660,7 +2660,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area .overlay-bg {
-  opacity: 0.95;
+  opacity: 1;
 }
 
 .banner-area img{
