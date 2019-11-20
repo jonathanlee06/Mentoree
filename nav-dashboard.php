@@ -6,7 +6,7 @@
             </div>
             <nav id="nav-menu-container justify-content-between">
             <ul class="nav-menu">
-                <li class="menu-active"><a href="home.php?page=1?">Home</a></li>
+                <li class="menu-active"><a href="home.php?page=1?page=1?page=1">Home</a></li>
                 <li><a href="about-us.html">Find A Student</a></li>
                 <li><a href="category.html">Find A Tutor</a></li>
                 <!-- <li><a href="price.html">Price</a></li>
@@ -20,8 +20,17 @@
                     <li><a href="single.html">single</a></li>
                 </ul>
                 </li> -->
-                <li><button class="ticker-btn-white" onclick="document.getElementById('id01').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto; color: #000; font-weight: 500;">Login</button></li>
-                <li><button class="ticker-btn text-white" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';" style="width:auto;">Register</button></li>				          				          
+                <li class="menu-has-children">
+                    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                        <img src="img/man.png" class="rounded-circle">
+                    <!-- </a> -->
+                    <ul>
+                        <li><a href="elements.html"><?php echo $_SESSION["username"]; ?></a></li>
+                        <li><a href="search.html"><?php echo $_SESSION["useremail"]; ?></a></li>
+                        <li><a href="single.html">View Profile  </a></li>
+                        <li><a href="index.php">Logout</a></li>
+                    </ul>
+                </li>				          				          
             </ul>
             </nav><!-- #nav-menu-container -->		    		
         </div>

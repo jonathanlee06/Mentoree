@@ -24,7 +24,12 @@
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<!-- <link rel="stylesheet" href="css/bootstrap-tagsinput.css"> -->
 			<link rel="stylesheet" href="css/main.css">
-			
+		
+			<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script>
+
 		</head>
 		<body>
 			
@@ -39,7 +44,8 @@
 			<?php include "modal.html"; ?>
 
 			<!-- start banner Area -->
-			<section class="banner-area relative" id="home">	
+			<section class="banner-area relative" id="home">
+			
 				<div class="overlay overlay-bg"></div>
 				<div class="container">
 					<div class="row fullscreen d-flex align-items-center justify-content-center">
@@ -81,23 +87,24 @@
 						<div class="col-md-12">
 							<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 								<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-									<form action="search.html" class="serach-form-area">
+									<form action="tutor-listings.php" class="serach-form-area" id="search-tutor" method="POST">
 										<div class="row justify-content-center form-wrap">
-											<div class="col-lg-4 form-cols">
-												<input type="text" class="form-control" name="search" placeholder="what are you looking for?">
+											<div class="col-lg-6 form-cols">
+												<input type="text" class="form-control" name="search" id="search" placeholder="what are you looking for student?">
+												<small id="s_error" class="form-text text-muted text-center"></small>
 											</div>
-											<div class="col-lg-3 form-cols">
+											<div class="col-lg-4 form-cols">
 												<div class="default-select" id="default-selects">
-													<select>
-														<option value="1">Select area</option>
-														<option value="2">Dhaka</option>
-														<option value="3">Rajshahi</option>
-														<option value="4">Barishal</option>
-														<option value="5">Noakhali</option>
+													<select name="area" id="area">
+														<option value="" selected disabled style="font-weight:bold">Select Area</option>
+														<option value="Glenmarie">Glenmarie</option>
+														<option value="Damansara Jaya">Damansara Jaya</option>
+														<option value="Penang">Penang</option>
+														<option value="Batu Kawan">Batu Kawan</option>
 													</select>
 												</div>
 											</div>
-											<div class="col-lg-3 form-cols">
+											<!-- <div class="col-lg-3 form-cols">
 												<div class="default-select" id="default-selects2">
 													<select>
 														<option value="1">All Category</option>
@@ -107,9 +114,9 @@
 														<option value="5">Development</option>
 													</select>
 												</div>										
-											</div>
+											</div> -->
 											<div class="col-lg-2 form-cols">
-												<button type="button" class="ticker-btn-search">
+												<button type="submit" class="ticker-btn-search">
 													<span class="lnr lnr-magnifier"></span> Search
 												</button>
 											</div>								
@@ -768,7 +775,7 @@
 			</section>
 			<!-- End download Area -->
 		
-			<?php include "footer.php"; ?>		
+			<?php include "footer.html"; ?>		
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<!-- <script src="js/vendor/jquery-3.4.1.min.js"></script> -->

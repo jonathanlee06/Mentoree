@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("127.0.0.1", "root", "1234", "mentoree", "3306");
+    $conn = mysqli_connect("localhost", "root", "", "mentoree");
 
     $rows_per_page = 10;
 
