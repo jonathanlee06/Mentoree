@@ -42,8 +42,8 @@
 
         <!-- start banner Area -->
         <div class="short-banner-area relative" id="post">	
-        <div class="container">
-            <div class="row d-flex align-items-center justify-content-center">
+        <div class="container" style="margin-bottom:0; padding-bottom:0;">
+            <div class="row d-flex align-items-center justify-content-center" style="padding-top:5%">
             <div class="about-content col-lg-12">
                 <h1 class="title">
                 Search Tutor				
@@ -60,17 +60,18 @@
                                 <div class="col-lg-4 form-cols">
                                     <div class="default-select" id="default-selects">
                                         <select name="area" id="area">
-                                            <option value="" selected disabled style="font-weight:bold">Select Area</option>
+                                            <option value="" selected hidden disabled style="font-weight:bold">Select Area</option>
                                             <option value="Glenmarie">Glenmarie</option>
                                             <option value="Damansara Jaya">Damansara Jaya</option>
                                             <option value="Penang">Penang</option>
                                             <option value="Batu Kawan">Batu Kawan</option>
                                         </select>
                                     </div>
+                                    <small id="a_error" class="form-text text-muted text-center"></small>
                                 </div>
                                 <div class="col-lg-2 form-cols">
                                     <button type="submit" class="ticker-btn-search">
-                                        <span class="lnr lnr-magnifier"></span> Search
+                                        <span class="lnr lnr-magnifier" id="mag" style="color:white"></span> Search
                                     </button>
                                 </div>								
                             </div>
@@ -85,10 +86,10 @@
         <!-- End banner Area -->	
         
         <!-- Start post Area -->
-        <section class="post-area section-gap">
+        <section class="post-area">
             <div class="container">
                 <div class="row justify-content-center d-flex">
-                <div class="col-lg-4 sidebar">
+                <!-- <div class="col-lg-4 sidebar">
                         <div class="single-slidebar">
                             <h4>Filter by Location</h4>
                             <div class="list-group">
@@ -106,22 +107,16 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="checkbox">
-
-                                    <label><input type="checkbox" class="common_selector ram" id="checkbox" value="<?php echo $rs['Location']; ?>" > <?php echo $rs['Location']; ?> </label>
-
-                            </div> -->
-
                         </div>						
 
-                    </div>
-                    <div class="col-lg-8 post-list">
-                        
-                        <!-- Start PHP Dynamic Post-->
-                        <?php include "tutor-listings.php" ?>
-                        <!-- End PHP Dynamic Post-->	
+                    </div> -->
+                <div class="col-lg-12 post-list" id="tutor-list">
+                    
+                    <!-- Start PHP Dynamic Post-->
+                    <?php include "tutor-listings.php" ?>
+                    <!-- End PHP Dynamic Post-->	
 
-                    </div>
+                </div>
                     
                 </div>
             </div>	
