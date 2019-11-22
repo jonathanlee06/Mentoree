@@ -44,11 +44,14 @@ if(isset($_POST["job_level"]) AND isset($_POST["job_subject"]) AND isset($_POST[
     $level = $_POST["job_level"];
     $subject = $_POST["job_subject"];
     $location = $_POST["job_campus"];
-    $duration = $_POST["job_duration"];
     $budget = $_POST["job_budget"];
-    $tutor_requirements = $_POST["job_requirements"];
+    $duration = $_POST["job_duration"];
+    $phone = $_POST["job_phone"];
+    $email = $_POST["job_email"];
+    $requirements = $_POST["job_requirements"];
+    $studentID = $_SESSION['userid'];
 
-    $result = $obj->addJobListing($level,$subject,$location,$duration,$budget,$tutor_requirements,$_SESSION["userid"]);
+    $result = $obj->addJobListing($level,$subject,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
     echo $result;
 }
 
