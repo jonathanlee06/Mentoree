@@ -37,7 +37,7 @@
         // $ram_filter = implode("','", $_POST["ram"]);
         $ram_filter = $_POST["ram"];
         $query .= "
-        WHERE gender IN('".$ram_filter."')
+        WHERE location IN('".$ram_filter."')
         ";
     }
 
@@ -55,17 +55,19 @@
             ?>
             <div class="single-post d-flex flex-row justify-content-start align-items-start">
                 
-                        <div class="details col-md-12">
+                        <div class="details col-lg-12">
                             <div class="row">
-                            <div class="col-md-2 text-center">
+                            <!-- <div class="col-1"></div> -->
+                            <div class="col-md-3 text-center" style="padding-left:5%">
                                     <div class="thumb justify-content-between">
                                         <img src="img/profile/user.png" alt="">
                                     </div>
                                     <br>
-                                    <button class="ticker-btn" style="width:100%">
+                                    <button class="ticker-btn" style="width:auto">
                                         View Profile
                                     </button>  
                                 </div>
+                                <div class="col-md-1"></div>
                                 <div class="col-md-8">
                                     <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
                                         <div class="titles">
@@ -123,7 +125,7 @@
         <div class="container">
             <ul class="pagination justify-content-center" id="pagination">
                 <?php
-                    if($num_of_rows1 < 0){
+                    if($num_of_rows1 < 0 || $num_of_rows < 0){
                         echo "<li ";
                         echo ' class="active"';
                         echo "><a>1</a></li>";
@@ -159,5 +161,5 @@
     
     // }
         
-
+    exit();
 ?>

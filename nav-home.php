@@ -12,6 +12,7 @@
                 <!-- <li><a href="price.html">Price</a></li>
                 <li><a href="blog-home.php?page=1">Blog</a></li> -->
                 <?php
+
                     if(isset($_SESSION['usertype'])){
                         $userType = $_SESSION['usertype'];
                         if($userType == "Student"){
@@ -42,7 +43,7 @@
                         <li><a href=""><?php echo $_SESSION["username"]; ?></a></li>
                         <li><a href="search.html"><?php echo $_SESSION["useremail"]; ?></a></li>
                         <li><a href="single.html">View Profile  </a></li>
-                        <li><a href="index.php"><?php session_destroy(); ?>Logout</a></li>
+                        <li><a href="index.php">Logout</a></li>
                     </ul>
                 </li>
                 <!-- <li><img src="img/man.png" alt=""></li>	 -->

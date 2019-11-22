@@ -15,7 +15,7 @@ class DBOperation
     //add to submission database
     public function addJobListing($level,$subject,$location,$duration,$budget,$tutor_requirements,$studentID){
 
-        $pre_stmt = $this->con->prepare("INSERT INTO `joblisting`(`level`, `subject`, `location`, `duration`, `budget`, `tutor_requirements`, `studentID`) 
+        $pre_stmt = $this->con->prepare("INSERT INTO `mentorlistings`(`level`, `subject`, `location`, `tel`, `budget`, `description`, `email`) 
         VALUES (?,?,?,?,?,?,?)");
         $pre_stmt->bind_param("sssssss",$level, $subject,$location,$duration,$budget,$tutor_requirements,$studentID);
         $result = $pre_stmt->execute() or die($this->con->error);
@@ -28,6 +28,6 @@ class DBOperation
     }
 }
 
-//$dbop = new DBOperation();
-//echo $dbop->addJobListing("Degree","Computer Architecture","KDU College Damansara Jaya","2hrs","rm60/hr","must be handsome","19");
+// $dbop = new DBOperation();
+// echo $dbop->addJobListing("Degree","Computer Architecture","KDU College Damansara Jaya","2hrs","rm60/hr","must be handsome","email@email.com");
 ?>

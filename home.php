@@ -27,15 +27,11 @@
 			<?php 
 				session_start();
 				// if(!isset($_SESSION['username'])){
-				// 	header("Location: about-us.html");
+				// 	header("Location: index.php");
 				// }	
 				
+				include "nav-home.php";
 			?>
-			<?php include "nav-home.php"; ?>
-
-			
-
-
 			<!-- Start tab Area -->
 			<section class="short-banner-area relative" id="fa">
 			<div class="container about-content">
@@ -65,17 +61,6 @@
 														</select>
 													</div>
 												</div>
-												<!-- <div class="col-lg-3 form-cols">
-													<div class="default-select" id="default-selects2">
-														<select>
-															<option value="1">All Category</option>
-															<option value="2">Medical</option>
-															<option value="3">Technology</option>
-															<option value="4">Goverment</option>
-															<option value="5">Development</option>
-														</select>
-													</div>										
-												</div> -->
 												<div class="col-lg-2 form-cols">
 													<button type="submit" class="ticker-btn-search">
 														<span class="lnr lnr-magnifier" id="mag" style="color:white"></span> Search
@@ -89,37 +74,27 @@
 									else{
 										echo '<h1 class="title text-center">Search Student</h1>';
 										echo '<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-										<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-										<form action="search.html" class="serach-form-area">
+										<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+										<form action="search-student.php" class="serach-form-area" id="search-tutor" method="POST">
 											<div class="row justify-content-center form-wrap">
-												<div class="col-lg-4 form-cols">
-													<input type="text" class="form-control" name="search" placeholder="what are you looking for?">
+												<div class="col-lg-6 form-cols">
+													<input type="text" class="form-control" name="search" id="search" placeholder="what are you looking for student?">
+													<small id="s_error" class="form-text text-muted text-center"></small>
 												</div>
-												<div class="col-lg-3 form-cols">
+												<div class="col-lg-4 form-cols">
 													<div class="default-select" id="default-selects">
-														<select>
-															<option value="1">Select area</option>
-															<option value="2">Dhaka</option>
-															<option value="3">Rajshahi</option>
-															<option value="4">Barishal</option>
-															<option value="5">Noakhali</option>
+														<select class="nice-select" name="area" id="area">
+															<option value="" selected disabled style="font-weight:bold">Select Area</option>
+															<option value="Glenmarie">Glenmarie</option>
+															<option value="Damansara Jaya">Damansara Jaya</option>
+															<option value="Penang">Penang</option>
+															<option value="Batu Kawan">Batu Kawan</option>
 														</select>
 													</div>
 												</div>
-												<div class="col-lg-3 form-cols">
-													<div class="default-select" id="default-selects2">
-														<select>
-															<option value="1">All Category</option>
-															<option value="2">Medical</option>
-															<option value="3">Technology</option>
-															<option value="4">Goverment</option>
-															<option value="5">Development</option>
-														</select>
-													</div>										
-												</div>
 												<div class="col-lg-2 form-cols">
-													<button type="button" class="ticker-btn-search">
-														<span class="lnr lnr-magnifier"></span> Search
+													<button type="submit" class="ticker-btn-search">
+														<span class="lnr lnr-magnifier" id="mag" style="color:white"></span> Search
 													</button>
 												</div>								
 											</div>
@@ -173,7 +148,46 @@
 			<section class="post-area">
 				<div class="container">
 					<div class="row justify-content-center d-flex">
-						<div class="col-lg-12 post-list">
+						<div class="col-lg-3 sidebar">
+							<div class="single-slidebar">
+								<h4>Filter by Location</h4>
+								<div class="list-group">
+									<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Glenmarie"  > Glenmarie</label>
+									</div>
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Damansara Jaya"  > Damansara Jaya</label>
+									</div>
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Batu Kawan"  > Batu Kawan</label>
+									</div>
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Penang"  > Penang</label>
+									</div>
+									</div>
+								</div>
+								<div class="list-group">
+									<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Glenmarie"  > Glenmarie</label>
+									</div>
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Damansara Jaya"  > Damansara Jaya</label>
+									</div>
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Batu Kawan"  > Batu Kawan</label>
+									</div>
+									<div class="list-group-item">
+										<label><input type="radio" name="selector" class="brand" value="Penang"  > Penang</label>
+									</div>
+									</div>
+								</div>
+
+							</div>						
+
+						</div>
+						<div class="col-lg-9 post-list">
 							
 						<?php
 							if(isset($_SESSION['usertype'])){
@@ -198,104 +212,10 @@
 			<!-- End post Area -->
 		
 			<!-- start footer Area -->		
-			<footer class="footer-area section-gap-footer">
-				<div class="container">
-						<div class="row">
-
-							<!-- Grid column -->
-							<div class="col-md-4 mt-md-0 mt-3">
-						
-								<!-- Content -->
-								<img src="img/web-logo-2.png" alt="" style="width: 200px; height: 55px;">
-								<h5 class="text-uppercase">Footer Content</h5>
-								<p>Mentoree is a platform where tutor and student can find each other to learn and teach together</p>
-						
-							</div>
-							<!-- Grid column -->
-						
-							<hr class="clearfix w-100 d-md-none pb-3">
-						
-							<!-- Grid column -->
-							<div class="col-md-3 mb-md-0 mb-3">
-								
-								<!-- Links -->
-								<h5 class="text-uppercase footer-title">For Students</h5>
-								
-								<ul class="list-unstyled">
-								<li>
-									<a href="#!" class="text-white">Become a student</a>
-								</li>
-								<li>
-									<a href="#!" class="text-white">Find tutors</a>
-								</li>
-								<li>
-									<a href="#!" class="text-white">FAQ</a>
-								</li>
-								</ul>
-						
-							</div>
-							<!-- Grid column -->
-						
-							<!-- Grid column -->
-							<div class="col-md-3 mb-md-0 mb-3">
-						
-								<!-- Links -->
-								<h5 class="text-uppercase footer-title">For Tutors</h5>
-								
-								<ul class="list-unstyled">
-								<li>
-									<a href="#!" class="text-white">Become a tutor</a>
-								</li>
-								<li>
-									<a href="#!" class="text-white">Find students</a>
-								</li>
-								<li>
-									<a href="#!" class="text-white">FAQ</a>
-								</li>
-								</ul>
-						
-							</div>
-							<!-- Grid column -->
-							
-							<!-- Grid column -->
-							<div class="col-md-2 mb-md-0 mb-3">
-						
-								<!-- Links -->
-								<h5 class="text-uppercase footer-title">Contact Us</h5>
-								
-								<ul class="list-unstyled">
-								<li>
-									<a href="#!" class="text-white">About Us</a>
-								</li>
-								<li>
-									<a href="#!" class="text-white">Contact</a>
-								</li>
-								<li>
-									<a href="#!" class="text-white">Our Vision</a>
-								</li>
-								</ul>
-						
-							</div>
-							<!-- Grid column -->
-
-						</div>
-						<!-- Grid row -->
-
-					<div class="row footer-bottom d-flex justify-content-between">
-						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy; <a href="index.php" target="_blank">Mentoree</a> <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-						<div class="col-lg-4 col-sm-12 footer-social">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
-						</div>
-					</div>
-				</div>
-			</footer>
+			<?php include "footer.html"; 
+			
+			exit();
+			?>
 			<!-- End footer Area -->		
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>

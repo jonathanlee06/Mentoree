@@ -54,15 +54,16 @@
                 
                         <div class="details col-md-12">
                             <div class="row">
-                            <div class="col-md-2 text-center">
+                            <div class="col-md-3 text-center">
                                     <div class="thumb justify-content-between">
                                         <img src="img/profile/user.png" alt="">
                                     </div>
                                     <br>
-                                    <button class="ticker-btn" style="width:100%">
+                                    <button class="ticker-btn" style="width:auto">
                                         View Profile
                                     </button>  
                                 </div>
+                                <div class="col-md-1"></div>
                                 <div class="col-md-8">
                                     <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
                                         <div class="titles">
@@ -75,7 +76,7 @@
                                                 <h6><strong>Prefered Days:        </strong><?php echo $rs['preferred_days'] ?></h6>
                                                 <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                                 </div>
-                                                <div class="col-md-2"></div>
+                                                
                                                 <div class="col-md-4">		
                                                     <h6><strong>Description:    </strong><?php echo $rs['description'] ?></h6>	
                                                 </div>

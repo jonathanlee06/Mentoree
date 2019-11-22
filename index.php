@@ -174,13 +174,14 @@
 						<div class="col-lg-5">
 							<img src="img/productive.svg" alt="">
 						</div>
-						<div class="menu-content col-lg-7" style="padding-top:10%">
+						<div class="col-lg-1"></div>
+						<div class="menu-content col-lg-6" style="padding-top:10%">
 							<div class="title">
 								<h1 class="mb-10 text-white">Join us today! It is free!</h1>
 								
 							</div>
 							<p style="font-weight:500;color:#939393">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-							<button class="ticker-btn" id="ga" style="width:25%;height:15%;border-radius:35px" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';"><span>Register Now</span></button>
+							<button class="ticker-btn" id="ga" style="width:30%;height:15%;border-radius:35px" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';"><span>Register Now</span></button>
 						</div>
 						
 					</div>	
@@ -189,6 +190,9 @@
 			<!-- End calto-action Area -->
 		
 			<?php include "footer.html"; ?>		
+			
+			<a href="#home" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+			<div id="preloader"></div>
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<!-- <script src="js/vendor/jquery-3.4.1.min.js"></script> -->

@@ -3302,7 +3302,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .post-list .single-post {
   padding: 30px;
-  background-color: rgb(243, 243, 243);
+  /* background-color: rgb(243, 243, 243); */
+  background-color: #F9FCFF;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
   border-radius: 30px;
   margin-bottom: 30px;
@@ -5103,4 +5104,31 @@ body.mobile-nav-active #mobile-nav-toggle {
       opacity: 0;
       transform: rotate(45deg) translate(20px,20px);
   }
+}
+
+
+/* Back to top button */
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  background: #0f0f0f;
+  color: #ff7b00;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.back-to-top i {
+  padding-top: 14px;
+  font-size: 20px;
+  color: #ff7b00;
 }
