@@ -512,7 +512,7 @@ var DOMAIN = "http://localhost/Mentoree";
         })
       }
 
-    // });
+    });
 
     // Checkboxes
     function filter_data()
@@ -593,27 +593,8 @@ var DOMAIN = "http://localhost/Mentoree";
               }
         });
       }   
-    });
+  });
 
     
 
- });
-
-// function submit_userType(){
-//   var type=$("input[id=Tutor]").val();
-
-//   var dataTosend='type='+type;
-
-//   $.ajax({
-//     url: 'test.php',
-//     type: "POST",
-//     data: {'type': type},
-//     dataType: 'text',
-//     async: true,
-//     success: function (data) {
-//       alert(data);
-//       document.getElementById('id02-2').style.display='none'; 
-//       document.getElementById('id02').style.display='block';
-//     },
-//   });
-// }
+});
