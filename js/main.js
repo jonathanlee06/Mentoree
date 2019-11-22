@@ -1,9 +1,5 @@
 
 $(document).ready(function(){
-  $('#nav-home').attr('style','color:white;');
-  $('#nav-home a').attr('style','color:white;');
-  $('#drop-bar a').attr('style','color:black;');
-
 	"use strict";
 
 	var window_width 	 = $(window).width(),
@@ -161,15 +157,8 @@ $(document).ready(function(){
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
-      $('#logo-img').attr('src','img/web-logo-4.png');
-      $('#nav-home').attr('style','color:black;');
-      $('#nav-home a').attr('style','color:black;')
     } else {
       $('#header').removeClass('header-scrolled');
-      $('#logo-img').attr('src','img/web-logo-2.png');
-      $('#nav-home').attr('style','color:white;');
-      $('#nav-home a').attr('style','color:white;')
-      $('#drop-bar a').attr('style','color:black;')
     }
   })
 
@@ -419,7 +408,7 @@ var DOMAIN = "http://localhost/Mentoree";
                         $("#p_error").html("<span class = 'text-danger'> Password did not matched</span>");
                     }else if(data == 1){
                         //console.log(data);
-                        window.location.href = DOMAIN+"/home.php"
+                        window.location.href = DOMAIN+"/home.php?page=1"
                     }else{
                         console.log(data);
                     }
@@ -575,45 +564,6 @@ var DOMAIN = "http://localhost/Mentoree";
           query_type.addClass("border-danger");
           $("#s_error").html("<span class= 'text-danger'>Please enter search query</span>");
           status = false;
-      }else{
-          // email.removeClass("border-danger");
-          // $("#e_error").html("");
-          status = true;
-      }
-
-      //red text border and error message is no password
-      if (area == "") {
-          $("#a_error").html("<span class= 'text-danger' style='margin-top:10px'>Please Select Area</span>");
-          status = false;
-      }else{
-          // pass.removeClass("border-danger");
-          // $("#p_error").html("");
-          status = true;
-      }
-
-      if(status){
-        $.ajax({
-            url : "tutor-listings.php",
-              method : "POST",
-              data : $('#search-tutor').serialize(),
-              async: true,
-              success : function(data){
-                $('#tutor-list').html(data);
-                console.log(data);
-              }
-        });
-      }   
-    });
-
-    // Search Student
-    $("#search-student").on("submit",function(){
-      var query_type = $("#search");
-      var area = $('#area option:selected').val()
-      //red text border and error message if no email
-      if (query_type.val() == "") {
-          query_type.addClass("border-danger");
-          $("#s_error").html("<span class= 'text-danger'>Please enter search query</span>");
-          status = false;
           alert("You Noob");
       }else{
           // email.removeClass("border-danger");
@@ -633,18 +583,15 @@ var DOMAIN = "http://localhost/Mentoree";
 
       if(status){
         $.ajax({
-            url : "student-listings.php",
+            url : "tutor-listings.php",
               method : "POST",
-              data : $('#search-student').serialize(),
+              data : $('#search-tutor').serialize(),
               async: true,
               success : function(data){
-                $('#student-list').html(data);
+                $('.post-list').html(data);
                 console.log(data);
               }
         });
       }   
   });
-
-    
-
 });
