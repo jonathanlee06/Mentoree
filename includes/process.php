@@ -19,21 +19,11 @@ include_once("DBOperation.php");
 // echo $name;
 
 //REGISTER processing 
-if(isset($_POST["reg_username"]) AND isset($_POST["reg_email"]) AND isset($_POST["reg_password"])){
-    ?><p><?php echo $_POST['type']; ?> successful</p><?php
-    echo 
+if(isset($_POST["reg_username"]) AND isset($_POST["reg_email"]) AND isset($_POST["reg_password"]) AND isset($_POST["userType"])){
+    
     $user = new User();
 
-
-    // if(isset($_POST["reg_student"])){
-    //     $userType = "Student";
-    // }
-    
-    // if (isset($_POST["reg_tutor"])){
-    //     $userType = "Tutor";
-    // }
-
-    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_password"], $_POST['type']);
+    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_password"], $_POST['userType']);
     
     echo $result;
 

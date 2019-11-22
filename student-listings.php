@@ -19,14 +19,11 @@
         $page1 = 0;
     }
 
-    $query = "SELECT * FROM mentorlistings";
-    $query_row = "SELECT * FROM mentorlistings ";
+    $query = "SELECT * FROM studentlistings";
+    $query_row = "SELECT * FROM studentlistings ";
 
-    if(isset($_POST["search"])){
-        if(isset($_POST["area"])){
-            $query .= " WHERE level_of_teaching LIKE '%".$_POST["search"]."%' AND location LIKE '%".$_POST["area"]."%'";
-        }
-        
+    if(isset($_POST["search"]) || isset($_POST["area"])){
+        $query .= " WHERE subject LIKE '%".$_POST["search"]."%' AND location='".$_POST["area"]."'";
     }
 
     // echo $_POST["ram"];
@@ -73,15 +70,14 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                 <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                                <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
+                                                <h6><strong>Budget:               </strong>RM<?php echo $rs['Budget'] ?></h6>	
                                                 <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
-                                                <h6><strong>Phone:                  </strong><?php echo $rs['tel'] ?></h6>
-                                                <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
-                                                <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
+                                                <h6><strong>Prefered Days:        </strong><?php echo $rs['preferred_days'] ?></h6>
+                                                <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                                 </div>
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-4">		
-                                                    
+                                                    <h6><strong>Description:    </strong><?php echo $rs['description'] ?></h6>	
                                                 </div>
                                             </div>
                                             
@@ -106,7 +102,6 @@
                 
             </div>
             <?php
-            // if($count1 >= 5){
             // echo $rs['id'].' -> '.$rs['first_name'].'<br>';
         }
     }
@@ -119,11 +114,15 @@
         <?php
     }
 
-    ?>
+    
+
+
+    // if($count1 >= 5){
+        ?>
         <div class="container">
             <ul class="pagination justify-content-center" id="pagination">
                 <?php
-                    if($num_of_rows1 < 0){
+                    if($count1 < 5){
                         echo "<li ";
                         echo ' class="active"';
                         echo "><a>1</a></li>";
@@ -152,11 +151,6 @@
             </ul>
         </div>
         <?php
-
-    
-
-
-    
     // }
         
 

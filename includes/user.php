@@ -28,7 +28,7 @@ class User
         if($this->emailExists($email)){
             echo "EMAIL_ALREADY_EXISTS";
         }else{
-            echo $type + "You noob";
+            
             $pass_hash = password_hash($password,PASSWORD_BCRYPT,["cost"=>8]);
             //$date = date("Y-m-d");  
             $pre_stmt = $this->con->prepare("INSERT INTO `users`(`username`, `email`, `password`,`userType`) 
@@ -46,7 +46,7 @@ class User
 
     //return 1 if email&password is matched 
     public function userLogin($email,$password){
-        $pre_stmt = $this->con->prepare("SELECT id,username,password FROM users WHERE email = ?");
+        $pre_stmt = $this->con->prepare("SELECT id,username,password,userType FROM users WHERE email = ?");
         $pre_stmt->bind_param("s",$email);
         $pre_stmt->execute() or die($this->con->error);
         $result = $pre_stmt->get_result();
@@ -59,6 +59,7 @@ class User
                 $_SESSION["userid"] = $row["id"];
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["useremail"] = $email;
+                $_SESSION["usertype"] = $row["userType"];
                 if($result){
                     return 1;
                 }else{

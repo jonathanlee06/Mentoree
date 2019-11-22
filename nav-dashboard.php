@@ -11,7 +11,7 @@
                 <li><a href="category.html">Find A Tutor</a></li>
                 <!-- <li><a href="price.html">Price</a></li>
                 <li><a href="blog-home.php?page=1?page=1">Blog</a></li> -->
-                <li><a href="new-post.html">Post</a></li>
+                <li><a href="new-post.php">Post</a></li>
                 <li><a>|</a></li>
                 <!-- <li class="menu-has-children"><a href="">Pages</a>
                 <ul>
