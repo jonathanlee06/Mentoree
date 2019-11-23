@@ -3,6 +3,8 @@ $(document).ready(function(){
   $('#nav-home').attr('style','color:white;');
   $('#nav-home a').attr('style','color:white;');
   $('#drop-bar a').attr('style','color:black;');
+  $("#message").hide();
+  $("#form-tutor-post").show();
 
 	"use strict";
 
@@ -508,6 +510,18 @@ var DOMAIN = "http://localhost/Mentoree";
         }
     })
 
+    var number = 5;
+    function countDown() {
+      setTimeout(countDown, 500);
+      $("#message").html("<h2 class='text-center'>Posted Successfully! Redirecting you to homepage in " + number + " seconds...</h2>");
+      number--;
+
+      if(number < 0){
+        window.location = "home.php"
+        number = 0;
+      }
+    }
+
     //job listing upload 
     $("#form_jobListing").on("submit",function(){
 
@@ -519,12 +533,14 @@ var DOMAIN = "http://localhost/Mentoree";
           method : "POST",
           data : $("#form_jobListing").serialize(),
           success : function(data){
-            alert(data);
+            $("#form-tutor-post").hide();
+            $("#message").show();
+            countDown();
           }
         })
       }
 
-    // });
+    });
 
     // Checkboxes
     function filter_data()
@@ -645,23 +661,42 @@ var DOMAIN = "http://localhost/Mentoree";
         });
       }   
     });
+    =======
+    
+
+    // // LIKE SYSTEM
+    // $('.like').on('click', function(){
+    //   if(! $('.like').parent().data('bookmark')){
+    //     alert('bookmarked');
+    //     $('.like').parent().data('bookmark', 1);
+    //     // Add image + AJAX call
+    //   }
+    //   else {
+    //       alert('not bookmarked');
+    //       $(this).parent().data('bookmark', null);
+    //   }
+
+    //   $('.like').html('<i class="fa fa-heart" aria-hidden="true"></i>');
+		//   $('.like').children('.fa-heart').addClass('animate-like');
+		// 	var postid = $(this).data('id');
+		// 	    $post = $(this);
+
+		// 	$.ajax({
+		// 		url: 'index.php',
+		// 		type: 'POST',
+		// 		data: {
+		// 			'postid': postid
+		// 		},
+		// 		success: function(response){
+		// 			$post.parent().find('span.likes_count').text(response + " likes");
+		// 			$post.addClass('hide');
+		// 			$post.siblings().removeClass('hide');
+		// 		}
+		// 	});
+		// });
+
+
+    
+  >>>>>>> e066d20db5e0decadcd7767ab5d4c9ce7a26f236
  });
 
-// function submit_userType(){
-//   var type=$("input[id=Tutor]").val();
-
-//   var dataTosend='type='+type;
-
-//   $.ajax({
-//     url: 'test.php',
-//     type: "POST",
-//     data: {'type': type},
-//     dataType: 'text',
-//     async: true,
-//     success: function (data) {
-//       alert(data);
-//       document.getElementById('id02-2').style.display='none'; 
-//       document.getElementById('id02').style.display='block';
-//     },
-//   });
-// }

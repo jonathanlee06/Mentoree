@@ -13,11 +13,25 @@ class DBOperation
     }
 
     //add to submission database
-    public function addJobListing($subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID){
+    public function addJobListing($name,$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID){
 
-        $pre_stmt = $this->con->prepare("INSERT INTO `mentorlistings`(`subject`, `level_of_teaching`, `location`, `budget`, `duration`,`tel`, `email`, `description`,`studentID`) 
-        VALUES (?,?,?,?,?,?,?,?,?)");
-        $pre_stmt->bind_param("sssssssss",$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID);
+        $pre_stmt = $this->con->prepare("INSERT INTO `mentorlistings`(`requester_name`,`subject`, `level_of_teaching`, `location`, `budget`, `duration`,`tel`, `email`, `description`,`userid`) 
+        VALUES (?,?,?,?,?,?,?,?,?,?)");
+        $pre_stmt->bind_param("ssssssssss",$name,$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "LISTING_ADDED";
+        }else{
+            return 0;
+        }
+    }
+
+    //add to submission database
+    public function addStudentListing($name,$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID){
+
+        $pre_stmt = $this->con->prepare("INSERT INTO `studentlistings`(`requester_name`,`subject`, `level_of_teaching`, `location`, `budget`, `duration`,`tel`, `email`, `description`,`userid`) 
+        VALUES (?,?,?,?,?,?,?,?,?,?)");
+        $pre_stmt->bind_param("ssssssssss",$name,$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID);
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){
             return "LISTING_ADDED";

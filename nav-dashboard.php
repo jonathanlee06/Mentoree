@@ -1,4 +1,4 @@
-<header id="header" id="home">
+<header id="header" id="home" style="background-color: white">
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
@@ -22,7 +22,7 @@
                 </li> -->
                 <li class="menu-has-children">
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                        <img src="img/man.png" class="rounded-circle">
+                        <img src="img/profile/user.png" class="rounded-circle" style="width:32px;height:32px">
                     <!-- </a> -->
                     <ul>
                         <li><a href="elements.html"><?php echo $_SESSION["username"]; ?></a></li>

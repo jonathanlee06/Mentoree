@@ -48,102 +48,107 @@
         <div class="row">
        
           <div class="col-md-12 col-lg-12 mb-5">
-          
-			     <form id = "form_jobListing" onsubmit = "return false" method = "POST" action="#" class="p-5 bg-white">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="form-select" id="default-select">
-                        <label class="font-weight-bold" for="fullname">Qualification Level</label>
-                        <select class="nice-select" name = "job_level" id="job_level">
-                        <option value="" selected disabled hidden>Select Qualification</option>
-                        <option value="foundation">Foundation</option>
-                        <option value="diploma">Diploma</option>
-                        <option value="degree">Degree</option>
-                        <option value="master">Master</option>
-                        </select>
+            <div class="container" id="form-tutor-post">
+              <form id = "form_jobListing" onsubmit = "return false" method = "POST" action="#" class="p-5 bg-white">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="form-select" id="default-select">
+                          <label class="font-weight-bold" for="fullname">Qualification Level</label>
+                          <select class="nice-select" name = "job_level" id="job_level">
+                          <option value="" selected disabled hidden>Select Qualification</option>
+                          <option value="Foundation">Foundation</option>
+                          <option value="Diploma">Diploma</option>
+                          <option value="Degree">Degree</option>
+                          <option value="Master">Master</option>
+                          </select>
+                      </div>
+                      
                     </div>
-                    
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="form-select" id="default-select">
-                        <label class="font-weight-bold" for="fullname">Location of Campus</label>
-                        <select class="nice-select" name = "job_campus" id="job_campus">
-                            <option value="" selected disabled hidden>Select Location</option>
-                            <option value="glen">UOW Malaysia KDU Utropolis, Glenmarie</option>
-                            <option value="dj">UOW Malaysia KDU College Damansara Jaya</option>
-                            <option value="george">UOW Malaysia KDU Georgetown, Penang</option>
-                            <option value="batu">UOW Malaysia KDU Batu Kawan, Penang</option>
-                        </select>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-              
-
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Subject To Teach</label>
-                  <input type="text" name = "job_subject" id="job_subject" class="form-control" placeholder="eg. Computer Architecture">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row form-group ">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Duration of tuition</label>
-                      <input type="text" name = "job_duration" id="job_duration" class="form-control" placeholder="eg. 2 hours (optional)">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="form-select" id="default-select">
+                          <label class="font-weight-bold" for="fullname">Location of Campus</label>
+                          <select class="nice-select" name = "job_campus" id="job_campus">
+                              <option value="" selected disabled hidden>Select Location</option>
+                              <option value="Glenmarie">UOW Malaysia KDU Utropolis, Glenmarie</option>
+                              <option value="Damansara Jaya">UOW Malaysia KDU College Damansara Jaya</option>
+                              <option value="Penang">UOW Malaysia KDU Georgetown, Penang</option>
+                              <option value="Batu Kawan">UOW Malaysia KDU Batu Kawan, Penang</option>
+                          </select>
+                      </div>
+                      
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="row form-group mb-5">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Budget</label>
-                      <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="eg. RM60/hour (optional)">
+                
+
+                <div class="row form-group">
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="font-weight-bold" for="fullname">Subject To Teach</label>
+                    <input type="text" name = "job_subject" id="job_subject" class="form-control" placeholder="eg. Computer Architecture">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row form-group ">
+                      <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname">Duration of tuition</label>
+                        <input type="text" name = "job_duration" id="job_duration" class="form-control" placeholder="eg. 2 hours (optional)">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row form-group mb-5">
+                      <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname">Budget</label>
+                        <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="eg. RM60/hour (optional)">
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row form-group ">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Phone Number</label>
-                      <input type="text" name = "job_phone" id="job_phone" class="form-control" placeholder="eg. 012345678">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row form-group ">
+                      <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname">Phone Number</label>
+                        <input type="text" name = "job_phone" id="job_phone" class="form-control" placeholder="eg. 012345678">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row form-group mb-5">
+                      <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname">Email Address</label>
+                        <input type="text" name = "job_email" id="job_email" class="form-control" placeholder="eg. person@email.com">
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="row form-group mb-5">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Email Address</label>
-                      <input type="text" name = "job_email" id="job_email" class="form-control" placeholder="eg. person@email.com">
-                    </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="font-weight-bold" for="fullname">Description  </label>
+                    <textarea class="single-textarea" name = "job_requirements" id="job_requirements" cols="30" rows="5"></textarea>
                   </div>
                 </div>
-              </div>
 
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Description  </label>
-                  <textarea class="single-textarea" name = "job_requirements" id="job_requirements" cols="30" rows="5"></textarea>
+                <div class="row form-group">
+                  <div class="col-md-2">
+                    <button type="submit" value="Post" class="ticker-btn  py-2 px-5">Post</button>
+                    <small id="after-message" class="form-text text-muted"></small>
+                  </div>
                 </div>
-              </div>
 
-              <div class="row form-group">
-                <div class="col-md-2">
-                  <button type="submit" value="Post" class="ticker-btn  py-2 px-5">Post</button>
-                </div>
-              </div>
 
-  
-            </form>
+              </form>
+            </div>
+            <div class="container p-5 bg-white" id="message">
+              <h2 class="text-center">Posted Successfully! Redirecting you to homepage in 5 seconds...</h2>
+            </div>
           </div>
         </div>
       </div>
