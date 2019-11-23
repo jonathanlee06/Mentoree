@@ -426,8 +426,9 @@ var DOMAIN = "http://localhost/Mentoree";
                       
                 }
           });
-        }   
+        }
     });
+    
 
     
 
@@ -644,9 +645,6 @@ var DOMAIN = "http://localhost/Mentoree";
         });
       }   
     });
-
-    
-
  });
 
 // function submit_userType(){
