@@ -37,6 +37,7 @@
     </head>
     <body>
 
+        <?php session_start(); ?>
         <?php include "nav-home.php"; ?>
 
 
@@ -50,7 +51,7 @@
                 </h1>
                 <div class="col-md-12">
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="tab-pane fade show active" id="nav-student" role="tabpanel" aria-labelledby="nav-home-tab">
                         <form class="serach-form-area" id="search-student" method="POST" onsubmit="return false">
                             <div class="row justify-content-center form-wrap">
                                 <div class="col-lg-6 form-cols">
