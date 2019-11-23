@@ -49,7 +49,7 @@
        
           <div class="col-md-12 col-lg-12 mb-5">
             <div class="container" id="form-tutor-post">
-              <form id = "form_jobListing" onsubmit = "return false" method = "POST" action="#" class="p-5 bg-white">
+              <form id = "form-tutor-post" onsubmit = "return false" method = "POST" action="#" class="p-5 bg-white">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">

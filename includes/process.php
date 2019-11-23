@@ -52,7 +52,18 @@ if(isset($_POST["job_level"]) AND isset($_POST["job_subject"]) AND isset($_POST[
     $studentID = $_SESSION['userid'];
     $name = $_SESSION['username'];
 
-    $result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
+    $result = $obj->addStudentListing($name,$subject,$level,$location,$budget,$duration,$tel,$email,$requirements,$studentID);
+    //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
+    echo $result;
+}
+
+if(isset($_POST["postid"])){
+    $obj = new DBOperation();
+
+    $postid = $_POST["postid"];
+    $userid = $_SESSION['userid'];
+
+    $result = $obj->addFavoriteListing($postid,$userid);
     echo $result;
 }
 

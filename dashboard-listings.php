@@ -21,17 +21,17 @@
 
     if($_SESSION['usertype'] == 'Tutor'){
         $user = $_SESSION['userid'];
-        $query = "SELECT * FROM mentorlistings WHERE userid = ".$user."";
+        $query = "SELECT * FROM mentorlistings WHERE userid = ".$user." ORDER BY postID DESC;";
         $query_row = "SELECT * FROM mentorlistings WHERE userid = ".$user."";
     }
     else{
         $user = $_SESSION['userid'];
-        $query = "SELECT * FROM studentlistings WHERE userid = ".$user."";
+        $query = "SELECT * FROM studentlistings WHERE userid = ".$user." ORDER BY postID DESC;";
         $query_row = "SELECT * FROM studentlistings WHERE userid = ".$user."";
     }
 
 
-    $query .= " ORDER BY id DESC;";
+    // $query .= " ORDER BY id DESC;";
     // $row_num = mysqli_query($conn, $query_row);
     // $count = mysqli_num_rows($row_num);
     // $num_of_rows = ceil($count/5);
@@ -50,17 +50,35 @@
                         <div class="col-md-9">
                             <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
                                 <div class="titles">
-                                    <h4><?php echo $rs['requester_name']?></h4>
+                                    <h4><?php echo $rs['subject']?></h4>
                                     <br>
                                     <div class="row">
-                                        <div class="col-md-12">
-                                        <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6><br>
-                                        <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6><br>
-                                        <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6><br>
-                                        <h6><strong>Phone:                  </strong><?php echo $rs['tel'] ?></h6><br>
-                                        <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6><br>
-                                        <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
-                                        </div>
+                                        <?php
+                                            if($_SESSION['usertype'] == 'Student'){
+                                                echo '
+                                                    <div class="col-md-12">
+                                                    <h6><strong>Listed By:             </strong>'.$rs['requester_name'].'</h6><br>
+                                                    <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
+                                                    <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
+                                                    <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
+                                                    <h6><strong>Description:                  </strong>'.$rs['description'].'</h6>
+                                                    </div>
+                                                ';
+                                            }
+                                            else {
+                                                echo '
+                                                    <div class="col-md-12">
+                                                    <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
+                                                    <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
+                                                    <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
+                                                    <h6><strong>Phone:                  </strong>'.$rs['tel'].'</h6><br>
+                                                    <h6><strong>Email:                  </strong>'.$rs['email'].'</h6><br>
+                                                    <h6><strong>Level of Teaching:      </strong>'.$rs['level_of_teaching'].'</h6>
+                                                    </div>
+                                                ';
+                                            }
+                                        ?>
+                                        
                                         <!-- <div class="col-md-2"></div>
                                         <div class="col-md-4">		
                                             
@@ -72,10 +90,12 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <button class="ticker-btn-red" value="<?php echo $rs['id'] ?>">Delete Listing</button>
-                            <button class="btn-secondary like">
-                                <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
-                            </button>
+                                <!-- <button class="ticker-btn-red" value="<?php echo $rs['postID'] ?>">Delete Listing</button> -->
+                                <button class="btn-secondary like" name="like" id="like" onclick="like('<?php echo $rs['postID'] ?>')">
+                                    <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
+                                </button>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -97,42 +117,20 @@
     }
 
     ?>
-        <!-- <div class="container">
-            <ul class="pagination justify-content-center" id="pagination">
-                <?php
-                    // if($num_of_rows1 < 0 || $num_of_rows < 0){
-                    //     echo "<li ";
-                    //     echo ' class="active"';
-                    //     echo "><a>1</a></li>";
-                    // }
-                    // else{
-                    //     for($i = 1; $i <= $num_of_rows; $i++){
-                    //         echo "<li ";
-                    //         if(isset($_GET['page'])){
-                    //             $page = $_GET['page'];
-                    //             if($page == $i){
-                    //                 echo ' class="active"';
-                    //             }
-                    //         }
-                    //         else{
-                    //             $page = 1;
-                    //             if($page == $i){
-                    //                 echo ' class="active"';
-                    //             }
-                    //         }
-                    //         echo "><a href='?page=$i'>$i</a></li>";
-                            
-                    //     }
-                    // }
-                    
-                ?>
-            </ul>
-        </div> -->
-        <?php
-
-    
-
-
-    
-    // }
+        <script>
+            function like(postID){
+                $.ajax({
+                    url: 'includes/process.php',
+                    type: 'POST',
+                    data: {
+                        'postid':postID
+                    },
+                    success: function(data){
+                        alert(data);
+                        alert("Liked")
+                    }
+                });
+            }
+        </script>
+    <?php
 ?>

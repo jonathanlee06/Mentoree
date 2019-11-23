@@ -39,6 +39,20 @@ class DBOperation
             return 0;
         }
     }
+
+    //add to submission database
+    public function addFavoriteListing($postid,$userid){
+
+        $pre_stmt = $this->con->prepare("INSERT INTO `favorite`(`postID`,`userID`) 
+        VALUES (?,?)");
+        $pre_stmt->bind_param("ss",$postid,$userid);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "FAVORITE_ADDED";
+        }else{
+            return 0;
+        }
+    }
 }
 
 // $dbop = new DBOperation();

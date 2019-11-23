@@ -522,7 +522,7 @@ var DOMAIN = "http://localhost/Mentoree";
     }
 
     //job listing upload 
-    $("#form_jobListing").on("submit",function(){
+    $("#form-tutor-post").on("submit",function(){
 
       var status = true;
 
@@ -533,6 +533,26 @@ var DOMAIN = "http://localhost/Mentoree";
           data : $("#form_jobListing").serialize(),
           success : function(data){
             $("#form-tutor-post").hide();
+            $("#message").show();
+            countDown();
+          }
+        })
+      }
+
+    });
+
+    //job listing upload 
+    $("#form-student-post").on("submit",function(){
+
+      var status = true;
+
+      if(status){
+        $.ajax({
+          url : DOMAIN+"/includes/process.php",
+          method : "POST",
+          data : $("#form-student-post").serialize(),
+          success : function(data){
+            $("#form-student-post").hide();
             $("#message").show();
             countDown();
           }
@@ -662,39 +682,67 @@ var DOMAIN = "http://localhost/Mentoree";
     });
     
 
-    // // LIKE SYSTEM
+    // LIKE SYSTEM
     // $('.like').on('click', function(){
     //   if(! $('.like').parent().data('bookmark')){
-    //     alert('bookmarked');
     //     $('.like').parent().data('bookmark', 1);
-    //     // Add image + AJAX call
+    //     $('.like').html('<i class="fa fa-heart" aria-hidden="true"></i>');
+    //     $('.like').children('.fa-heart').addClass('animate-like');
+    //     var postid = $('.like').data("id");
+    //     // var postid = get_filter_id('like');
+
+    //     $.ajax({
+    //       url: 'includes/process.php',
+    //       type: 'POST',
+    //       data: {
+    //         'postid': postid
+    //       },
+    //       success: function(data){
+    //         alert(data);
+    //         alert("Liked")
+    //       }
+    //     });
     //   }
-    //   else {
-    //       alert('not bookmarked');
-    //       $(this).parent().data('bookmark', null);
-    //   }
 
-    //   $('.like').html('<i class="fa fa-heart" aria-hidden="true"></i>');
-		//   $('.like').children('.fa-heart').addClass('animate-like');
-		// 	var postid = $(this).data('id');
-		// 	    $post = $(this);
+      
+    // });
+    $('#like-form').on('submit', function() {
+      if(! $('#like').parent().data('bookmark')){
+        $('#like').parent().data('bookmark', 1);
+        $('#like').html('<i class="fa fa-heart" aria-hidden="true"></i>');
+        $('#like').children('.fa-heart').addClass('animate-like');
+        var postid = $('#like').val();
+        console.log(postid);
+        // var postid = get_filter_id('like');
 
-		// 	$.ajax({
-		// 		url: 'index.php',
-		// 		type: 'POST',
-		// 		data: {
-		// 			'postid': postid
-		// 		},
-		// 		success: function(response){
-		// 			$post.parent().find('span.likes_count').text(response + " likes");
-		// 			$post.addClass('hide');
-		// 			$post.siblings().removeClass('hide');
-		// 		}
-		// 	});
-		// });
+        $.ajax({
+          url: 'includes/process.php',
+          type: 'POST',
+          data: $('#like-form').serialize(),
+          success: function(data){
+            alert(data);
+            alert("Liked")
+          }
+        });
+      }
+    });
 
+    function get_filter_id(class_name)
+    {
+        var filter = "";
+        $('.'+class_name+'').each(function(){
+            filter = ($(this).val());
+        });
+        return filter;
+    }
 
-    
+    function call_name(nama){
+      alert(nama);
+    }
+
+    $('#view-profile').on('click', function() {
+      
+    });
   
  });
 

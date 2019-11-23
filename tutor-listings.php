@@ -41,7 +41,7 @@
         ";
     }
 
-    $query .= " ORDER BY id DESC LIMIT ".$page1. ", " .$rows_per_page.";";
+    $query .= " ORDER BY postID DESC LIMIT ".$page1. ", " .$rows_per_page.";";
     $row_num = mysqli_query($conn, $query_row);
     $count = mysqli_num_rows($row_num);
     $num_of_rows = ceil($count/5);

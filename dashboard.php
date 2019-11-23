@@ -52,6 +52,8 @@
 
             .list-sec {
                 margin-top: 18%;
+                height: 400px;
+                overflow-y: scroll;
             }
 
             .selection-tab {
@@ -112,13 +114,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 list-sec">
-                        <div class="container py-3 px-3 px-sm-0 align-items-center justify-content-center" id="nav-tabContent" style="padding-bottom:5%">
+                    <div class="col-lg-12">
+                        <div class="container py-3 px-3 px-sm-0 align-items-center justify-content-center  list-sec" id="nav-tabContent" style="padding-bottom:5%">
                             <div class="fade show active" id="nav-mylist" role="tabpanel" aria-labelledby="nav-home-tab">
+                              
                                 <?php include "dashboard-listings.php" ?>
                             </div>
                             <div class="fade" id="nav-favlist" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                
+                                <?php include "favorite.php" ?>  
                             </div>
                         </div>
                         

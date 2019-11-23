@@ -38,7 +38,7 @@
         ";
     }
 
-    $query .= " ORDER BY id DESC LIMIT ".$page1. ", " .$rows_per_page.";";
+    $query .= " ORDER BY postID DESC LIMIT ".$page1. ", " .$rows_per_page.";";
     $row_num = mysqli_query($conn, $query_row);
     $count = mysqli_num_rows($row_num);
     $num_of_rows = ceil($count/5);
@@ -59,7 +59,7 @@
                                         <img src="img/profile/user.png" alt="">
                                     </div>
                                     <br>
-                                    <button class="ticker-btn" style="width:auto">
+                                    <button class="ticker-btn" style="width:auto" value="<?php echo $rs['requester_name']?>" onclick="call_name('<?php echo $rs['requester_name']?>')">
                                         View Profile
                                     </button>  
                                 </div>
@@ -71,7 +71,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                 <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                                <h6><strong>Budget:               </strong>RM<?php echo $rs['Budget'] ?></h6>	
+                                                <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
                                                 <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
                                                 <h6><strong>Prefered Days:        </strong><?php echo $rs['preferred_days'] ?></h6>
                                                 <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
@@ -154,5 +154,13 @@
         <?php
     // }
         
+    ?>
+        <script>
+            function call_name(nama){
+                alert(nama);
+            }
+        </script>
+    <?php
+
 
 ?>
