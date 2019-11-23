@@ -50,8 +50,9 @@ if(isset($_POST["job_level"]) AND isset($_POST["job_subject"]) AND isset($_POST[
     $email = $_POST["job_email"];
     $requirements = $_POST["job_requirements"];
     $studentID = $_SESSION['userid'];
+    $name = $_SESSION['username'];
 
-    $result = $obj->addJobListing($level,$subject,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
+    $result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
     echo $result;
 }
 
