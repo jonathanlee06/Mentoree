@@ -28,7 +28,6 @@
     </head>
   <body>
 
-    <?php session_start(); ?>
     <?php include "nav-home.php" ?>  
 
     <div class="short-banner-area relative" id="post">

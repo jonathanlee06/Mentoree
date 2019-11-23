@@ -13,17 +13,18 @@ class DBOperation
     }
 
     //add to submission database
-    public function addJobListing($subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID){
+    public function addJobListing($level,$subject,$location,$duration,$budget,$tutor_requirements,$studentID){
 
-        $pre_stmt = $this->con->prepare("INSERT INTO `mentorlistings`(`subject`, `level_of_teaching`, `location`, `budget`, `duration`,`tel`, `email`, `description`,`studentID`) 
-        VALUES (?,?,?,?,?,?,?,?,?)");
-        $pre_stmt->bind_param("sssssssss",$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID);
+        $pre_stmt = $this->con->prepare("INSERT INTO `mentorlistings`(`level`, `subject`, `location`, `tel`, `budget`, `description`, `email`) 
+        VALUES (?,?,?,?,?,?,?)");
+        $pre_stmt->bind_param("sssssss",$level, $subject,$location,$duration,$budget,$tutor_requirements,$studentID);
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){
             return "LISTING_ADDED";
         }else{
             return 0;
         }
+
     }
 }
 
