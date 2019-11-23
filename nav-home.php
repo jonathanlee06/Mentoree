@@ -42,7 +42,7 @@
                     <ul id="drop-bar">
                         <li><a href=""><?php echo $_SESSION["username"]; ?></a></li>
                         <li><a href="search.html"><?php echo $_SESSION["useremail"]; ?></a></li>
-                        <li><a href="dashboard.php">View Profile  </a></li>
+                        <li><a href="single.html">View Profile  </a></li>
                         <li><a href="index.php">Logout</a></li>
                     </ul>
                 </li>

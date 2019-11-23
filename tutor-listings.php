@@ -55,48 +55,55 @@
             ?>
             <div class="single-post d-flex flex-row justify-content-start align-items-start">
                 
-                <div class="details col-lg-12">
-                    <div class="row">
-                    <!-- <div class="col-1"></div> -->
-                    <div class="col-md-3 text-center" style="padding-left:5%">
-                            <div class="thumb justify-content-between">
-                                <img src="img/profile/user.png" alt="">
-                            </div>
-                            <br>
-                            <button class="ticker-btn" style="width:auto">
-                                View Profile
-                            </button>  
-                        </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-8">
-                            <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
-                                <div class="titles">
-                                    <h4><?php echo $rs['requester_name']?></h4>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                        <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                        <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
-                                        <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
-                                        <h6><strong>Phone:                  </strong><?php echo $rs['tel'] ?></h6>
-                                        <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
-                                        <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
-                                        </div>
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-4">		
-                                            
-                                        </div>
+                        <div class="details col-lg-12">
+                            <div class="row">
+                            <!-- <div class="col-1"></div> -->
+                            <div class="col-md-3 text-center" style="padding-left:5%">
+                                    <div class="thumb justify-content-between">
+                                        <img src="img/profile/user.png" alt="">
                                     </div>
-                                    
-                                                    
+                                    <br>
+                                    <button class="ticker-btn" style="width:auto">
+                                        View Profile
+                                    </button>  
                                 </div>
-                                <ul class="btns">
-                                    <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                    <li><a href="#">Apply</a></li> -->
-                                </ul>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-8">
+                                    <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
+                                        <div class="titles">
+                                            <h4><?php echo $rs['requester_name']?></h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
+                                                <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
+                                                <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
+                                                <h6><strong>Phone:                  </strong><?php echo $rs['tel'] ?></h6>
+                                                <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
+                                                <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
+                                                </div>
+                                                <div class="col-md-2"></div>
+                                                <div class="col-md-4">		
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                                          
+                                        </div>
+                                        <ul class="btns">
+                                            <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                            <li><a href="#">Apply</a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
+                                
+                            
+                            
+                            
+                            <!-- <h5>Job Nature: Full time</h5>
+                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p> -->
                         </div>
-                    </div>
-                </div>
                 
                 
             </div>
@@ -153,4 +160,6 @@
 
     
     // }
+        
+    exit();
 ?>
