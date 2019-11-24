@@ -70,8 +70,38 @@ class User
             }
         }
     }
-}   
 
+    public function editUserProfile($username,$email,$phone,$description,$location,$course,$userID){
+        //to protect your application from sql attack you can use prepare statement
+        $stmt = $this->con->prepare("UPDATE `users` SET `username`= ?,`email`= ? ,`phone`= ? ,`description`= ? ,`location`= ?
+        ,`course`= ? WHERE `id` = ? ");
+        $stmt->bind_param("ssssssi", $username,$email,$phone,$description,$location,$course,$userID);
+        $result = $stmt->execute() or die($this->con->error);
+        if($result){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    public function editTutorProfile($username,$email,$phone,$description,$location,$course,$subjects,$level,$time,$rate,$status,$tutorID){
+        
+        $stmt = $this->con->prepare("UPDATE users JOIN tutors ON users.id = tutors.tutorID
+        SET users.username= ?,users.email= ? ,users.phone= ? ,users.description = ? ,users.location = ?,users.course = ?
+        , tutors.subjects = ?, tutors.level_of_teaching = ?, tutors.time = ?, tutors.rate = ?, tutors.status = ?
+        WHERE users.id = ?");
+        $stmt->bind_param("sssssssssssi", $username,$email,$phone,$description,$location,$course,$subjects,$level,$time,$rate,$status,$tutorID);
+        $result = $stmt->execute() or die($this->con->error);
+        if($result){
+            return 1;
+        }else{
+            return 0;
+        }
+
+    }
+
+
+}  
 //$user = new User();
 //echo $user->createUserAccount("Jin","jin@gmail.com","1234","Tutor");
 //echo $user -> userlogin("bob@gmail.com", "1234");

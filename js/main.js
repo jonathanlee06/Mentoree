@@ -760,6 +760,29 @@ var DOMAIN = "http://localhost/Mentoree";
     $('#view-profile').on('click', function() {
       
     });
+
+    $('#form_edit_profile').on('submit', function() {
+        $.ajax({
+          url: 'includes/process.php',
+          type: 'POST',
+          data: $('#form_edit_profile').serialize(),
+          success: function(data){
+            alert(data);
+            //alert("SUCCESS");
+          }
+        });
+    });
+
+    $('#form_edit_profile_tutor').on('submit', function() {
+      $.ajax({
+        url: 'includes/process.php',
+        type: 'POST',
+        data: $('#form_edit_profile_tutor').serialize(),
+        success: function(data){
+          alert(data);
+        }
+      });
+  });
   
  });
 
