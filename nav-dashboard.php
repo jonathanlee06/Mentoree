@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-            <a href="index.php"><img src="img/web-logo-4.png" alt="" title="" /></a>
+            <a href="home.php"><img src="img/web-logo-4.png" alt="" title="" /></a>
             </div>
             <nav id="nav-menu-container justify-content-between">
             <ul class="nav-menu">

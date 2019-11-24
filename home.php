@@ -155,16 +155,16 @@
 								<div class="list-group">
 									<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 									<div class="list-group-item">
-										<label><input type="checkbox" name="selector" class="location" value="Glenmarie"  > Glenmarie</label>
+										<label><input type="checkbox" name="selector" class="location" value="UOW Malaysia KDU Utropolis, Glenmarie"  > Glenmarie</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="checkbox" name="selector" class="location" value="Damansara Jaya"  > Damansara Jaya</label>
+										<label><input type="checkbox" name="selector" class="location" value="UOW Malaysia KDU College Damansara Jaya"  > Damansara Jaya</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="checkbox" name="selector" class="location" value="Batu Kawan"  > Batu Kawan</label>
+										<label><input type="checkbox" name="selector" class="location" value="UOW Malaysia KDU Batu Kawan, Penang"  > Batu Kawan, Penang</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="checkbox" name="selector" class="location" value="Penang"  > Penang</label>
+										<label><input type="checkbox" name="selector" class="location" value="UOW Malaysia KDU Georgetown, Penang"  > Goergetown, Penang</label>
 									</div>
 									</div>
 								</div>
@@ -179,7 +179,7 @@
 										<label><input type="checkbox" name="selector" class="level" value="Diploma"  > Diploma</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="checkbox" name="selector" class="level" value="University"  > Degree</label>
+										<label><input type="checkbox" name="selector" class="level" value="Degree"  > Degree</label>
 									</div>
 									<div class="list-group-item">
 										<label><input type="checkbox" name="selector" class="level" value="Master"  > Master</label>
@@ -232,7 +232,6 @@
                         },
                         success: function(data){
                             alert(data);
-                            alert("Liked")
                         }
                     });
                 }

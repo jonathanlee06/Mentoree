@@ -41,11 +41,25 @@ class DBOperation
     }
 
     //add to submission database
-    public function addFavoriteListing($postid,$userid){
+    public function addFavoriteStudentListing($jobid,$userid){
 
-        $pre_stmt = $this->con->prepare("INSERT INTO `favorite`(`postID`,`userID`) 
+        $pre_stmt = $this->con->prepare("INSERT INTO `favorite`(`jobID`,`userID`) 
         VALUES (?,?)");
-        $pre_stmt->bind_param("ss",$postid,$userid);
+        $pre_stmt->bind_param("ss",$jobid,$userid);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "FAVORITE_ADDED";
+        }else{
+            return 0;
+        }
+    }
+
+    //add to submission database
+    public function addFavoriteTutorListing($profileid,$userid){
+
+        $pre_stmt = $this->con->prepare("INSERT INTO `favorite`(`profileID`,`userID`) 
+        VALUES (?,?)");
+        $pre_stmt->bind_param("ss",$profileid,$userid);
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){
             return "FAVORITE_ADDED";
@@ -83,6 +97,18 @@ class DBOperation
 
         $pre_stmt = $this->con->prepare("DELETE FROM `favorite` WHERE `postID`=? AND `userID`=?");
         $pre_stmt->bind_param("ss",$postid,$userid);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "DELETED";
+        }else{
+            return 0;
+        }
+    }
+
+    public function deleteFavoriteStudentListing($favid,$userid){
+
+        $pre_stmt = $this->con->prepare("DELETE FROM `favorite` WHERE `favID`=? AND `userID`=?");
+        $pre_stmt->bind_param("is",$favid,$userid);
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){
             return "DELETED";

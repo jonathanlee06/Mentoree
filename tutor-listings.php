@@ -19,12 +19,12 @@
         $page1 = 0;
     }
 
-    $query = "SELECT * FROM mentorlistings";
-    $query_row = "SELECT * FROM mentorlistings ";
+    $query = "SELECT * FROM tutors,users WHERE tutors.tutorID = users.id";
+    $query_row = "SELECT * FROM tutors,users WHERE tutors.tutorID = users.id";
 
     if(isset($_POST["search"])){
         if(isset($_POST["area"])){
-            $query .= " WHERE level_of_teaching LIKE '%".$_POST["search"]."%' AND location LIKE '%".$_POST["area"]."%'";
+            $query .= " AND tutors.subjects LIKE '%".$_POST["search"]."%' AND users.location LIKE '%".$_POST["area"]."%'";
         }
         
     }
@@ -41,7 +41,7 @@
     //     ";
     // }
 
-    $query .= " ORDER BY postID DESC LIMIT ".$page1. ", " .$rows_per_page.";";
+    $query .= " ORDER BY profileID DESC LIMIT ".$page1. ", " .$rows_per_page.";";
     $row_num = mysqli_query($conn, $query_row);
     $count = mysqli_num_rows($row_num);
     $num_of_rows = ceil($count/5);
@@ -63,7 +63,7 @@
                                 <img src="img/profile/user.png" alt="">
                             </div>
                             <br>
-                            <button class="ticker-btn" style="width:auto">
+                            <button class="ticker-btn" style="width:auto" onclick="view_profile('<?php echo $rs['profileID'] ?>')">
                                 View Profile
                             </button>  
                         </div>
@@ -71,13 +71,13 @@
                         <div class="col-md-9">
                             <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
-                                    <h4><?php echo $rs['requester_name']?></h4>
+                                    <h4><?php echo $rs['username']?></h4>
                                     <div class="row">
                                         <div class="col-md-6">
                                         <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                        <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
-                                        <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
-                                        <h6><strong>Phone:                  </strong><?php echo $rs['tel'] ?></h6>
+                                        <h6><strong>Budget:               </strong>RM<?php echo $rs['rate'] ?></h6>	
+                                        <h6><strong>Subject:               </strong><?php echo $rs['subjects'] ?></h6>	
+                                        <h6><strong>Phone:                  </strong><?php echo $rs['phone'] ?></h6>
                                         <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
                                         <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                         </div>
@@ -86,7 +86,7 @@
                                             
                                         </div> -->
                                         <div class="col-md-3">
-                                            <button class="btn-secondary like" name="like" id="like" onclick="like('<?php echo $rs['postID'] ?>')">
+                                            <button class="btn-secondary like" name="like" id="like" onclick="like_tutor('<?php echo $rs['profileID'] ?>')">
                                                 <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
                                             </button>
                                             
@@ -155,6 +155,20 @@
         </div>
         <?php
 
+
+        ?>
+            <div id="id05" class="modal">
+                <div class="model-content card mx-auto">
+                            
+                    <div class="card-body" id="view-profile">
+                        
+                         
+                    </div>
+
+
+                </div>
+            </div>
+        <?php
     
     ?>
     <script>
@@ -167,7 +181,33 @@
                 },
                 success: function(data){
                     alert(data);
-                    alert("Liked")
+                }
+            });
+        }
+
+        function like_tutor(profileID){
+            $.ajax({
+                url: 'includes/process.php',
+                type: 'POST',
+                data: {
+                    'profileid':profileID
+                },
+                success: function(data){
+                    alert(data);
+                }
+            });
+        }
+
+        function view_profile(profileID){
+            $.ajax({
+                url: 'view-profile.php',
+                type: 'POST',
+                data: {
+                    'profileid':profileID
+                },
+                success: function(data){
+                    $('#view-profile').html(data);
+                    document.getElementById('id05').style.display='block';
                 }
             });
         }

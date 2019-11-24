@@ -101,20 +101,30 @@ if(isset($_POST["edit_t_username"]) AND isset($_POST["edit_t_location"]) AND iss
 if(isset($_POST["postid"])){
     $obj = new DBOperation();
 
-    $postid = $_POST["postid"];
+    $jobid = $_POST["postid"];
     $userid = $_SESSION['userid'];
 
-    $result = $obj->addFavoriteListing($postid,$userid);
+    $result = $obj->addFavoriteStudentListing($jobid,$userid);
+    echo $result;
+}
+
+if(isset($_POST["profileid"])){
+    $obj = new DBOperation();
+
+    $profileid = $_POST["profileid"];
+    $userid = $_SESSION['userid'];
+
+    $result = $obj->addFavoriteTutorListing($profileid,$userid);
     echo $result;
 }
 
 if(isset($_POST["like-postid"]) AND isset($_POST["like-userid"])){
     $obj = new DBOperation();
 
-    $postid = $_POST["like-postid"];
+    $favid = $_POST["like-postid"];
     $userid = $_POST["like-userid"];
 
-    $result = $obj->deleteFavoriteListing($postid,$userid);
+    $result = $obj->deleteFavoriteStudentListing($favid,$userid);
     echo $result;
 }
 

@@ -58,10 +58,10 @@
                                     <div class="default-select" id="default-selects">
                                         <select class="nice-select" name="area" id="area">
                                             <option value="" selected hidden disabled style="font-weight:bold">Select Area</option>
-                                            <option value="Glenmarie">Glenmarie</option>
-                                            <option value="Damansara Jaya">Damansara Jaya</option>
-                                            <option value="Penang">Penang</option>
-                                            <option value="Batu Kawan">Batu Kawan</option>
+                                            <option value="UOW Malaysia KDU Utropolis, Glenmarie">Glenmarie</option>
+                                            <option value="UOW Malaysia KDU College Damansara Jaya">Damansara Jaya</option>
+                                            <option value="UOW Malaysia KDU Batu Kawan, Penang">Batu Kawan, Penang</option>
+                                            <option value="UOW Malaysia KDU Georgetown, Penang">Georgetown, Penang</option> 
                                         </select>
                                     </div>
                                     <small id="a_error" class="form-text text-muted text-center"></small>

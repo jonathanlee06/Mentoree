@@ -21,13 +21,13 @@
 
     if($_SESSION['usertype'] == 'Tutor'){
         $user = $_SESSION['userid'];
-        $query = "SELECT * FROM mentorlistings WHERE userid = ".$user." ORDER BY postID DESC;";
-        $query_row = "SELECT * FROM mentorlistings WHERE userid = ".$user."";
+        $query = "SELECT * FROM tutors,users WHERE tutors.tutorID = ".$user." AND tutors.tutorID = users.id ORDER BY profileID DESC;";
+        $query_row = "SELECT * FROM tutors WHERE tutorID = ".$user."";
     }
     else{
         $user = $_SESSION['userid'];
-        $query = "SELECT * FROM studentlistings WHERE userid = ".$user." ORDER BY postID DESC;";
-        $query_row = "SELECT * FROM studentlistings WHERE userid = ".$user."";
+        $query = "SELECT * FROM joblistings,users WHERE joblistings.studentID = ".$user." AND joblistings.studentID = users.id ORDER BY jobID DESC;";
+        $query_row = "SELECT * FROM joblistings WHERE studentID = ".$user."";
     }
 
 
@@ -50,14 +50,14 @@
                         <div class="col-md-9">
                             <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
-                                    <h4><?php echo $rs['subject']?></h4>
+                                    <h4><?php echo $rs['username']?></h4>
                                     <br>
                                     <div class="row">
                                         <?php
                                             if($_SESSION['usertype'] == 'Student'){
                                                 echo '
                                                     <div class="col-md-12">
-                                                    <h6><strong>Listed By:             </strong>'.$rs['requester_name'].'</h6><br>
+                                                    <h6><strong>Listed By:             </strong>'.$rs['username'].'</h6><br>
                                                     <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
                                                     <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
                                                     <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
@@ -69,9 +69,9 @@
                                                 echo '
                                                     <div class="col-md-12">
                                                     <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                    <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
-                                                    <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
-                                                    <h6><strong>Phone:                  </strong>'.$rs['tel'].'</h6><br>
+                                                    <h6><strong>Budget:               </strong>RM'.$rs['rate'].'</h6><br>
+                                                    <h6><strong>Subject:               </strong>'.$rs['subjects'].'</h6><br>
+                                                    <h6><strong>Phone:                  </strong>'.$rs['phone'].'</h6><br>
                                                     <h6><strong>Email:                  </strong>'.$rs['email'].'</h6><br>
                                                     <h6><strong>Level of Teaching:      </strong>'.$rs['level_of_teaching'].'</h6>
                                                     </div>
@@ -89,6 +89,15 @@
                                 </div>
                             </div>
                         </div>
+
+                        <?php
+                            if($_SESSION['usertype'] == 'Student'){
+                                echo '
+                                
+                                ';
+                            }
+                        ?>
+
                         <div class="col-md-3">
                                 
                                 <button class="ticker-btn-red" onclick="document.getElementById('id03').style.display='block';">Delete Listing</button>
