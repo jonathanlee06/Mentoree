@@ -29,7 +29,7 @@
             .side {
                 position: fixed;
                 width: 300px;
-                z-index: 997;
+                z-index: 1;
                 margin-top: 8%;
             }
 
@@ -75,7 +75,12 @@
 
         <!-- <button onclick="document.getElementById('form_login').style.display='block'" style="width:auto;">Login</button> -->
         
-        <?php session_start(); ?>
+        <?php session_start(); 
+        
+            if(!isset($_SESSION['username'])){
+                header("Location: index.php");
+            }	
+        ?>
 
         <?php include "nav-dashboard.php"; ?>
 

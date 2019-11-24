@@ -3,6 +3,7 @@ $(document).ready(function(){
   $('#nav-home').attr('style','color:white;');
   $('#nav-home a').attr('style','color:white;');
   $('#drop-bar a').attr('style','color:black;');
+  $('.post-list').show();
   $("#message").hide();
   $("#form-tutor-post").show();
 
@@ -279,6 +280,7 @@ $(document).ready(function(){
 var loginModal = document.getElementById('id01');
 var registerModal = document.getElementById('id02');
 var infoModal = document.getElementById('id02-1');
+var deleteModal = document.getElementById('id03');
 var userTypeModal = document.getElementById('id02-2');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -297,6 +299,10 @@ window.onclick = function(event) {
     }
     else if (event.target == userTypeModal) {
       userTypeModal.style.display = "none";
+      document.body.style.overflow = '';
+    }
+    else if (event.target == deleteModal) {
+      deleteModal.style.display = "none";
       document.body.style.overflow = '';
     }
 }
@@ -501,7 +507,7 @@ var DOMAIN = "http://localhost/Mentoree";
               }else{
                 // alert(data)
                 document.getElementById('id02').style.display='none'; 
-                document.getElementById('id02-1').style.display='block';
+                document.getElementById('id01-1').style.display='block';
                 // test your git
               }
             }
@@ -552,9 +558,10 @@ var DOMAIN = "http://localhost/Mentoree";
           method : "POST",
           data : $("#form-student-post").serialize(),
           success : function(data){
-            $("#form-student-post").hide();
-            $("#message").show();
-            countDown();
+            alert(data);
+            // $("#form-student-post").hide();
+            // $("#message").show();
+            // countDown();
           }
         })
       }
@@ -568,16 +575,18 @@ var DOMAIN = "http://localhost/Mentoree";
         // var action = 'fetch_data';
         // var minimum_price = $('#hidden_minimum_price').val();
         // var maximum_price = $('#hidden_maximum_price').val();
-        // var brand = get_filter('brand');
-        var ram = get_filter('brand');
+        var level = get_filter('level');
+        var ram = get_filter('location');
         console.log(ram);
         // var storage = get_filter('storage');
         $.ajax({
-            url:"tutor-listings.php",
+            url:"filter-tutor-listings.php",
             method:"POST",
-            data:{ram:ram},
+            data:{ram:ram,level:level},
             success:function(data){
-                $('.post-list').html(data);
+              $('.post-list').hide();
+              $('.filter').show();
+              $('.filter').html(data);
                 
             }
         });
@@ -585,9 +594,9 @@ var DOMAIN = "http://localhost/Mentoree";
 
     function get_filter(class_name)
     {
-        var filter = "";
+        var filter = [];
         $('.'+class_name+':checked').each(function(){
-            filter = ($(this).val());
+            filter.push($(this).val());
         });
         return filter;
     }
@@ -599,6 +608,14 @@ var DOMAIN = "http://localhost/Mentoree";
         }
 
         
+    });
+
+    $("input[type=checkbox]").click(function(){
+      
+        filter_data();
+      
+
+      
     });
 
 

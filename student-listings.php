@@ -52,55 +52,61 @@
             ?>
             <div class="single-post d-flex flex-row justify-content-start align-items-start">
                 
-                        <div class="details col-md-12">
-                            <div class="row">
-                            <div class="col-md-3 text-center">
-                                    <div class="thumb justify-content-between">
-                                        <img src="img/profile/user.png" alt="">
-                                    </div>
-                                    <br>
-                                    <button class="ticker-btn" style="width:auto" value="<?php echo $rs['requester_name']?>" onclick="call_name('<?php echo $rs['requester_name']?>')">
-                                        View Profile
-                                    </button>  
-                                </div>
-                                <div class="col-md-1"></div>
-                                <div class="col-md-8">
-                                    <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
-                                        <div class="titles">
-                                            <h4><?php echo $rs['requester_name']?></h4>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                                <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
-                                                <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
-                                                <h6><strong>Prefered Days:        </strong><?php echo $rs['preferred_days'] ?></h6>
-                                                <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
-                                                </div>
-                                                
-                                                <div class="col-md-4">		
-                                                    <h6><strong>Description:    </strong><?php echo $rs['description'] ?></h6>	
-                                                </div>
-                                            </div>
-                                            
-                                                          
-                                        </div>
-                                        <ul class="btns">
-                                            <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="#">Apply</a></li> -->
-                                        </ul>
-                                    </div>
-                                </div>
+                <div class="details col-md-12">
+                    <div class="row">
+                    <div class="col-md-3 text-center">
+                            <div class="thumb justify-content-between">
+                                <img src="img/profile/user.png" alt="">
                             </div>
-                                
-                            
-                            
-                            
-                            <!-- <h5>Job Nature: Full time</h5>
-                            <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-                            <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p> -->
+                            <br>
+                            <button class="ticker-btn" style="width:auto" value="<?php echo $rs['requester_name']?>" onclick="call_name('<?php echo $rs['requester_name']?>')">
+                                View Profile
+                            </button>  
                         </div>
-                
-                
+                        <div class="col-md-9">
+                            <div class="title justify-content-between" style="cursor: pointer">
+                                <div class="titles">
+                                    <h4><?php echo $rs['requester_name']?></h4>
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                        <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
+                                        <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
+                                        <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
+                                        <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
+                                        <h6><strong>Description:    </strong><?php echo $rs['description'] ?></h6>	
+                                        </div>
+                                        <!-- <div class="col-md-2"></div> -->
+                                        <!-- <div class="col-md-4">		
+                                            
+                                        </div> -->
+                                        <div class="col-md-3">
+                                            <button class="btn-secondary like" name="like" id="like" onclick="like('<?php echo $rs['postID'] ?>')">
+                                                <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
+                                            </button>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                                
+                                </div>
+                                <ul class="btns">
+                                    <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                    <li><a href="#">Apply</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
+                    
+                    
+                    <!-- <h5>Job Nature: Full time</h5>
+                    <p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
+                    <p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p> -->
+                </div>
+    
+    
             </div>
             <?php
             // echo $rs['id'].' -> '.$rs['first_name'].'<br>';

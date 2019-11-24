@@ -36,7 +36,7 @@ class DBOperation
         if($result){
             return "LISTING_ADDED";
         }else{
-            return 0;
+            return "Noob";
         }
     }
 
@@ -49,6 +49,43 @@ class DBOperation
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){
             return "FAVORITE_ADDED";
+        }else{
+            return 0;
+        }
+    }
+
+    //delete listing from database
+    public function deleteStudentListing($postid,$userid){
+
+        $pre_stmt = $this->con->prepare("DELETE FROM `studentlistings` WHERE `postID`=?");
+        $pre_stmt->bind_param("i",$postid);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "DELETED";
+        }else{
+            return 0;
+        }
+    }
+
+    public function deleteTutorListing($postid,$userid){
+
+        $pre_stmt = $this->con->prepare("DELETE FROM `mentorlistings` WHERE `postID`=?");
+        $pre_stmt->bind_param("i",$postid);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "DELETED";
+        }else{
+            return 0;
+        }
+    }
+
+    public function deleteFavoriteListing($postid,$userid){
+
+        $pre_stmt = $this->con->prepare("DELETE FROM `favorite` WHERE `postID`=? AND `userID`=?");
+        $pre_stmt->bind_param("ss",$postid,$userid);
+        $result = $pre_stmt->execute() or die($this->con->error);
+        if($result){
+            return "DELETED";
         }else{
             return 0;
         }

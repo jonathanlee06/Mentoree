@@ -31,6 +31,23 @@
     <?php session_start(); ?>
     <?php include "nav-home.php" ?>  
 
+    <?php
+        $conn = mysqli_connect("localhost", "root", "", "mentoree");
+
+        $username = $_SESSION["username"];
+
+        $query = "SELECT * FROM users ";
+        $query .= "WHERE username = 'james'";
+        
+        $run  = mysqli_query($conn, $query);
+
+        while($rs = mysqli_fetch_array($run)) {
+            $name = $rs['userType'];
+
+            return $name;
+        }
+    ?>
+
     <div class="short-banner-area relative" id="post">
       <div class="container" style="padding-top:5%">
         <div class="row d-flex align-items-center justify-content-center">
@@ -86,8 +103,8 @@
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="fullname">Subject To Learn</label>
-                  <input type="text" name = "job_subject" id="job_subject" class="form-control" placeholder="eg. Computer Architecture">
+                  <label class="font-weight-bold" for="fullname">User Type</label>
+                  <input type="text" name = "job_subject" id="job_subject" class="form-control" placeholder="eg. Computer Architecture" value="<?php echo $name; ?>">
                 </div>
               </div>
 

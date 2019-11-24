@@ -37,7 +37,6 @@
 
 			<!-- <button onclick="document.getElementById('form_login').style.display='block'" style="width:auto;">Login</button> -->
 			
-			
 
 			<?php include "nav.html"; ?>
 
@@ -80,7 +79,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<h2 class="title" style="padding-top:20%">What is Mentoree?</h2><br>
-							<p style="font-weight:500;font-size:16px;color:#939393">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sequi vitae enim atque adipisci ea distinctio minus velit mollitia iste consequuntur, quibusdam blanditiis possimus veritatis libero aspernatur repellendus magni praesentium?</p>
+							<p style="font-weight:500;font-size:16px;color:#939393">Mentoree is a platform for students of UOWMKDU to interact with each other where students facing troubles with their courses can seek help from their peers. This platform allows students to participate as a mentor or mentee, where mentors will teach the mentees the subjects they are concerned with. This portal allows students to easily find a mentor if they require one and also be a small source of income for those interested in becoming mentors.</p>
 						</div>
 						<div class="col-md-1"></div>
 						<div class="col-md-5">
@@ -180,7 +179,14 @@
 								<h1 class="mb-10 text-white">Join us today! It is free!</h1>
 								
 							</div>
-							<p style="font-weight:500;color:#939393">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+							<p style="font-weight:500;color:#939393">
+							Facing trouble with your subjects and don’t know who to go to? 
+							Having asked your lecturer multiple times and still have no idea what you’re doing?
+							Extra time on your hands and don’t want it to go to waste?
+							This portal will be your gateway to finding what you need. 
+							Just register and pick if you want to be a mentor or mentee!
+							</p>
+							
 							<button class="ticker-btn" id="ga" style="width:30%;height:15%;border-radius:35px" onclick="document.getElementById('id02').style.display='block'; document.body.style.overflow = 'hidden';"><span>Register Now</span></button>
 						</div>
 						

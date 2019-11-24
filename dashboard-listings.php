@@ -48,7 +48,7 @@
                 <div class="details col-lg-12">
                     <div class="row">
                         <div class="col-md-9">
-                            <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
+                            <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
                                     <h4><?php echo $rs['subject']?></h4>
                                     <br>
@@ -90,11 +90,30 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                                <!-- <button class="ticker-btn-red" value="<?php echo $rs['postID'] ?>">Delete Listing</button> -->
-                                <button class="btn-secondary like" name="like" id="like" onclick="like('<?php echo $rs['postID'] ?>')">
-                                    <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
-                                </button>
-                            
+                                
+                                <button class="ticker-btn-red" onclick="document.getElementById('id03').style.display='block';">Delete Listing</button>
+                                
+                                <!-- Register Confirmation -->
+                                <div id="id03" class="modal">
+                                    <div class="model-content card mx-auto">
+                                                
+                                        <div class="card-body">
+                                            
+                                            <h2 class="card-title text-center">Warning!</h2>
+                                            <h2 class="card-title text-center">Are you sure you want to delete this listing?</h2>
+                                            
+                                            <br>
+                                            <div class = "login-button text-center" >
+                                                <button href="#" class="ticker-btn-red" style="font-size:16px;border-radius:40px;width:40%; height: 50px;" onclick="delete_list('<?php echo $rs['postID'] ?>', '<?php echo $_SESSION['usertype'] ?>')">Yes</button>
+                                                <br>
+                                                <button href="#" class="ticker-btn-form" style="width:40%; height: 50px;" onclick="document.getElementById('id03').style.display='none';">Cancel</button>
+                                                <!--<span><a href='#'>&nbsp;Register</a></span>-->
+                                            </div>  
+                                        </div>
+
+
+                                    </div>
+                                </div>
                             
                         </div>
                     </div>
@@ -127,9 +146,52 @@
                     },
                     success: function(data){
                         alert(data);
-                        alert("Liked")
                     }
                 });
+            }
+
+            function delete_like(postID){
+                $.ajax({
+                    url: 'includes/process.php',
+                    type: 'POST',
+                    data: {
+                        'postid':postID
+                    },
+                    success: function(data){
+                        alert(data);
+                    }
+                });
+            }
+
+            function delete_list(postID, userType){
+
+                if(userType == "Student"){
+                    $.ajax({
+                        url: 'includes/process.php',
+                        type: 'POST',
+                        data: {
+                            'del-postid':postID
+                        },
+                        success: function(data){
+                            alert(data);
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: 'includes/process.php',
+                        type: 'POST',
+                        data: {
+                            'del-postid-tutor':postID
+                        },
+                        success: function(data){
+                            alert(data);
+                            location.reload();
+                        }
+                    });
+                }
+
+                
             }
         </script>
     <?php

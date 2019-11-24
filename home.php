@@ -27,9 +27,9 @@
 		<body>
 			<?php 
 				session_start();
-				// if(!isset($_SESSION['username'])){
-				// 	header("Location: index.php");
-				// }	
+				if(!isset($_SESSION['username'])){
+					header("Location: index.php");
+				}	
 				
 				include "nav-home.php";
 			?>
@@ -155,32 +155,34 @@
 								<div class="list-group">
 									<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Glenmarie"  > Glenmarie</label>
+										<label><input type="checkbox" name="selector" class="location" value="Glenmarie"  > Glenmarie</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Damansara Jaya"  > Damansara Jaya</label>
+										<label><input type="checkbox" name="selector" class="location" value="Damansara Jaya"  > Damansara Jaya</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Batu Kawan"  > Batu Kawan</label>
+										<label><input type="checkbox" name="selector" class="location" value="Batu Kawan"  > Batu Kawan</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Penang"  > Penang</label>
+										<label><input type="checkbox" name="selector" class="location" value="Penang"  > Penang</label>
 									</div>
 									</div>
 								</div>
+								<br>
+								<h4>Filter by Level</h4>
 								<div class="list-group">
-									<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+								<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Glenmarie"  > Glenmarie</label>
+										<label><input type="checkbox" name="selector" class="level" value="Pre-U"  > Pre-U / Foundation</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Damansara Jaya"  > Damansara Jaya</label>
+										<label><input type="checkbox" name="selector" class="level" value="Diploma"  > Diploma</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Batu Kawan"  > Batu Kawan</label>
+										<label><input type="checkbox" name="selector" class="level" value="University"  > Degree</label>
 									</div>
 									<div class="list-group-item">
-										<label><input type="radio" name="selector" class="brand" value="Penang"  > Penang</label>
+										<label><input type="checkbox" name="selector" class="level" value="Master"  > Master</label>
 									</div>
 									</div>
 								</div>
@@ -206,6 +208,11 @@
 						?>
 
 						</div>
+						<div class="col-lg-9 post-list filter">
+							
+						
+
+						</div>
 						
 					</div>
 				</div>	
@@ -215,7 +222,21 @@
 			<!-- start footer Area -->		
 			<?php include "footer.html"; ?>
 			<!-- End footer Area -->		
-
+			<script>
+                function like(postID){
+                    $.ajax({
+                        url: 'includes/process.php',
+                        type: 'POST',
+                        data: {
+                            'postid':postID
+                        },
+                        success: function(data){
+                            alert(data);
+                            alert("Liked")
+                        }
+                    });
+                }
+            </script>  
 			
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			

@@ -48,7 +48,7 @@
                 <div class="details col-lg-12">
                     <div class="row">
                         <div class="col-md-9">
-                            <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
+                            <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
                                     <h4><?php echo $rs['requester_name']?></h4>
                                     <br>
@@ -72,10 +72,29 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <button class="ticker-btn-red" value="<?php echo $rs['id'] ?>">Delete Listing</button>
-                            <button type="submit" class="btn-secondary like" id="like" value="<?php echo $rs['id'] ?>">
-                                <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
-                            </button>
+                            <button class="ticker-btn-red" onclick="document.getElementById('id04').style.display='block';">Remove Favorite</button>
+
+                            <!-- Register Confirmation -->
+                            <div id="id04" class="modal">
+                                    <div class="model-content card mx-auto">
+                                                
+                                        <div class="card-body">
+                                            
+                                            <h2 class="card-title text-center">Warning!</h2>
+                                            <h2 class="card-title text-center">Are you sure you want to remove this favorite listing?</h2>
+                                            
+                                            <br>
+                                            <div class = "login-button text-center" >
+                                                <button href="#" class="ticker-btn-red" style="font-size:16px;border-radius:40px;width:40%; height: 50px;" onclick="delete_like('<?php echo $rs['postID'] ?>', '<?php echo $_SESSION['userid'] ?>')">Yes</button>
+                                                <br>
+                                                <button href="#" class="ticker-btn-form" style="width:40%; height: 50px;" onclick="document.getElementById('id04').style.display='none';">Cancel</button>
+                                                <!--<span><a href='#'>&nbsp;Register</a></span>-->
+                                            </div>  
+                                        </div>
+
+
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -128,11 +147,28 @@
                 ?>
             </ul>
         </div> -->
+        <script>
+            function delete_like(postID,userID){
+                $.ajax({
+                    url: 'includes/process.php',
+                    type: 'POST',
+                    data: {
+                        'like-postid':postID,
+                        'like-userid':userID
+                    },
+                    success: function(data){
+                        alert(data);
+                    }
+                });
+            }
+        </script>
+
+            
         <?php
 
     
 
-
+                  
     
     // }
 ?>

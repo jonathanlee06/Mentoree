@@ -31,15 +31,15 @@
 
     // echo $_POST["ram"];
 
-    if(isset($_POST["ram"]))
-    {   
-        // echo $_POST["ram"];
-        // $ram_filter = implode("','", $_POST["ram"]);
-        $ram_filter = $_POST["ram"];
-        $query .= "
-        WHERE location IN('".$ram_filter."')
-        ";
-    }
+    // if(isset($_POST["ram"]))
+    // {   
+    //     // echo $_POST["ram"];
+    //     $ram_filter = implode("','", $_POST["ram"]);
+    //     // $ram_filter = $_POST["ram"];
+    //     $query .= "
+    //     WHERE location IN('".$ram_filter."')
+    //     ";
+    // }
 
     $query .= " ORDER BY postID DESC LIMIT ".$page1. ", " .$rows_per_page.";";
     $row_num = mysqli_query($conn, $query_row);
@@ -57,8 +57,8 @@
                 
                 <div class="details col-lg-12">
                     <div class="row">
-                    <!-- <div class="col-1"></div> -->
-                    <div class="col-md-3 text-center" style="padding-left:5%">
+                        <!-- <div class="col-1"></div> -->
+                        <div class="col-md-3 text-center" style="padding-left:2%;padding-right:2%">
                             <div class="thumb justify-content-between">
                                 <img src="img/profile/user.png" alt="">
                             </div>
@@ -67,9 +67,9 @@
                                 View Profile
                             </button>  
                         </div>
-                        <div class="col-md-1"></div>
-                        <div class="col-md-8">
-                            <div class="title justify-content-between" onclick="location.href='single.html';" style="cursor: pointer">
+                        <!-- <div class="col-md-1"></div> -->
+                        <div class="col-md-9">
+                            <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
                                     <h4><?php echo $rs['requester_name']?></h4>
                                     <div class="row">
@@ -81,8 +81,15 @@
                                         <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
                                         <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                         </div>
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-4">		
+                                        <div class="col-md-3"></div>
+                                        <!-- <div class="col-md-4">		
+                                            
+                                        </div> -->
+                                        <div class="col-md-3">
+                                            <button class="btn-secondary like" name="like" id="like" onclick="like('<?php echo $rs['postID'] ?>')">
+                                                <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
+                                            </button>
+                                            
                                             
                                         </div>
                                     </div>
@@ -149,7 +156,23 @@
         <?php
 
     
-
+    ?>
+    <script>
+        function like(postID){
+            $.ajax({
+                url: 'includes/process.php',
+                type: 'POST',
+                data: {
+                    'postid':postID
+                },
+                success: function(data){
+                    alert(data);
+                    alert("Liked")
+                }
+            });
+        }
+    </script>
+    <?php
 
     
     // }
