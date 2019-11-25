@@ -59,7 +59,7 @@
                                 <img src="img/profile/user.png" alt="">
                             </div>
                             <br>
-                            <button class="ticker-btn" style="width:auto" value="<?php echo $rs['username']?>" onclick="call_name('<?php echo $rs['username']?>')">
+                            <button class="ticker-btn" style="width:auto" value="<?php echo $rs['username']?>" onclick="view_profile('<?php echo $rs['jobID']?>')">
                                 View Profile
                             </button>  
                         </div>
@@ -73,7 +73,7 @@
                                         <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
                                         <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
                                         <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
-                                        <h6><strong>Description:    </strong><?php echo $rs['description'] ?></h6>	
+                                        <h6><strong>Description:    </strong><?php echo $rs['job_description'] ?></h6>	
                                         </div>
                                         <!-- <div class="col-md-2"></div> -->
                                         <!-- <div class="col-md-4">		
@@ -159,6 +159,20 @@
         </div>
         <?php
     // }
+
+    ?>
+            <div id="id05" class="modal">
+                <div class="model-content card mx-auto" style="margin-top:1%; margin-bottom:0; padding-top:0">
+                            
+                    <div class="card-body" id="view-profile">
+                        
+                         
+                    </div>
+
+
+                </div>
+            </div>
+        <?php
         
     ?>
         <script>
@@ -167,17 +181,31 @@
             }
 
             function like(postID){
-            $.ajax({
-                url: 'includes/process.php',
-                type: 'POST',
-                data: {
-                    'postid':postID
-                },
-                success: function(data){
-                    alert(data);
-                }
-            });
-        }
+                $.ajax({
+                    url: 'includes/process.php',
+                    type: 'POST',
+                    data: {
+                        'postid':postID
+                    },
+                    success: function(data){
+                        alert(data);
+                    }
+                });
+            }
+
+            function view_profile(jobID){
+                $.ajax({
+                    url: 'view-profile.php',
+                    type: 'POST',
+                    data: {
+                        'jobid':jobID
+                    },
+                    success: function(data){
+                        $('#view-profile').html(data);
+                        document.getElementById('id05').style.display='block';
+                    }
+                });
+            }
         </script>
     <?php
 ?>

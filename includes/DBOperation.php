@@ -27,11 +27,11 @@ class DBOperation
     }
 
     //add to submission database
-    public function addStudentListing($name,$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID){
+    public function addStudentListing($subject,$level,$budget,$frequency,$duration,$description,$studentID){
 
-        $pre_stmt = $this->con->prepare("INSERT INTO `studentlistings`(`requester_name`,`subject`, `level_of_teaching`, `location`, `budget`, `duration`,`tel`, `email`, `description`,`userid`) 
-        VALUES (?,?,?,?,?,?,?,?,?,?)");
-        $pre_stmt->bind_param("ssssssssss",$name,$subject,$level,$location,$budget,$duration,$tel,$email,$description,$studentID);
+        $pre_stmt = $this->con->prepare("INSERT INTO `joblistings`(`subject`,`level_of_teaching`, `budget`, `frequency`, `duration`, `description`,`studentID`) 
+        VALUES (?,?,?,?,?,?,?)");
+        $pre_stmt->bind_param("ssssssi",$subject,$level,$budget,$frequency,$duration,$description,$studentID);
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){
             return "LISTING_ADDED";
@@ -71,7 +71,7 @@ class DBOperation
     //delete listing from database
     public function deleteStudentListing($postid,$userid){
 
-        $pre_stmt = $this->con->prepare("DELETE FROM `studentlistings` WHERE `postID`=?");
+        $pre_stmt = $this->con->prepare("DELETE FROM `joblistings` WHERE `jobID`=?");
         $pre_stmt->bind_param("i",$postid);
         $result = $pre_stmt->execute() or die($this->con->error);
         if($result){

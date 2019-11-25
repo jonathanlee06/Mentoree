@@ -37,22 +37,19 @@ if(isset($_POST["log_email"]) AND isset($_POST["log_password"])){
 }
 
 //job listing processing
-if(isset($_POST["job_level"]) AND isset($_POST["job_subject"]) AND isset($_POST["job_campus"])){
+if(isset($_POST["job_level"]) AND isset($_POST["job_subject"]) AND isset($_POST["job_budget"])){
 
     $obj = new DBOperation();
 
     $level = $_POST["job_level"];
     $subject = $_POST["job_subject"];
-    $location = $_POST["job_campus"];
     $budget = $_POST["job_budget"];
     $duration = $_POST["job_duration"];
-    $phone = $_POST["job_phone"];
-    $email = $_POST["job_email"];
-    $requirements = $_POST["job_requirements"];
+    $frequency = $_POST["job_freq"];
+    $description = $_POST["job_requirements"];
     $studentID = $_SESSION['userid'];
-    $name = $_SESSION['username'];
 
-    $result = $obj->addStudentListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
+    $result = $obj->addStudentListing($subject,$level,$budget,$frequency,$duration,$description,$studentID);
     //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
     echo $result;
 }
@@ -85,14 +82,43 @@ if(isset($_POST["edit_t_username"]) AND isset($_POST["edit_t_location"]) AND iss
     $description = $_POST["edit_t_description"];
     $location = $_POST["edit_t_location"];
     $course = $_POST["edit_t_course"];
-    $subject = $_POST["edit_t_subject"];
-    $level = $_POST["edit_t_level"];
-    $time = $_POST["edit_t_time"];
-    $rate = $_POST["edit_t_rate"];
-    $status = $_POST["edit_t_status"];
     $tutorID = $_SESSION['userid'];
 
-    $result = $obj->editTutorProfile($username,$email,$phone,$description,$location,$course,$subject,$level,$time,$rate,$status,$tutorID);
+    $result = $obj->editTutorProfile($username,$email,$phone,$description,$location,$course,$tutorID);
+
+    //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
+    echo $result;
+}
+
+if(isset($_POST["edit_t_time"]) AND isset($_POST["edit_t_subject"]) AND isset($_POST["edit_t_rate"])){
+
+    $obj = new User();
+
+    $level = $_POST["edit_t_level"];
+    $time = $_POST["edit_t_time"];
+    $subject = $_POST["edit_t_subject"];
+    $rate = $_POST["edit_t_rate"];
+    $status = $_POST["edit_t_status"];
+    $tutorID = $_SESSION["userid"];
+
+    $result = $obj->editTutorProfile($username,$email,$phone,$description,$location,$course,$tutorID);
+
+    //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
+    echo $result;
+}
+
+if(isset($_POST["add_t_time"]) AND isset($_POST["add_t_subject"]) AND isset($_POST["add_t_rate"])){
+
+    $obj = new User();
+
+    $level = $_POST["add_t_level"];
+    $time = $_POST["add_t_time"];
+    $subject = $_POST["add_t_subject"];
+    $rate = $_POST["add_t_rate"];
+    $status = $_POST["add_t_status"];
+    $tutorID = $_SESSION["userid"];
+
+    $result = $obj->addTutorProfile($level,$time,$subject,$rate,$status,$tutorID);
 
     //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
     echo $result;
@@ -131,7 +157,7 @@ if(isset($_POST["like-postid"]) AND isset($_POST["like-userid"])){
 if(isset($_POST["del-postid"])){
     $obj = new DBOperation();
 
-    $postid = $_POST["postid"];
+    $postid = $_POST["del-postid"];
     $userid = $_SESSION['userid'];
 
     $result = $obj->deleteStudentListing($postid,$userid);

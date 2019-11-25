@@ -47,7 +47,7 @@
             <div class="row d-flex align-items-center justify-content-center" style="padding-top:5%">
             <div class="about-content col-lg-12">
                 <h1 class="title">
-                Search Student				
+                Search Job				
                 </h1>
                 <div class="col-md-12">
                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -55,7 +55,7 @@
                         <form class="serach-form-area" id="search-student" method="POST" onsubmit="return false">
                             <div class="row justify-content-center form-wrap">
                                 <div class="col-lg-6 form-cols">
-                                    <input type="text" class="form-control" name="search" id="search" placeholder="what are you looking for student?">
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="Search by Subject">
                                     <small id="s_error" class="form-text text-muted text-center"></small>
                                 </div>
                                 <div class="col-lg-4 form-cols">

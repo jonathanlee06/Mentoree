@@ -62,7 +62,7 @@
                                                     <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
                                                     <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
                                                     <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
-                                                    <h6><strong>Description:                  </strong>'.$rs['description'].'</h6>
+                                                    <h6><strong>Description:                  </strong>'.$rs['job_description'].'</h6>
                                                     </div>
                                                 ';
                                             }

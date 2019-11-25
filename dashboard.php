@@ -103,17 +103,34 @@
                             <div class="details col-lg-12">
                                 <div class="row">
                                 <!-- <div class="col-1"></div> -->
-                                <div class="col-md-12 text-center" style="padding-left:5%">
-                                        <div class="thumb text-center">
+                                <div class="col-md-12" style="padding-left:5%">
+                                        <div class="thumb">
                                             <img src="img/profile/user.png" alt="">
                                         </div>
                                         <br>
-                                        <h3><?php echo $_SESSION['username'] ?></h3>
+                                        <h3 style="text-transform:uppercase"><?php echo $_SESSION['username'] ?></h3>
+                                        <p style="color:black; font-weight:500"><?php echo $_SESSION['usertype'] ?></p>
+                                        <p style="color:black; font-weight:400">Email:&nbsp;<?php echo $_SESSION['useremail'] ?></p>
+                                        <p style="color:black; font-weight:400"><?php echo $_SESSION['userphone'] ?></p>
+                                        <p style="color:black; font-weight:400"><?php echo $_SESSION['userarea'] ?></p>
+                                        <?php
+                                            if($_SESSION['usertype'] == "Student"){
+                                                ?>
+                                                    <button class="ticker-btn" style="width:auto" onclick="window.location.href='edit-student-profile.php'">
+                                                        Edit Profile
+                                                    </button> 
+                                                <?php
+                                            }
+                                            else{
+                                                ?>
+                                                    <button class="ticker-btn" style="width:auto" onclick="window.location.href='edit-tutor-profile.php'">
+                                                        Edit Profile
+                                                    </button> 
+                                                <?php
+                                            }
+                                        ?>
                                         
-                                        <p><?php echo $_SESSION['useremail'] ?></p>
-                                        <button class="ticker-btn" style="width:auto">
-                                            Edit Profile
-                                        </button>  
+                                         
                                     </div>
                                 </div>
                             </div>

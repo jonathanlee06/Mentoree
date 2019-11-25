@@ -35,7 +35,7 @@
 			?>
 			<!-- Start tab Area -->
 			<section class="short-banner-area relative" id="fa">
-			<div class="container about-content">
+			<div class="container about-content" style="padding-bottom:2%">
 					<div class="row">
 						<div class="col-md-12" style="padding-top:5%; padding-bottom:5%">
 							<?php
@@ -73,13 +73,13 @@
 									</div>';
 									}
 									else{
-										echo '<h1 class="title text-center">Search Student</h1>';
+										echo '<h1 class="title text-center">Search Job</h1>';
 										echo '<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 										<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 										<form action="search-student.php" class="serach-form-area" id="search-tutor" method="POST">
 											<div class="row justify-content-center form-wrap">
 												<div class="col-lg-6 form-cols">
-													<input type="text" class="form-control" name="search" id="search" placeholder="what are you looking for student?">
+													<input type="text" class="form-control" name="search" id="search" placeholder="Search by Subject">
 													<small id="s_error" class="form-text text-muted text-center"></small>
 												</div>
 												<div class="col-lg-4 form-cols">

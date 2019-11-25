@@ -46,7 +46,7 @@ class User
 
     //return 1 if email&password is matched 
     public function userLogin($email,$password){
-        $pre_stmt = $this->con->prepare("SELECT id,username,password,userType FROM users WHERE email = ?");
+        $pre_stmt = $this->con->prepare("SELECT id,username,password,userType,location,phone FROM users WHERE email = ?");
         $pre_stmt->bind_param("s",$email);
         $pre_stmt->execute() or die($this->con->error);
         $result = $pre_stmt->get_result();
@@ -60,6 +60,8 @@ class User
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["useremail"] = $email;
                 $_SESSION["usertype"] = $row["userType"];
+                $_SESSION["userphone"] = $row["phone"];
+                $_SESSION["userarea"] = $row["location"];
                 if($result){
                     return 1;
                 }else{
@@ -78,22 +80,32 @@ class User
         $stmt->bind_param("ssssssi", $username,$email,$phone,$description,$location,$course,$userID);
         $result = $stmt->execute() or die($this->con->error);
         if($result){
-            return 1;
+            return "Updated";
         }else{
             return 0;
         }
     }
 
-    public function editTutorProfile($username,$email,$phone,$description,$location,$course,$subjects,$level,$time,$rate,$status,$tutorID){
+    public function editTutorProfile($username,$email,$phone,$description,$location,$course,$userID){
         
-        $stmt = $this->con->prepare("UPDATE users JOIN tutors ON users.id = tutors.tutorID
-        SET users.username= ?,users.email= ? ,users.phone= ? ,users.description = ? ,users.location = ?,users.course = ?
-        , tutors.subjects = ?, tutors.level_of_teaching = ?, tutors.time = ?, tutors.rate = ?, tutors.status = ?
-        WHERE users.id = ?");
-        $stmt->bind_param("sssssssssssi", $username,$email,$phone,$description,$location,$course,$subjects,$level,$time,$rate,$status,$tutorID);
+        $stmt = $this->con->prepare("UPDATE `users` SET `level_of_teaching`=?,`time`=?,`subjects`=?,`rate`=?,`status`=? WHERE `id` = ? ");
+        $stmt->bind_param("ssssssi", $username,$email,$phone,$description,$location,$course,$userID);
         $result = $stmt->execute() or die($this->con->error);
         if($result){
-            return 1;
+            return "Updated";
+        }else{
+            return 0;
+        }
+
+    }
+
+    public function addTutorProfile($level,$time,$subject,$rate,$status,$tutorID){
+        
+        $stmt = $this->con->prepare("INSERT INTO `tutors`(`level_of_teaching`,`time`,`subjects`,`rate`,`status`,`tutorID`) VALUES (?,?,?,?,?,?)");
+        $stmt->bind_param("sssssi", $level,$time,$subject,$rate,$status,$tutorID);
+        $result = $stmt->execute() or die($this->con->error);
+        if($result){
+            return "Added";
         }else{
             return 0;
         }

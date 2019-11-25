@@ -119,7 +119,7 @@
 								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 									<img src="img/icons/search.svg" alt="" style="width:70px;height:70px">
 									<br><br>
-									<h4>Search For Student/Job</h4>
+									<h4>Search For Tutoring Job</h4>
 									<br>
 									<p style="font-weight:500;color:#939393">Search for student listings around the area selected and subject interested</p>
 								</div>

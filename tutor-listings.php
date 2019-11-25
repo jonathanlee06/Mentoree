@@ -69,7 +69,7 @@
                         </div>
                         <!-- <div class="col-md-1"></div> -->
                         <div class="col-md-9">
-                            <div class="title justify-content-between" style="cursor: pointer">
+                            <div class="title justify-content-between">
                                 <div class="titles">
                                     <h4><?php echo $rs['username']?></h4>
                                     <div class="row">
@@ -158,7 +158,7 @@
 
         ?>
             <div id="id05" class="modal">
-                <div class="model-content card mx-auto">
+                <div class="model-content card mx-auto" style="margin-top:1%; margin-bottom:0">
                             
                     <div class="card-body" id="view-profile">
                         

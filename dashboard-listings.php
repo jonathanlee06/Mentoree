@@ -50,42 +50,40 @@
                         <div class="col-md-9">
                             <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
-                                    <h4><?php echo $rs['username']?></h4>
-                                    <br>
-                                    <div class="row">
+                                    
                                         <?php
-                                            if($_SESSION['usertype'] == 'Student'){
+                                            if($_SESSION['usertype'] == 'Tutor'){
                                                 echo '
-                                                    <div class="col-md-12">
-                                                    <h6><strong>Listed By:             </strong>'.$rs['username'].'</h6><br>
-                                                    <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                    <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
-                                                    <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
-                                                    <h6><strong>Description:                  </strong>'.$rs['description'].'</h6>
+                                                    <h4>'.$rs['username'].'</h4>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <h6><strong>Listed By:             </strong>'.$rs['username'].'</h6><br>
+                                                        <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
+                                                        <h6><strong>Budget:               </strong>RM'.$rs['rate'].'</h6><br>
+                                                        <h6><strong>Subject:               </strong>'.$rs['subjects'].'</h6><br>
+                                                        <h6><strong>Description:                  </strong>'.$rs['description'].'</h6>
+                                                        </div>
                                                     </div>
                                                 ';
                                             }
                                             else {
                                                 echo '
-                                                    <div class="col-md-12">
-                                                    <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                    <h6><strong>Budget:               </strong>RM'.$rs['rate'].'</h6><br>
-                                                    <h6><strong>Subject:               </strong>'.$rs['subjects'].'</h6><br>
-                                                    <h6><strong>Phone:                  </strong>'.$rs['phone'].'</h6><br>
-                                                    <h6><strong>Email:                  </strong>'.$rs['email'].'</h6><br>
-                                                    <h6><strong>Level of Teaching:      </strong>'.$rs['level_of_teaching'].'</h6>
+                                                    <h4>'.$rs['subject'].'</h4>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        <h6><strong>Description:                  </strong>'.$rs['job_description'].'</h6><br>
+                                                        <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
+                                                        <h6><strong>Duration:               </strong>'.$rs['duration'].'</h6><br>
+                                                        <h6><strong>Frequency:                  </strong>'.$rs['frequency'].'</h6><br>
+                                                        <h6><strong>Preferred Tutor Qualification:      </strong>'.$rs['level_of_teaching'].'</h6>
+                                                        
+                                                        </div>
                                                     </div>
                                                 ';
                                             }
-                                        ?>
-                                        
-                                        <!-- <div class="col-md-2"></div>
-                                        <div class="col-md-4">		
-                                            
-                                        </div> -->
-                                    </div>
-                                    
-                                                    
+                                        ?>                
                                 </div>
                             </div>
                         </div>
@@ -97,6 +95,8 @@
                                 ';
                             }
                         ?>
+
+                        
 
                         <div class="col-md-3">
                                 
@@ -113,7 +113,7 @@
                                             
                                             <br>
                                             <div class = "login-button text-center" >
-                                                <button href="#" class="ticker-btn-red" style="font-size:16px;border-radius:40px;width:40%; height: 50px;" onclick="delete_list('<?php echo $rs['postID'] ?>', '<?php echo $_SESSION['usertype'] ?>')">Yes</button>
+                                                <button href="#" class="ticker-btn-red" style="font-size:16px;border-radius:40px;width:40%; height: 50px;" onclick="delete_list('<?php echo $rs['jobID'] ?>', '<?php echo $_SESSION['usertype'] ?>')">Yes</button>
                                                 <br>
                                                 <button href="#" class="ticker-btn-form" style="width:40%; height: 50px;" onclick="document.getElementById('id03').style.display='none';">Cancel</button>
                                                 <!--<span><a href='#'>&nbsp;Register</a></span>-->
@@ -183,6 +183,7 @@
                         },
                         success: function(data){
                             alert(data);
+                            location.reload();
                         }
                     });
                 }

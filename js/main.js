@@ -505,9 +505,9 @@ var DOMAIN = "http://localhost/Mentoree";
                 email.addClass("border-danger");
                 $("#r_email_error").html("<span class= 'text-danger'>Email is taken by another user</span>");
               }else{
-                // alert(data)
-                document.getElementById('id02').style.display='none'; 
-                document.getElementById('id01-1').style.display='block';
+                alert(data);
+                // document.getElementById('id02').style.display='none'; 
+                // document.getElementById('id01-1').style.display='block';
                 // test your git
               }
             }
@@ -558,10 +558,9 @@ var DOMAIN = "http://localhost/Mentoree";
           method : "POST",
           data : $("#form-student-post").serialize(),
           success : function(data){
-            alert(data);
-            // $("#form-student-post").hide();
-            // $("#message").show();
-            // countDown();
+            $("#form-student-post").hide();
+            $("#message").show();
+            countDown();
           }
         })
       }
@@ -768,6 +767,7 @@ var DOMAIN = "http://localhost/Mentoree";
           data: $('#form_edit_profile').serialize(),
           success: function(data){
             alert(data);
+            window.location.href='home.php'
             //alert("SUCCESS");
           }
         });
@@ -780,9 +780,21 @@ var DOMAIN = "http://localhost/Mentoree";
         data: $('#form_edit_profile_tutor').serialize(),
         success: function(data){
           alert(data);
+          windows.location.href='home.php'
         }
       });
   });
+
+  $('#form_add_listing_tutor').on('submit', function() {
+    $.ajax({
+      url: 'includes/process.php',
+      type: 'POST',
+      data: $('#form_add_listing_tutor').serialize(),
+      success: function(data){
+        alert(data);
+      }
+    });
+});
   
  });
 

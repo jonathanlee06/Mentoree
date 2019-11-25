@@ -2317,6 +2317,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-has-children ul li a{
+  text-align: center;
   padding: 4px 10px !important;
   text-transform: uppercase !important;
 }
@@ -3200,6 +3201,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: rgb(1,190,196);
   background: linear-gradient(30deg, rgba(1,190,196,1) 0%, rgba(37,124,227,1) 100%);
   box-shadow: 0px 3px 15px rgba(0, 0, 0, .3);
+  transform: translateY(-3px);
 }
 
 .works-nav-tabs .nav-link.disabled {

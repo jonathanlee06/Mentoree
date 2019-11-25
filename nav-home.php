@@ -19,7 +19,7 @@
                             echo '<li><a href="new-post-student.php" id="nav-home">Post Listing</a></li>';
                         }
                         else{
-                            echo '<li><a href="new-post-tutor.php" id="nav-home">Post Listing</a></li>';
+                            echo '<li><a href="new-post-tutor.php" id="nav-home">Edit Listing</a></li>';
                         }
                     }
                     else {
@@ -39,11 +39,11 @@
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                         <img src="img/man.png" class="rounded-circle">
                     <!-- </a> -->
-                    <ul id="drop-bar">
-                        <li><a href=""><?php echo $_SESSION["username"]; ?></a></li>
-                        <li><a href="search.html"><?php echo $_SESSION["useremail"]; ?></a></li>
+                    <ul id="drop-bar" style="right:0; left:auto">
+                        <li><a><?php echo $_SESSION["username"]; ?></a></li>
+                        <li><a><?php echo $_SESSION["useremail"]; ?></a></li>
                         <li><a href="dashboard.php">View Profile  </a></li>
-                        <li><a href="destroy.php">Logout</a></li>
+                        <li><a href="destroy.php" class="text-danger">Logout</a></li>
                     </ul>
                 </li>
                 <!-- <li><img src="img/man.png" alt=""></li>	 -->
