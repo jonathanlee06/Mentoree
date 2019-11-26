@@ -50,7 +50,7 @@
                                     <img src="img/profile/user.png" alt="">
                                 </div>
                                 <br>
-                                <button class="ticker-btn" style="width:auto">
+                                <button class="ticker-btn" style="width:auto" onclick="view_profile('<?php echo $rs['profileID']?>')">
                                     View Profile
                                 </button>  
                             </div>
@@ -218,7 +218,7 @@
     }
     
     ?>
-            <div id="id05" class="modal">
+            <div id="id07" class="modal">
                 <div class="model-content card mx-auto" style="margin-top:1%; margin-bottom:0; padding-top:0">
                             
                     <div class="card-body" id="view-profile">
@@ -268,7 +268,7 @@
                     },
                     success: function(data){
                         $('#view-profile').html(data);
-                        document.getElementById('id05').style.display='block';
+                        document.getElementById('id07').style.display='block';
                     }
                 });
             }

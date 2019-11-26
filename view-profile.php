@@ -29,8 +29,7 @@
                     </div>
                     <div class="col-md-12">
                         <p><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                        <p><strong>Budget:               </strong>RM<?php echo $rs['rate'] ?></h6>	
-                        <p><strong>Subject:               </strong><?php echo $rs['subjects'] ?></h6>	
+                        <p><strong>Rate:               </strong>RM<?php echo $rs['rate'] ?></h6>	
                         <p><strong>Phone:                  </strong><?php echo $rs['phone'] ?></h6>
                         <p><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
                         <p><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
@@ -72,11 +71,10 @@
                     </div>
                     <div class="col-md-12">
                         <p><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                        <p><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
-                        <p><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
+                        <p><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>		
                         <p><strong>Phone:                  </strong><?php echo $rs['phone'] ?></h6>
                         <p><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
-                        <p><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
+                        <p><strong>Course:      </strong><?php echo $rs['course'] ?></h6>
                         </div>
                     </div>
                 

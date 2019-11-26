@@ -23,7 +23,7 @@ class User
         }
     }
 
-    public function createUserAccount($username,$email,$password,$type){
+    public function createUserAccount($username,$email,$phone,$location,$course,$password,$type){
         //to protect your application from sql attack you can use prepare statement
         if($this->emailExists($email)){
             echo "EMAIL_ALREADY_EXISTS";
@@ -31,9 +31,9 @@ class User
             
             $pass_hash = password_hash($password,PASSWORD_BCRYPT,["cost"=>8]);
             //$date = date("Y-m-d");  
-            $pre_stmt = $this->con->prepare("INSERT INTO `users`(`username`, `email`, `password`,`userType`) 
-            VALUES (?,?,?,?)");
-            $pre_stmt->bind_param("ssss", $username,$email,$pass_hash,$type);
+            $pre_stmt = $this->con->prepare("INSERT INTO `users`(`username`, `email`, `phone`, `location`, `course`, `password`,`userType`) 
+            VALUES (?,?,?,?,?,?,?)");
+            $pre_stmt->bind_param("sssssss", $username,$email,$phone,$location,$course,$pass_hash,$type);
             $result = $pre_stmt->execute() or die($this->con->error);
             if($result){
                 return $this->con->insert_id;
@@ -86,10 +86,10 @@ class User
         }
     }
 
-    public function editTutorProfile($username,$email,$phone,$description,$location,$course,$userID){
+    public function editTutorProfile($level,$time,$subject,$rate,$status,$tutorID){
         
-        $stmt = $this->con->prepare("UPDATE `users` SET `level_of_teaching`=?,`time`=?,`subjects`=?,`rate`=?,`status`=? WHERE `id` = ? ");
-        $stmt->bind_param("ssssssi", $username,$email,$phone,$description,$location,$course,$userID);
+        $stmt = $this->con->prepare("UPDATE `tutors` SET `level_of_teaching`=?,`time`=?,`subjects`=?,`rate`=?,`status`=? WHERE `tutorID` = ? ");
+        $stmt->bind_param("sssssi", $level,$time,$subject,$rate,$status,$tutorID);
         $result = $stmt->execute() or die($this->con->error);
         if($result){
             return "Updated";

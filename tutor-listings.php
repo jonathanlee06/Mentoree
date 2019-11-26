@@ -75,10 +75,8 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                         <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                        <h6><strong>Budget:               </strong>RM<?php echo $rs['rate'] ?></h6>	
+                                        <h6><strong>Rate:               </strong>RM<?php echo $rs['rate'] ?></h6>	
                                         <h6><strong>Subject:               </strong><?php echo $rs['subjects'] ?></h6>	
-                                        <h6><strong>Phone:                  </strong><?php echo $rs['phone'] ?></h6>
-                                        <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
                                         <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                         </div>
                                         <div class="col-md-3"></div>

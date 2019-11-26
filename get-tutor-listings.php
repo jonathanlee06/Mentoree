@@ -74,6 +74,13 @@
                   
                 </div>
 
+                <!-- <div class="row form-group">
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="font-weight-bold" for="fullname">Description </label>
+                    <textarea class="single-textarea" name = "edit_t_description" id="edit_t_description" cols="30" rows="5" placeholder = "eg. I can help on..."><?php echo $rs['description'] ?></textarea>
+                  </div>
+                </div>  -->
+
                 <div class="row form-group">
                   <div class="col-md-2">
                     <button type="submit" value="Post" class="ticker-btn  py-2 px-5" style="width:200px;height:40px">Submit Changes</button>
@@ -153,6 +160,13 @@
 
                   
                 </div>
+
+                <!-- <div class="row form-group">
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="font-weight-bold" for="fullname">Description </label>
+                    <textarea class="single-textarea" name = "add_t_description" id="add_t_description" cols="30" rows="5" placeholder = "eg. I can help on..."></textarea>
+                  </div>
+                </div>  -->
 
                 <div class="row form-group">
                   <div class="col-md-2">

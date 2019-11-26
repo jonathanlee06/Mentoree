@@ -23,7 +23,7 @@ if(isset($_POST["reg_username"]) AND isset($_POST["reg_email"]) AND isset($_POST
     
     $user = new User();
 
-    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_password"], $_POST['userType']);
+    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_phone"], $_POST["reg_location"], $_POST["reg_course"], $_POST["reg_password"], $_POST['userType']);
     
     echo $result;
 
@@ -84,7 +84,7 @@ if(isset($_POST["edit_t_username"]) AND isset($_POST["edit_t_location"]) AND iss
     $course = $_POST["edit_t_course"];
     $tutorID = $_SESSION['userid'];
 
-    $result = $obj->editTutorProfile($username,$email,$phone,$description,$location,$course,$tutorID);
+    $result = $obj->editUserProfile($username,$email,$phone,$description,$location,$course,$tutorID);
 
     //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
     echo $result;
@@ -101,7 +101,7 @@ if(isset($_POST["edit_t_time"]) AND isset($_POST["edit_t_subject"]) AND isset($_
     $status = $_POST["edit_t_status"];
     $tutorID = $_SESSION["userid"];
 
-    $result = $obj->editTutorProfile($username,$email,$phone,$description,$location,$course,$tutorID);
+    $result = $obj->editTutorProfile($level,$time,$subject,$rate,$status,$tutorID);
 
     //$result = $obj->addJobListing($name,$subject,$level,$location,$budget,$duration,$phone,$email,$requirements,$studentID);
     echo $result;
@@ -116,6 +116,7 @@ if(isset($_POST["add_t_time"]) AND isset($_POST["add_t_subject"]) AND isset($_PO
     $subject = $_POST["add_t_subject"];
     $rate = $_POST["add_t_rate"];
     $status = $_POST["add_t_status"];
+    
     $tutorID = $_SESSION["userid"];
 
     $result = $obj->addTutorProfile($level,$time,$subject,$rate,$status,$tutorID);

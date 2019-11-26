@@ -57,6 +57,8 @@
                     <div class="col-md-3 text-center">
                             <div class="thumb justify-content-between">
                                 <img src="img/profile/user.png" alt="">
+                                <br><br>
+                                <h4 class="titles"><?php echo $rs['username'] ?></h4>
                             </div>
                             <br>
                             <button class="ticker-btn" style="width:auto" value="<?php echo $rs['username']?>" onclick="view_profile('<?php echo $rs['jobID']?>')">
@@ -66,7 +68,7 @@
                         <div class="col-md-9">
                             <div class="title justify-content-between" style="cursor: pointer">
                                 <div class="titles">
-                                    <h4><?php echo $rs['username']?></h4>
+                                    <h4><?php echo $rs['subject']?></h4>
                                     <div class="row">
                                         <div class="col-md-9">
                                         <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
@@ -161,7 +163,7 @@
     // }
 
     ?>
-            <div id="id05" class="modal">
+            <div id="id06" class="modal">
                 <div class="model-content card mx-auto" style="margin-top:1%; margin-bottom:0; padding-top:0">
                             
                     <div class="card-body" id="view-profile">
@@ -202,7 +204,7 @@
                     },
                     success: function(data){
                         $('#view-profile').html(data);
-                        document.getElementById('id05').style.display='block';
+                        document.getElementById('id06').style.display='block';
                     }
                 });
             }

@@ -444,6 +444,8 @@ var DOMAIN = "http://localhost/Mentoree";
 
         var username = $("#reg_username");
         var email = $("#reg_email");
+        var phone = $("#reg_phone");
+        var course = $("#reg_course");
         var pass = $("#reg_password");
         var confirmPass = $("#reg_confirmPass");
         var status = true;
@@ -465,6 +467,26 @@ var DOMAIN = "http://localhost/Mentoree";
       }else{
         email.removeClass("border-danger");
         $("#r_email_error").html("");
+        status = true;
+      }
+
+      if (phone.val() == "") {
+        phone.addClass("border-danger");
+        $("#r_phone_error").html("<span class= 'text-danger'>Please enter phone number</span>");
+        status = false;
+      }else{
+        phone.removeClass("border-danger");
+        $("#r_phone_error").html("");
+        status = true;
+      }
+
+      if (course.val() == "") {
+        course.addClass("border-danger");
+        $("#r_course_error").html("<span class= 'text-danger'>Please enter the course you are taking</span>");
+        status = false;
+      }else{
+        phone.removeClass("border-danger");
+        $("#r_course_error").html("");
         status = true;
       }
 
@@ -505,9 +527,9 @@ var DOMAIN = "http://localhost/Mentoree";
                 email.addClass("border-danger");
                 $("#r_email_error").html("<span class= 'text-danger'>Email is taken by another user</span>");
               }else{
-                alert(data);
-                // document.getElementById('id02').style.display='none'; 
-                // document.getElementById('id01-1').style.display='block';
+                //alert(data);
+                document.getElementById('id02').style.display='none'; 
+                document.getElementById('id01-1').style.display='block';
                 // test your git
               }
             }
@@ -558,6 +580,7 @@ var DOMAIN = "http://localhost/Mentoree";
           method : "POST",
           data : $("#form-student-post").serialize(),
           success : function(data){
+            // alert(data)
             $("#form-student-post").hide();
             $("#message").show();
             countDown();
@@ -767,7 +790,7 @@ var DOMAIN = "http://localhost/Mentoree";
           data: $('#form_edit_profile').serialize(),
           success: function(data){
             alert(data);
-            window.location.href='home.php'
+            window.location.href='home.php';
             //alert("SUCCESS");
           }
         });
@@ -780,7 +803,7 @@ var DOMAIN = "http://localhost/Mentoree";
         data: $('#form_edit_profile_tutor').serialize(),
         success: function(data){
           alert(data);
-          windows.location.href='home.php'
+          windows.location ='home.php';
         }
       });
   });
@@ -792,9 +815,22 @@ var DOMAIN = "http://localhost/Mentoree";
       data: $('#form_add_listing_tutor').serialize(),
       success: function(data){
         alert(data);
+        windows.location.href='home.php';
       }
     });
 });
+
+  $('#form_edit_listing_tutor').on('submit', function() {
+    $.ajax({
+      url: 'includes/process.php',
+      type: 'POST',
+      data: $('#form_edit_listing_tutor').serialize(),
+      success: function(data){
+        alert(data);
+        windows.location.href='home.php';
+      }
+    });
+  });
   
  });
 

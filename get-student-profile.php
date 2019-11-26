@@ -14,7 +14,7 @@
                   <div class="col-md-6">
                     <div class="row form-group">
                         <div class="col-md-12 mb-3 mb-md-0">
-                            <label class="font-weight-bold" for="fullname">Username</label>
+                            <label class="font-weight-bold" for="fullname">Full Name</label>
                             <input type="text" name = "edit_username" id="edit_username" class="form-control" placeholder="enter new username" value="<?php echo $rs['username'] ?>">
                         </div>
                     </div>

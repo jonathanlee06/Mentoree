@@ -48,7 +48,7 @@
 										<form action="search-tutor.php" class="serach-form-area" id="search-tutor" method="POST">
 											<div class="row justify-content-center form-wrap">
 												<div class="col-lg-6 form-cols">
-													<input type="text" class="form-control" name="search" id="search" placeholder="what are you looking for student?">
+													<input type="text" class="form-control" name="search" id="search" placeholder="Search by Subject?">
 													<small id="s_error" class="form-text text-muted text-center"></small>
 												</div>
 												<div class="col-lg-4 form-cols">

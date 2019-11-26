@@ -29,7 +29,7 @@ class DBOperation
     //add to submission database
     public function addStudentListing($subject,$level,$budget,$frequency,$duration,$description,$studentID){
 
-        $pre_stmt = $this->con->prepare("INSERT INTO `joblistings`(`subject`,`level_of_teaching`, `budget`, `frequency`, `duration`, `description`,`studentID`) 
+        $pre_stmt = $this->con->prepare("INSERT INTO `joblistings`(`subject`,`level_of_teaching`, `budget`, `frequency`, `duration`, `job_description`,`studentID`) 
         VALUES (?,?,?,?,?,?,?)");
         $pre_stmt->bind_param("ssssssi",$subject,$level,$budget,$frequency,$duration,$description,$studentID);
         $result = $pre_stmt->execute() or die($this->con->error);

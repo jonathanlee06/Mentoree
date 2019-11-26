@@ -54,15 +54,15 @@
                                         <?php
                                             if($_SESSION['usertype'] == 'Tutor'){
                                                 echo '
-                                                    <h4>'.$rs['username'].'</h4>
+                                                    <h4>'.$rs['subjects'].'</h4>
                                                     <br>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                         <h6><strong>Listed By:             </strong>'.$rs['username'].'</h6><br>
                                                         <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                        <h6><strong>Budget:               </strong>RM'.$rs['rate'].'</h6><br>
-                                                        <h6><strong>Subject:               </strong>'.$rs['subjects'].'</h6><br>
-                                                        <h6><strong>Description:                  </strong>'.$rs['description'].'</h6>
+                                                        <h6><strong>Rate:               </strong>RM'.$rs['rate'].'</h6><br>
+                                                        <h6><strong>Time:               </strong>'.$rs['time'].'</h6><br>
+                                                        <h6><strong>Status:               </strong>'.$rs['status'].'</h6><br>
                                                         </div>
                                                     </div>
                                                 ';

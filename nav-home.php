@@ -37,7 +37,7 @@
                 </li> -->
                 <li class="menu-has-children">
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                        <img src="img/man.png" class="rounded-circle">
+                        <img src="img/profile/user.png" class="rounded-circle" style="width:32px;height:32px">
                     <!-- </a> -->
                     <ul id="drop-bar" style="right:0; left:auto">
                         <li><a><?php echo $_SESSION["username"]; ?></a></li>
