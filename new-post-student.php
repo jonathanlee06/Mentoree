@@ -75,10 +75,19 @@
                 </div>
                 <div class="col-md-6">
                   <div class="row form-group mb-5">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Budget (RM)</label>
-                      <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="eg. 10/hour">
+                    <div class="col-md-12">
+                    <label class="font-weight-bold" for="fullname">Budget (RM)</label>
                     </div>
+                    <div class="col-md-12 mb-3 input-group">
+                      <div class="input-group-prepend" style="height:100%;padding-top:8px;backgroung-color:#333">
+                        <span class="input-group-text" id="budget_label">RM</span>
+                      </div>
+                      <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="10" aria-describedby="budget_label">
+                      <div class="input-group-append" style="height:100%;padding-top:8px;">
+                        <span class="input-group-text" id="budget_label">Per Session</span>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -86,17 +95,29 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="row form-group mb-5">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Preferred Tuition Frequency</label>
-                      <input type="text" name = "job_freq" id="job_freq" class="form-control" placeholder="eg. 2 times a week">
+                    <div class="col-md-12">
+                    <label class="font-weight-bold" for="fullname">Preferred Tuition Frequency</label>
                     </div>
+                    <div class="col-md-12 mb-3 mb-md-0 input-group">
+                      <input type="text" name = "job_freq" id="job_freq" class="form-control" placeholder="eg. 2">
+                      <div class="input-group-append" style="height:100%;padding-top:8px;">
+                        <span class="input-group-text" id="budget_label">Session(s) Per Week</span>
+                      </div>
+                    </div>
+                    
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="row form-group ">
-                    <div class="col-md-12 mb-3 mb-md-0">
-                      <label class="font-weight-bold" for="fullname">Preferred Duration of Tuition</label>
-                      <input type="text" name = "job_duration" id="job_duration" class="form-control" placeholder="eg. 2 hours per session">
+                    <div class="col-md-12">
+                    <label class="font-weight-bold" for="fullname">Preferred Duration of Tuition</label>
+                    </div>
+                    <div class="col-md-12 mb-3 mb-md-0 input-group">
+                      
+                      <input type="text" name = "job_duration" id="job_duration" class="form-control" placeholder="eg. 3">
+                      <div class="input-group-append" style="height:100%;padding-top:8px;">
+                        <span class="input-group-text" id="budget_label">Hour(s) Per Session</span>
+                      </div>
                     </div>
                   </div>
                 </div>

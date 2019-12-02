@@ -62,7 +62,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                             <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                            <h6><strong>Budget:               </strong>RM<?php echo $rs['rate'] ?></h6>	
+                                            <h6><strong>Budget:               </strong>RM<?php echo $rs['rate'] ?> Per Session</h6>	
                                             <h6><strong>Subject:               </strong><?php echo $rs['subjects'] ?></h6>	
                                             <h6><strong>Phone:                  </strong><?php echo $rs['phone'] ?></h6>
                                             <h6><strong>Email:                  </strong><?php echo $rs['email'] ?></h6>
@@ -165,7 +165,7 @@
                                         <div class="row">
                                             <div class="col-md-9">
                                             <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                            <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?></h6>	
+                                            <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?> Per Session</h6>	
                                             <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
                                             <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                             <h6><strong>Description:    </strong><?php echo $rs['job_description'] ?></h6>	

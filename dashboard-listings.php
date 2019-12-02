@@ -60,7 +60,7 @@
                                                         <div class="col-md-12">
                                                         <h6><strong>Listed By:             </strong>'.$rs['username'].'</h6><br>
                                                         <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                        <h6><strong>Rate:               </strong>RM'.$rs['rate'].'</h6><br>
+                                                        <h6><strong>Rate:               </strong>RM'.$rs['rate'].' Per Hour</h6><br>
                                                         <h6><strong>Time:               </strong>'.$rs['time'].'</h6><br>
                                                         <h6><strong>Status:               </strong>'.$rs['status'].'</h6><br>
                                                         </div>
@@ -74,9 +74,9 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                         <h6><strong>Description:                  </strong>'.$rs['job_description'].'</h6><br>
-                                                        <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
-                                                        <h6><strong>Duration:               </strong>'.$rs['duration'].'</h6><br>
-                                                        <h6><strong>Frequency:                  </strong>'.$rs['frequency'].'</h6><br>
+                                                        <h6><strong>Budget:               </strong>RM'.$rs['budget'].' Per Session</h6><br>
+                                                        <h6><strong>Duration:               </strong>'.$rs['duration'].' Hour(s) Per Session</h6><br>
+                                                        <h6><strong>Frequency:                  </strong>'.$rs['frequency'].' Session(s) Per Week</h6><br>
                                                         <h6><strong>Preferred Tutor Qualification:      </strong>'.$rs['level_of_teaching'].'</h6>
                                                         
                                                         </div>

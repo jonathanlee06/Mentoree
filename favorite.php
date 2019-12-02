@@ -60,7 +60,7 @@
                                                     <div class="col-md-12">
                                                     <h6><strong>Listed By:             </strong>'.$rs['username'].'</h6><br>
                                                     <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                    <h6><strong>Budget:               </strong>RM'.$rs['budget'].'</h6><br>
+                                                    <h6><strong>Budget:               </strong>RM'.$rs['budget'].' Per Session</h6><br>
                                                     <h6><strong>Subject:               </strong>'.$rs['subject'].'</h6><br>
                                                     <h6><strong>Description:                  </strong>'.$rs['job_description'].'</h6>
                                                     </div>
@@ -70,7 +70,7 @@
                                                 echo '
                                                     <div class="col-md-12">
                                                     <h6><strong>Location:             </strong>'.$rs['location'].'</h6><br>
-                                                    <h6><strong>Budget:               </strong>RM'.$rs['rate'].'</h6><br>
+                                                    <h6><strong>Budget:               </strong>RM'.$rs['rate'].' Per Session</h6><br>
                                                     <h6><strong>Subject:               </strong>'.$rs['subjects'].'</h6><br>
                                                     <h6><strong>Phone:                  </strong>'.$rs['phone'].'</h6><br>
                                                     <h6><strong>Email:                  </strong>'.$rs['email'].'</h6><br>

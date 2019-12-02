@@ -20,20 +20,43 @@ include_once("DBOperation.php");
 
 //REGISTER processing 
 if(isset($_POST["reg_username"]) AND isset($_POST["reg_email"]) AND isset($_POST["reg_password"]) AND isset($_POST["userType"])){
-    
-    $user = new User();
 
-    $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_phone"], $_POST["reg_location"], $_POST["reg_course"], $_POST["reg_password"], $_POST['userType']);
+    $secret = '6LeziMUUAAAAAOtOaTkKQScAPI1x89l6BDyx80ll';
+    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+    $responseData = json_decode($verifyResponse);
+    if($responseData->success)
+    {
+        $user = new User();
+        $result = $user->createUserAccount($_POST["reg_username"], $_POST["reg_email"], $_POST["reg_phone"], $_POST["reg_location"], $_POST["reg_course"], $_POST["reg_password"], $_POST['userType']);
+        echo $result;
+    }
+    else
+    {
+        $errMsg = 'Robot Verification Failed';
+        echo $errMsg;
+    }
+
     
-    echo $result;
 
 }
 
 //LOGIN processing
 if(isset($_POST["log_email"]) AND isset($_POST["log_password"])){
-    $user = new User();
-    $result = $user->userLogin($_POST["log_email"], $_POST["log_password"]);
-    echo $result;
+    $secret = '6LeziMUUAAAAAOtOaTkKQScAPI1x89l6BDyx80ll';
+    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+    $responseData = json_decode($verifyResponse);
+    if($responseData->success)
+    {
+        $user = new User();
+        $result = $user->userLogin($_POST["log_email"], $_POST["log_password"]);
+        echo $result;
+    }
+    else
+    {
+        $errMsg = 'Robot Verification Failed';
+        echo $errMsg;
+    }
+
 }
 
 //job listing processing

@@ -425,8 +425,11 @@ var DOMAIN = "http://localhost/Mentoree";
                     }else if(data == "PASSWORD_NOT_MATCHED"){
                         pass.addClass("border-danger");
                         $("#p_error").html("<span class = 'text-danger'> Password did not matched</span>");
+                    }else if(data == "Robot Verification Failed"){
+                      $("#v_error").html("<span class = 'text-danger'> Please verify that you are not a robot.</span>");
                     }else if(data == 1){
                         //console.log(data);
+                        grecaptcha.reset();
                         window.location.href = DOMAIN+"/home.php"
                     }else{
                         console.log(data);
@@ -526,8 +529,11 @@ var DOMAIN = "http://localhost/Mentoree";
               if(data == "EMAIL_ALREADY_EXISTS"){
                 email.addClass("border-danger");
                 $("#r_email_error").html("<span class= 'text-danger'>Email is taken by another user</span>");
+              }else if(data == "Robot Verification Failed"){
+                $("#vr_error").html("<span class = 'text-danger'> Please verify that you are not a robot.</span>");
               }else{
                 //alert(data);
+                grecaptcha.reset();
                 document.getElementById('id02').style.display='none'; 
                 document.getElementById('id01-1').style.display='block';
                 // test your git

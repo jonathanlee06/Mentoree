@@ -49,10 +49,18 @@
 
                     <div class="col-md-6">
                         <div class="row form-group ">
-                        <div class="col-md-12 mb-3 mb-md-0">
+                          <div class="col-md-12">
                             <label class="font-weight-bold" for="fullname">Preferred Rate</label>
+                          </div>
+                          <div class="col-md-12 mb-3 mb-md-0 input-group">
+                            <div class="input-group-prepend" style="height:100%;padding-top:8px;">
+                              <span class="input-group-text" id="budget_label">RM</span>
+                            </div>
                             <input type="text" name = "edit_t_rate" id="edit_t_rate" class="form-control" placeholder="eg. 50/hr" value="<?php echo $rs['rate'] ?>">
-                        </div>
+                            <div class="input-group-append" style="height:100%;padding-top:8px;">
+                              <span class="input-group-text" id="budget_label">Per Hour</span>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
@@ -136,9 +144,17 @@
 
                     <div class="col-md-6">
                         <div class="row form-group ">
-                        <div class="col-md-12 mb-3 mb-md-0">
-                            <label class="font-weight-bold" for="fullname">Preferred Rate (RM)</label>
-                            <input type="text" name = "add_t_rate" id="add_t_rate" class="form-control" placeholder="eg. 50/hr">
+                        <div class="col-md-12">
+                          <label class="font-weight-bold" for="fullname">Preferred Rate (RM)</label>
+                        </div>
+                        <div class="col-md-12 mb-3 mb-md-0 input-group">
+                          <div class="input-group-prepend" style="height:100%;padding-top:8px;">
+                            <span class="input-group-text" id="budget_label">RM</span>
+                          </div>
+                          <input type="text" name = "add_t_rate" id="add_t_rate" class="form-control" placeholder="eg. 50">
+                          <div class="input-group-append" style="height:100%;padding-top:8px;">
+                            <span class="input-group-text" id="budget_label">Per Hour</span>
+                          </div>
                         </div>
                         </div>
                     </div>
