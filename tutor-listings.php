@@ -52,60 +52,62 @@
 
     if($count1 >= 1){
         while($rs = mysqli_fetch_array($run)) {
-            ?>
-            <div class="single-post d-flex flex-row justify-content-start align-items-start">
-                
-                <div class="details col-lg-12">
-                    <div class="row">
-                        <!-- <div class="col-1"></div> -->
-                        <div class="col-md-3 text-center" style="padding-left:2%;padding-right:2%">
-                            <div class="thumb justify-content-between">
-                                <img src="img/profile/user.png" alt="">
-                            </div>
-                            <br>
-                            <button class="ticker-btn" style="width:auto" onclick="view_profile('<?php echo $rs['profileID'] ?>')">
-                                View Profile
-                            </button>  
-                        </div>
-                        <!-- <div class="col-md-1"></div> -->
-                        <div class="col-md-9">
-                            <div class="title justify-content-between">
-                                <div class="titles">
-                                    <h4><?php echo $rs['username']?></h4>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                        <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
-                                        <h6><strong>Rate:               </strong>RM<?php echo $rs['rate'] ?> Per Session</h6>	
-                                        <h6><strong>Subject:               </strong><?php echo $rs['subjects'] ?></h6>	
-                                        <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
-                                        </div>
-                                        <div class="col-md-3"></div>
-                                        <!-- <div class="col-md-4">		
-                                            
-                                        </div> -->
-                                        <div class="col-md-3">
-                                            <button class="btn-secondary like" name="like" id="like" onclick="like_tutor('<?php echo $rs['profileID'] ?>')">
-                                                <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
-                                            </button>
-                                            
-                                            
-                                        </div>
-                                    </div>
-                                    
-                                                    
+            if($rs['status'] == 'AVAILABLE'){
+                ?>
+                <div class="single-post d-flex flex-row justify-content-start align-items-start">
+                    
+                    <div class="details col-lg-12">
+                        <div class="row">
+                            <!-- <div class="col-1"></div> -->
+                            <div class="col-md-3 text-center" style="padding-left:2%;padding-right:2%">
+                                <div class="thumb justify-content-between">
+                                    <img src="img/profile/user.png" alt="">
                                 </div>
-                                <ul class="btns">
-                                    <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                    <li><a href="#">Apply</a></li> -->
-                                </ul>
+                                <br>
+                                <button class="ticker-btn" style="width:auto" onclick="view_profile('<?php echo $rs['profileID'] ?>')">
+                                    View Profile
+                                </button>  
+                            </div>
+                            <!-- <div class="col-md-1"></div> -->
+                            <div class="col-md-9">
+                                <div class="title justify-content-between">
+                                    <div class="titles">
+                                        <h4><?php echo $rs['username']?></h4>
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                            <h5><strong>Status:               <?php echo $rs['status'] ?></strong></h5>
+                                            <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
+                                            <h6><strong>Subject:               </strong><?php echo $rs['subjects'] ?></h6>	
+                                            <h6><strong>Rate:               </strong>RM<?php echo $rs['rate'] ?> Per Session</h6>
+                                            <h6><strong>Time Available:               </strong><?php echo $rs['time'] ?></h6>		
+                                            <h6><strong>Level of Teaching:      </strong><?php echo $rs['level_of_teaching'] ?></h6>
+                                            </div>
+                                            
+                                            <div class="col-md-3">
+                                                <button class="btn-secondary like" name="like" id="like" onclick="like_tutor('<?php echo $rs['profileID'] ?>')">
+                                                    <i class="fa fa-heart" hidden aria-hidden="true"></i> Like
+                                                </button>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                                        
+                                    </div>
+                                    <ul class="btns">
+                                        <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                        <li><a href="#">Apply</a></li> -->
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    
+                    
                 </div>
-                
-                
-            </div>
-            <?php
+                <?php
+            }
+            
             // if($count1 >= 5){
             // echo $rs['id'].' -> '.$rs['first_name'].'<br>';
         }

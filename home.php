@@ -48,7 +48,7 @@
 										<form action="search-tutor.php" class="serach-form-area" id="search-tutor" method="POST">
 											<div class="row justify-content-center form-wrap">
 												<div class="col-lg-6 form-cols">
-													<input type="text" class="form-control" name="search" id="search" placeholder="Search by Subject?">
+													<input type="text" class="form-control" name="search" id="search" placeholder="Search by Subject">
 													<small id="s_error" class="form-text text-muted text-center"></small>
 												</div>
 												<div class="col-lg-4 form-cols">
@@ -173,7 +173,7 @@
 								<div class="list-group">
 								<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 									<div class="list-group-item">
-										<label><input type="checkbox" name="selector" class="level" value="Pre-U"  > Pre-U / Foundation</label>
+										<label><input type="checkbox" name="selector" class="level" value="Pre-U/Foundation"  > Pre-U / Foundation</label>
 									</div>
 									<div class="list-group-item">
 										<label><input type="checkbox" name="selector" class="level" value="Diploma"  > Diploma</label>
@@ -185,7 +185,7 @@
 										<label><input type="checkbox" name="selector" class="level" value="Master"  > Master</label>
 									</div>
 									</div>
-								</div>
+								</div> 
 
 							</div>						
 
@@ -222,6 +222,7 @@
 			<!-- start footer Area -->		
 			<?php include "footer.html"; ?>
 			<!-- End footer Area -->		
+			
 			<script>
                 function like(postID){
                     $.ajax({
@@ -234,7 +235,7 @@
                             alert(data);
                         }
                     });
-                }
+				}
             </script>  
 			
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

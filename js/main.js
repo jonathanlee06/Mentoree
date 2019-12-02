@@ -599,7 +599,7 @@ var DOMAIN = "http://localhost/Mentoree";
     // Checkboxes
     function filter_data()
     {
-        // $('.filter_data').html('<div id="loading" style="" ></div>');
+        // $('.filter').html('<div id="loading" style="" ></div>');
         // var action = 'fetch_data';
         // var minimum_price = $('#hidden_minimum_price').val();
         // var maximum_price = $('#hidden_maximum_price').val();
@@ -641,9 +641,7 @@ var DOMAIN = "http://localhost/Mentoree";
     $("input[type=checkbox]").click(function(){
       
         filter_data();
-      
 
-      
     });
 
 

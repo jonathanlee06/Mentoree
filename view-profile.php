@@ -52,7 +52,7 @@
             ?>  
                 <div class="row">
                     <div class="col-md-12">
-                        <span onclick="document.getElementById('id05').style.display='none'; document.body.style.overflow = '';" class="close" title="Close Modal" style="color: #000;">&times;</span>
+                        <span onclick="document.getElementById('id06').style.display='none'; document.body.style.overflow = '';" class="close" title="Close Modal" style="color: #000;">&times;</span>
                     </div>
                     <br><br>
                     <div class="col-md-12">

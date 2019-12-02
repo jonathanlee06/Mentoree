@@ -70,9 +70,9 @@
                           <label class="font-weight-bold" for="fullname">Availability Status</label>
                           <select class="nice-select" name = "edit_t_status" id="edit_t_status">
                               <option value="" selected disabled hidden>Select Status</option>
-                              <option value="Available">AVAILABLE</option>
-                              <option value="Busy">BUSY</option>
-                              <option value="Not Available">NOT AVAILABLE</option>
+                              <option value="AVAILABLE">AVAILABLE</option>
+                              <option value="BUSY">BUSY</option>
+                              <option value="NOT AVAILABLE">NOT AVAILABLE</option>
                           </select>
                        </div>
                       
@@ -165,9 +165,9 @@
                           <label class="font-weight-bold" for="fullname">Availability Status</label>
                           <select class="nice-select" name = "add_t_status" id="add_t_status">
                               <option value="" selected disabled hidden>Select Status</option>
-                              <option value="Available">AVAILABLE</option>
-                              <option value="Busy">BUSY</option>
-                              <option value="Not Available">NOT AVAILABLE</option>
+                              <option value="AVAILABLE">AVAILABLE</option>
+                              <option value="BUSY">BUSY</option>
+                              <option value="NOT AVAILABLE">NOT AVAILABLE</option>
                           </select>
                        </div>
                       

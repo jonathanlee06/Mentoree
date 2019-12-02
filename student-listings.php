@@ -73,7 +73,8 @@
                                         <div class="col-md-9">
                                         <h6><strong>Location:             </strong><?php echo $rs['location'] ?></h6>
                                         <h6><strong>Budget:               </strong>RM<?php echo $rs['budget'] ?> Per Session</h6>	
-                                        <h6><strong>Subject:               </strong><?php echo $rs['subject'] ?></h6>	
+                                        <h6><strong>Duration:               </strong><?php echo $rs['duration'] ?> Hour(s) Per Session</h6>
+                                        <h6><strong>Preferred Frequency:   </strong><?php echo $rs['frequency'] ?> Session(s) Per Week</h6>	
                                         <h6><strong>Student Level:        </strong><?php echo $rs['level_of_teaching'] ?></h6>
                                         <h6><strong>Description:    </strong><?php echo $rs['job_description'] ?></h6>	
                                         </div>

@@ -82,7 +82,7 @@
                       <div class="input-group-prepend" style="height:100%;padding-top:8px;backgroung-color:#333">
                         <span class="input-group-text" id="budget_label">RM</span>
                       </div>
-                      <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="10" aria-describedby="budget_label">
+                      <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="e.g. 10" aria-describedby="budget_label">
                       <div class="input-group-append" style="height:100%;padding-top:8px;">
                         <span class="input-group-text" id="budget_label">Per Session</span>
                       </div>
