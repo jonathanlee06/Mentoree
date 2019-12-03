@@ -43,7 +43,7 @@
                         <li><a><?php echo $_SESSION["username"]; ?></a></li>
                         <li><a><?php echo $_SESSION["useremail"]; ?></a></li>
                         <li><a href="dashboard.php">View Profile  </a></li>
-                        <li><a class="text-danger" href="index.php">Logout</a></li>
+                        <li><a class="text-danger" href="includes/destroy.php">Logout</a></li>
                     </ul>
                 </li>
                 <!-- <li><img src="img/man.png" alt=""></li>	 -->

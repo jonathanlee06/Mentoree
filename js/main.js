@@ -31,21 +31,6 @@ $(document).ready(function(){
           $('select').niceSelect();
     };        
 
-    $('.img-pop-up').magnificPopup({
-        type: 'image',
-        gallery:{
-        enabled:true
-        }
-    });
-
-
-    $('.play-btn').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
 
 
   // Initiate superfish on nav menu
@@ -480,8 +465,64 @@ var DOMAIN = "https://mentoree.herokuapp.com";
 
     //job listing upload 
     $("#form-student-post").on("submit",function(){
-
+      var subject = $("#job_subject");
+      var level= $("#job_level");
+      var budget = $("#job_budget");
+      var freq = $("#job_freq");
+      var duration = $("#job_duration");
       var status = true;
+
+      if (subject.val() == "") {
+          subject.addClass("border-danger");
+          $("#subject_error").html("<span class= 'text-danger'>Please enter at least one subject</span>");
+          status = false;
+      }else{
+          subject.removeClass("border-danger");
+          $("#subject_error").html("");
+          status = true;
+      }
+
+      if (level.val() == "") {
+        level.addClass("border-danger");
+        $("#level_error").html("<span class= 'text-danger'>Please select qualification level</span>");
+        status = false;
+      }else{
+          level.removeClass("border-danger");
+          $("#level_error").html("");
+          status = true;
+      }
+
+      if (budget.val() == "") {
+        budget.addClass("border-danger");
+        $("#budget_error").html("<span class= 'text-danger'>Please enter valid budget</span>");
+        status = false;
+      }else{
+        budget.removeClass("border-danger");
+        $("#budget_error").html("");
+        status = true;
+      }
+
+      if (freq.val() == "") {
+        freq.addClass("border-danger");
+        $("#freq_error").html("<span class= 'text-danger'>Please enter valid frequency</span>");
+        status = false;
+      }else{
+        freq.removeClass("border-danger");
+        $("#freq_error").html("");
+        status = true;
+      }
+
+      if (duration.val() == "") {
+        duration.addClass("border-danger");
+        $("#duration_error").html("<span class= 'text-danger'>Please enter valid duration</span>");
+        status = false;
+      }else{
+        duration.removeClass("border-danger");
+        $("#duration_error").html("");
+        status = true;
+      }
+
+      
 
       if(status){
         $.ajax({
@@ -502,7 +543,9 @@ var DOMAIN = "https://mentoree.herokuapp.com";
     // Checkboxes
     function filter_data()
     {
-        // $('.filter_data').html('<div id="loading" style="" ></div>');
+        $('.post-list').hide();
+        $('.filter').show();
+        $('.filter').html('<div id="loading" style="text-align:center; background: url("img/elements/loader.gif") no-repeat center; height: 150px;" ></div>');
         // var action = 'fetch_data';
         // var minimum_price = $('#hidden_minimum_price').val();
         // var maximum_price = $('#hidden_maximum_price').val();
@@ -511,12 +554,11 @@ var DOMAIN = "https://mentoree.herokuapp.com";
         console.log(ram);
         // var storage = get_filter('storage');
         $.ajax({
-            url:"php/filter-php/tutor-listings.php",
+            url:"php/filter-tutor-listings.php",
             method:"POST",
             data:{ram:ram,level:level},
             success:function(data){
-              $('.post-list').hide();
-              $('.filter').show();
+
               $('.filter').html(data);
                 
             }

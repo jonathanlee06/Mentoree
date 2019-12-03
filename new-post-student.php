@@ -11,17 +11,13 @@
     <title>Mentoree</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css">
       <!--
       CSS
       ============================================= -->
-      <link rel="stylesheet" href="css/linearicons.css">
       <link rel="stylesheet" href="css/font-awesome.min.css">
       <link rel="stylesheet" href="css/bootstrap.css">
-      <link rel="stylesheet" href="css/magnific-popup.css">
       <link rel="stylesheet" href="css/nice-select.css">					
       <link rel="stylesheet" href="css/animate.min.css">
-      <!-- <link rel="stylesheet" href="css/bootstrap-tagsinput.css"> -->
       <link rel="stylesheet" href="css/main.css">
 
     </head>
@@ -53,6 +49,7 @@
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Subject To Learn</label>
                   <input type="text" name = "job_subject" id="job_subject" class="form-control" placeholder="eg. Computer Architecture">
+                  <small id="subject_error" class="form-text text-muted text-center"></small>
                 </div>
               </div>
            
@@ -69,7 +66,7 @@
                         <option value="Master">Master</option>
                         </select>
                     </div>
-                    
+                    <small id="level_error" class="form-text text-muted text-center"></small>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -81,10 +78,13 @@
                       <div class="input-group-prepend" style="height:100%;padding-top:8px;">
                         <span class="input-group-text" id="budget_label">RM</span>
                       </div>
-                      <input type="text" name = "job_budget" id="job_budget" class="form-control" placeholder="e.g. 10" aria-describedby="budget_label">
+                      <input type="number" name = "job_budget" id="job_budget" class="form-control" placeholder="e.g. 10" aria-describedby="budget_label">
                       <div class="input-group-append" style="height:100%;padding-top:8px;">
                         <span class="input-group-text" id="budget_label">Per Session</span>
                       </div>
+                    </div>
+                    <div class="col-md-12">
+                      <small id="budget_error" class="form-text text-muted text-center"></small>
                     </div>
                     
                   </div>
@@ -98,12 +98,14 @@
                     <label class="font-weight-bold" for="fullname">Preferred Tuition Frequency</label>
                     </div>
                     <div class="col-md-12 mb-3 mb-md-0 input-group">
-                      <input type="text" name = "job_freq" id="job_freq" class="form-control" placeholder="eg. 2">
+                      <input type="number" name = "job_freq" id="job_freq" class="form-control" placeholder="eg. 2">
                       <div class="input-group-append" style="height:100%;padding-top:8px;">
                         <span class="input-group-text" id="budget_label">Session(s) Per Week</span>
                       </div>
                     </div>
-                    
+                    <div class="col-md-12">
+                      <small id="freq_error" class="form-text text-muted text-center"></small>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -113,10 +115,13 @@
                     </div>
                     <div class="col-md-12 mb-3 mb-md-0 input-group">
                       
-                      <input type="text" name = "job_duration" id="job_duration" class="form-control" placeholder="eg. 3">
+                      <input type="number" name = "job_duration" id="job_duration" class="form-control" placeholder="eg. 3">
                       <div class="input-group-append" style="height:100%;padding-top:8px;">
                         <span class="input-group-text" id="budget_label">Hour(s) Per Session</span>
                       </div>
+                    </div>
+                    <div class="col-md-12">
+                      <small id="duration_error" class="form-text text-muted text-center"></small>
                     </div>
                   </div>
                 </div>
@@ -158,13 +163,9 @@
       <script src="js/easing.min.js"></script>			
     <script src="js/hoverIntent.js"></script>
     <script src="js/superfish.min.js"></script>	
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>			
     <script src="js/jquery.sticky.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>			
     <script src="js/parallax.min.js"></script>		
-    <script src="js/mail-script.js"></script>	
-    <!-- <script src="js/tagsinput.js"></script> -->
     <script src="js/main.js"></script>
     
   </body>
