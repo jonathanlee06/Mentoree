@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet" href="css/nice-select.css">					
         <link rel="stylesheet" href="css/animate.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.css">
         <!-- <link rel="stylesheet" href="css/bootstrap-tagsinput.css"> -->
         <link rel="stylesheet" href="css/main.css">
         
@@ -82,9 +81,9 @@
             }	
         ?>
 
-        <?php include "nav-dashboard.php"; ?>
+        <?php include "php/nav-dashboard.php"; ?>
 
-        <?php include "modal.html"; ?>
+        <?php include "html/modal.html"; ?>
         
         <!-- Start post Area -->
         <section class="post-area">
@@ -140,10 +139,10 @@
                         <div class="container py-3 px-3 px-sm-0 align-items-center justify-content-center  list-sec" id="nav-tabContent" style="padding-bottom:5%">
                             <div class="fade show active" id="nav-mylist" role="tabpanel" aria-labelledby="nav-home-tab">
                               
-                                <?php include "dashboard-listings.php" ?>
+                                <?php include "php/dashboard-listings.php" ?>
                             </div>
                             <div class="fade" id="nav-favlist" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <?php include "favorite.php" ?>  
+                                <?php include "php/favorite.php" ?>  
                             </div>
                         </div>
                         
@@ -163,13 +162,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>			
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
         <script src="js/easing.min.js"></script>			
         <script src="js/hoverIntent.js"></script>
         <script src="js/superfish.min.js"></script>	
         <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>	
-        <script src="js/owl.carousel.min.js"></script>			
+        <script src="js/jquery.magnific-popup.min.js"></script>			
         <script src="js/jquery.sticky.js"></script>
         <script src="js/jquery.nice-select.min.js"></script>			
         <script src="js/parallax.min.js"></script>		

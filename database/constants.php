@@ -1,10 +1,12 @@
 <?php
 session_start();
 
-define("HOST","localhost");
-define("USER","root");
-define("PASS","");
-define("DB","mentoree");
+$clearURL = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-define("DOMAIN","http://localhost/Mentoree/index.php");
+define("HOST",$clearURL["host"]);
+define("USER",$clearURL["user"]);
+define("PASS",$clearURL["pass"]);
+define("DB", substr($clearURL["path"],1));
+
+define("DOMAIN","https://mentoree.herokuapp.com");
 ?>

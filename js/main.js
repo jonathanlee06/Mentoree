@@ -174,104 +174,7 @@ $(document).ready(function(){
       $('#nav-home a').attr('style','color:white;')
       $('#drop-bar a').attr('style','color:black;')
     }
-  })
-
-
-    $('.active-relatedjob-carusel').owlCarousel({
-        items:1,
-        autoplay:true,
-        loop:true,
-        margin:30,
-        dots: true
-    });
-
-    $('.active-review-carusel').owlCarousel({
-        items:2,
-        margin:30,
-        autoplay:true,
-        loop:true,
-        dots: true,       
-            responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 1,
-            },
-            768: {
-                items: 2,
-            }
-        }
-    });
-
-    $('.active-popular-post-carusel').owlCarousel({
-        items:2,
-        margin:30,
-        autoplay:true,
-        loop:true,
-        dots: true,       
-            responsive: {
-            0: {
-                items: 1
-            },
-            480: {
-                items: 1,
-            },
-            768: {
-                items: 1,
-            },
-            961: {
-                items: 2,
-            }
-        }
-    });
-
-
-
-
-    //  Start Google map 
-
-            // When the window has finished loading create our google map below
-
-            if(document.getElementById("map")){
-            
-            google.maps.event.addDomListener(window, 'load', init);
-        
-            function init() {
-                // Basic options for a simple Google Map
-                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                var mapOptions = {
-                    // How zoomed in you want the map to start at (always required)
-                    zoom: 11,
-
-                    // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
-
-                    // How you would like to style the map. 
-                    // This is where you would paste any style found on Snazzy Maps.
-                    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
-                };
-
-                // Get the HTML DOM element that will contain your map 
-                // We are using a div with id="map" seen below in the <body>
-                var mapElement = document.getElementById('map');
-
-                // Create the Google Map using our element and options defined above
-                var map = new google.maps.Map(mapElement, mapOptions);
-
-                // Let's also add a marker while we're at it
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(40.6700, -73.9400),
-                    map: map,
-                    title: 'Snazzy!'
-                });
-            }
-    }
-
-
-        $(document).ready(function() {
-            $('#mc_embed_signup').find('form').ajaxChimp();
-        });      
+  }) 
 
 
 ////////  Login/Register  ///////
@@ -384,7 +287,7 @@ window.scrollTo(0, parseInt(scrollY || '0') * -1);
   });
 
 //login
-var DOMAIN = "http://localhost/Mentoree";
+var DOMAIN = "https://mentoree.herokuapp.com";
   //user login
   $("#form_login").on("submit",function(){
       var email = $("#log_email");
@@ -413,7 +316,7 @@ var DOMAIN = "http://localhost/Mentoree";
       }
         if(status){
           $.ajax({
-              url : DOMAIN+"/includes/process.php",
+              url : "/includes/process.php",
                 method : "POST",
                 data : $('#form_login').serialize(),
                 success : function(data){
@@ -430,7 +333,7 @@ var DOMAIN = "http://localhost/Mentoree";
                     }else if(data == 1){
                         //console.log(data);
                         grecaptcha.reset();
-                        window.location.href = DOMAIN+"/home.php"
+                        window.location.href = "/home.php"
                     }else{
                         console.log(data);
                     }
@@ -599,7 +502,7 @@ var DOMAIN = "http://localhost/Mentoree";
     // Checkboxes
     function filter_data()
     {
-        // $('.filter').html('<div id="loading" style="" ></div>');
+        // $('.filter_data').html('<div id="loading" style="" ></div>');
         // var action = 'fetch_data';
         // var minimum_price = $('#hidden_minimum_price').val();
         // var maximum_price = $('#hidden_maximum_price').val();
@@ -608,7 +511,7 @@ var DOMAIN = "http://localhost/Mentoree";
         console.log(ram);
         // var storage = get_filter('storage');
         $.ajax({
-            url:"filter-tutor-listings.php",
+            url:"php/filter-php/tutor-listings.php",
             method:"POST",
             data:{ram:ram,level:level},
             success:function(data){
@@ -641,7 +544,9 @@ var DOMAIN = "http://localhost/Mentoree";
     $("input[type=checkbox]").click(function(){
       
         filter_data();
+      
 
+      
     });
 
 
@@ -672,7 +577,7 @@ var DOMAIN = "http://localhost/Mentoree";
 
       if(status){
         $.ajax({
-            url : "tutor-listings.php",
+            url : "php/tutor-listings.php",
               method : "POST",
               data : $('#search-tutor').serialize(),
               async: true,
@@ -712,7 +617,7 @@ var DOMAIN = "http://localhost/Mentoree";
 
       if(status){
         $.ajax({
-            url : "student-listings.php",
+            url : "php/student-listings.php",
               method : "POST",
               data : $('#search-student').serialize(),
               async: true,
