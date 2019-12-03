@@ -1,4 +1,4 @@
-mentoree.sql
-.htaccess
-composer.json
-composer.lock
+/composer.json
+/.htaccess
+/composer.lock
+/mentoree.sql
